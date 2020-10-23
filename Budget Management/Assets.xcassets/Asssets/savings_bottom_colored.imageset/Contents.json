@@ -1,7 +1,6 @@
 {
   "images" : [
     {
-      "filename" : "savings_bottom_colored.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -10,6 +9,7 @@
       "scale" : "2x"
     },
     {
+      "filename" : "savings_bottom_colored.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

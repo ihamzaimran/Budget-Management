@@ -7,5 +7,8 @@ use_frameworks!
 
 # Pods for Budget Management
 pod 'SideMenu'
+pod 'RealmSwift'
+pod 'GoogleSignIn'
+pod 'SKCountryPicker'
 
 end

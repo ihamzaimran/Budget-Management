@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4BC0BCDE68931BC7D2F14929 /* Pods_Budget_Management.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4FAED8B1BAFD1378411C38 /* Pods_Budget_Management.framework */; };
+		EC4D809E254298AC00D0EA31 /* BudgetBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D809D254298AC00D0EA31 /* BudgetBrain.swift */; };
 		EC510860253FFDA000A98A3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51085F253FFDA000A98A3E /* AppDelegate.swift */; };
 		EC510862253FFDA000A98A3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC510861253FFDA000A98A3E /* SceneDelegate.swift */; };
 		EC510864253FFDA000A98A3E /* DashBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC510863253FFDA000A98A3E /* DashBoard.swift */; };
@@ -28,12 +29,16 @@
 		EC5108D9254057D800A98A3E /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5108D8254057D800A98A3E /* UpdateProfileViewController.swift */; };
 		ECC58F252541744C00495610 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC58F242541744C00495610 /* Extensions.swift */; };
 		ECC58F292541963500495610 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC58F282541963500495610 /* SettingsTableViewCell.swift */; };
+		ECC8DB6A2542E37B008F41FA /* BudgetsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8DB692542E37B008F41FA /* BudgetsTabViewController.swift */; };
+		ECC8DB6D2542EB3F008F41FA /* ActivitiesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8DB6C2542EB3F008F41FA /* ActivitiesTabViewController.swift */; };
+		ECC8DB702542EB53008F41FA /* SavingsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8DB6F2542EB53008F41FA /* SavingsTabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4E4FAED8B1BAFD1378411C38 /* Pods_Budget_Management.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Budget_Management.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F481472DB10F78842114AAF /* Pods-Budget Management.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget Management.debug.xcconfig"; path = "Target Support Files/Pods-Budget Management/Pods-Budget Management.debug.xcconfig"; sourceTree = "<group>"; };
 		78E854B9E3E284EFF63C69C5 /* Pods-Budget Management.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget Management.release.xcconfig"; path = "Target Support Files/Pods-Budget Management/Pods-Budget Management.release.xcconfig"; sourceTree = "<group>"; };
+		EC4D809D254298AC00D0EA31 /* BudgetBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetBrain.swift; sourceTree = "<group>"; };
 		EC51085C253FFDA000A98A3E /* Budget Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Budget Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC51085F253FFDA000A98A3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC510861253FFDA000A98A3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +63,9 @@
 		EC5108D8254057D800A98A3E /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
 		ECC58F242541744C00495610 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ECC58F282541963500495610 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		ECC8DB692542E37B008F41FA /* BudgetsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetsTabViewController.swift; sourceTree = "<group>"; };
+		ECC8DB6C2542EB3F008F41FA /* ActivitiesTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTabViewController.swift; sourceTree = "<group>"; };
+		ECC8DB6F2542EB53008F41FA /* SavingsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsTabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		EC4D809C2542988B00D0EA31 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EC4D809D254298AC00D0EA31 /* BudgetBrain.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		EC510853253FFD9F00A98A3E = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +126,7 @@
 		EC51085E253FFDA000A98A3E /* Budget Management */ = {
 			isa = PBXGroup;
 			children = (
+				EC4D809C2542988B00D0EA31 /* Models */,
 				ECC58F272541960D00495610 /* Table View Cells */,
 				EC510883253FFE9D00A98A3E /* Fonts */,
 				EC510878253FFDF000A98A3E /* Supporting Files */,
@@ -132,6 +149,9 @@
 				EC5108C825403DF500A98A3E /* AccountsViewController.swift */,
 				EC5108CB25403E0B00A98A3E /* SettingsViewController.swift */,
 				EC5108D8254057D800A98A3E /* UpdateProfileViewController.swift */,
+				ECC8DB692542E37B008F41FA /* BudgetsTabViewController.swift */,
+				ECC8DB6C2542EB3F008F41FA /* ActivitiesTabViewController.swift */,
+				ECC8DB6F2542EB53008F41FA /* SavingsTabViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -189,6 +209,7 @@
 				EC510859253FFD9F00A98A3E /* Frameworks */,
 				EC51085A253FFD9F00A98A3E /* Resources */,
 				1DA1BCA5269664D69CF9738F /* [CP] Embed Pods Frameworks */,
+				124CD0D930D1C0A036E52DB1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,6 +269,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		124CD0D930D1C0A036E52DB1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Budget Management/Pods-Budget Management-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Budget Management/Pods-Budget Management-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Budget Management/Pods-Budget Management-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1DA1BCA5269664D69CF9738F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -296,12 +334,16 @@
 			files = (
 				EC5108D9254057D800A98A3E /* UpdateProfileViewController.swift in Sources */,
 				EC5108922540038300A98A3E /* Constants.swift in Sources */,
+				ECC8DB702542EB53008F41FA /* SavingsTabViewController.swift in Sources */,
 				EC5108962540078000A98A3E /* SideMenuTableViewController.swift in Sources */,
 				EC510864253FFDA000A98A3E /* DashBoard.swift in Sources */,
 				EC510860253FFDA000A98A3E /* AppDelegate.swift in Sources */,
 				EC5108C925403DF500A98A3E /* AccountsViewController.swift in Sources */,
 				EC5108C625403DDD00A98A3E /* CategoriesViewController.swift in Sources */,
 				EC5108C325403DCF00A98A3E /* BudgetViewController.swift in Sources */,
+				ECC8DB6A2542E37B008F41FA /* BudgetsTabViewController.swift in Sources */,
+				ECC8DB6D2542EB3F008F41FA /* ActivitiesTabViewController.swift in Sources */,
+				EC4D809E254298AC00D0EA31 /* BudgetBrain.swift in Sources */,
 				ECC58F292541963500495610 /* SettingsTableViewCell.swift in Sources */,
 				EC5108A825401AA200A98A3E /* SideMenuTableViewCell.swift in Sources */,
 				EC510862253FFDA000A98A3E /* SceneDelegate.swift in Sources */,

@@ -29,10 +29,17 @@ struct Constants {
     
     struct Images {
         static let settingsImages = ["user_profile_mini", "icon_currency", "icon_currency", "wipe_all_data", "like_app" ,"share_app"]
+        static let dashboard = "dash_bottom_colored"
+        static let budgetTab = "budget_bottm_colored"
+        static let activityTab = "activity_bottm_color"
+        static let savingsTab = "savings_bottom_colored"
     }
     
     struct Text {
         static let settingsText = ["Profile", "Currency", "Country", "Wipe All Data" , "Rate Our App", "Share Our App"]
-        static let settingssubText = ["name, email, gender, profile picture", "Set your native currency", "Set your Country of Origin", "This Action will clear records" , "", ""]
+        static let settingssubText = ["name, email, gender, profile picture", "Set your native currency", "Set your Country of Origin", "This Action will clear records" , "Like our app on App Store", "Share our app with others"]
+    }
+    struct Links {
+        static let appStore = "https://itunes.apple.com/pk/developer/suave-solutions/id415880778"
     }
 }
