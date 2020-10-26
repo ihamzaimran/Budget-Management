@@ -64,7 +64,7 @@ extension SideMenuTableViewController: UITableViewDataSource, UITableViewDelegat
         switch index {
         case 0:
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let newVC = storyboard.instantiateViewController(identifier: Constants.StoryboardIDs.dashboard) as! DashBoard
+            let newVC = storyboard.instantiateViewController(identifier: Constants.StoryboardIDs.tabBar) as! UITabBarController
             self.navigationController?.pushViewController(newVC, animated: false)
             revealViewController()?.revealToggle(animated: true)
             break
@@ -87,15 +87,15 @@ extension SideMenuTableViewController: UITableViewDataSource, UITableViewDelegat
             revealViewController()?.revealToggle(animated: true)
             break
         case 4:
-            self.dismiss(animated: true) {
-                print("Dismiss Completion working.")
-                self.shareDelegate?.MenuDismissed()
-            }
-//            let description = "Budget Management is a free to download app. \n Download it now from the App Store."
-//            let shareAll = [description]
-//            let activityViewController = UIActivityViewController(activityItems: shareAll, applicationActivities: nil)
-//            activityViewController.popoverPresentationController?.sourceView = self.view
-          
+//            self.dismiss(animated: true) {
+//                print("Dismiss Completion working.")
+//                self.shareDelegate?.MenuDismissed()
+//            }
+            let description = "Budget Management is a free to download app.\n Download it now from the App Store."
+            let shareAll = [description]
+            let activityViewController = UIActivityViewController(activityItems: shareAll, applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            self.present(activityViewController, animated: true, completion: nil)
             
         case 5:
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

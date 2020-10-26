@@ -1,38 +1,77 @@
 //
-//  BudgetsTabViewController.swift
+//  PagerViewForsavingsViewController.swift
 //  Budget Management
 //
-//  Created by Intern on 23/10/2020.
+//  Created by Intern on 26/10/2020.
 //
 
 import UIKit
+import XLPagerTabStrip
 import SideMenu
 
-class BudgetsTabViewController: UIViewController {
+class PagerViewForsavingsViewController: ButtonBarPagerTabStripViewController {
     
     override var prefersStatusBarHidden: Bool {
         true
     }
     
+    var itemInfo = IndicatorInfo(title: "View")
+
+    init(itemInfo: IndicatorInfo) {
+        self.itemInfo = itemInfo
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
          
         tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
-        tabBarItem = UITabBarItem(title: "Budgets", image: UIImage(named: Constants.Images.budgetTab), tag: 1)
+        tabBarItem = UITabBarItem(title: "Savings", image: UIImage(named: Constants.Images.savingsTab), tag: 3)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        setUpPagaingView()
+        super.viewDidLoad()
+        
         setupSideMenu()
         updateMenus()
     }
-}
 
+    
+    private func setUpPagaingView() {
+        settings.style.buttonBarBackgroundColor = UIColor(named: "HeaderColor")!
+        settings.style.buttonBarItemBackgroundColor = UIColor(named: "HeaderColor")!
+        settings.style.selectedBarBackgroundColor = .white
+        settings.style.buttonBarItemFont = .boldSystemFont(ofSize: 16)
+        settings.style.selectedBarHeight = 2.0
+        settings.style.buttonBarMinimumLineSpacing = 0
+        settings.style.buttonBarItemTitleColor = .white
+        settings.style.buttonBarItemsShouldFillAvailableWidth = true
+        settings.style.buttonBarLeftContentInset = 0
+        settings.style.buttonBarRightContentInset = 0
+        
+        
+        changeCurrentIndexProgressive = { [weak self] (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+            guard changeCurrentIndex == true else { return }
+            oldCell?.label.textColor = .gray
+            newCell?.label.textColor = .white
+        }
+    }
+    
+    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+        let child_1 = SavingsViewController(itemInfo: "RUNNING")
+        let child_2 = GoalAchievedViewController(itemInfo: "ACHIEVED")
+        return [child_1, child_2]
+    }
+}
 
 // MARK:- Side Menu Setup
 
-extension BudgetsTabViewController {
+extension PagerViewForsavingsViewController {
     private func updateMenus() {
         let settings = makeSettings()
         SideMenuManager.default.leftMenuNavigationController?.settings = settings
@@ -77,5 +116,3 @@ extension BudgetsTabViewController {
         return settings
     }
 }
-
-

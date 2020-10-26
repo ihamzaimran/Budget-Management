@@ -7,6 +7,7 @@
 
 import UIKit
 import SideMenu
+import XLPagerTabStrip
 
 class DashBoard: UIViewController {
     
@@ -18,7 +19,7 @@ class DashBoard: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-         
+        
         tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
         tabBarItem = UITabBarItem(title: "Dashboard", image: UIImage(named: Constants.Images.dashboard), tag: 0)
     }
@@ -31,6 +32,7 @@ class DashBoard: UIViewController {
         updateMenus()
         sideMenuVC?.shareDelegate = self
     }
+    
 }
 
 
@@ -96,3 +98,4 @@ extension DashBoard: ShareSheetProtocol {
         self.present(activityViewController, animated: true, completion: nil)
     }
 }
+

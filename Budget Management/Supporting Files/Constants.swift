@@ -18,6 +18,8 @@ struct Constants {
         static let account = "AccountsViewStoryboard"
         static let settings = "SettingsViewStoryboard"
         static let updateProfile = "updateProfileStoryboard"
+        static let tabBar = "tabBarController"
+        static let goalAchieved = "GoalAchievedStoryboard"
     }
     
     struct TableViewIdentifier {
