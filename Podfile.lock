@@ -11,17 +11,23 @@ PODS:
   - GTMAppAuth (1.1.0):
     - AppAuth/Core (~> 1.4)
     - GTMSessionFetcher (~> 1.4)
-  - GTMSessionFetcher (1.4.0):
-    - GTMSessionFetcher/Full (= 1.4.0)
-  - GTMSessionFetcher/Core (1.4.0)
-  - GTMSessionFetcher/Full (1.4.0):
-    - GTMSessionFetcher/Core (= 1.4.0)
-  - SideMenu (6.4.9)
+  - GTMSessionFetcher (1.5.0):
+    - GTMSessionFetcher/Full (= 1.5.0)
+  - GTMSessionFetcher/Core (1.5.0)
+  - GTMSessionFetcher/Full (1.5.0):
+    - GTMSessionFetcher/Core (= 1.5.0)
+  - Realm (10.1.0):
+    - Realm/Headers (= 10.1.0)
+  - Realm/Headers (10.1.0)
+  - RealmSwift (10.1.0):
+    - Realm (= 10.1.0)
+  - SideMenu (6.5.0)
   - SKCountryPicker (1.2.9)
   - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
   - GoogleSignIn
+  - RealmSwift
   - SideMenu
   - SKCountryPicker
   - XLPagerTabStrip (~> 9.0)
@@ -32,6 +38,8 @@ SPEC REPOS:
     - GoogleSignIn
     - GTMAppAuth
     - GTMSessionFetcher
+    - Realm
+    - RealmSwift
     - SideMenu
     - SKCountryPicker
     - XLPagerTabStrip
@@ -40,11 +48,13 @@ SPEC CHECKSUMS:
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GTMAppAuth: 197a8dabfea5d665224aa00d17f164fc2248dab9
-  GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
-  SideMenu: 8ef57a3cfc024a2d3fc1c036c7fe98537baec9e0
+  GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  Realm: 100df88a0faf5328f48477427e4b3e1a1598bae3
+  RealmSwift: 725d1c10df64964b04aaa0058c19ce0f4b4c3f5a
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SKCountryPicker: 7ad1e7dfb482cfb26855e33c2d70dbf1eaf218fe
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: 0119acb1171512977c96819102d35f934207227e
+PODFILE CHECKSUM: edc72a393be38c3b1153f7c1a07793563747b0f8
 
 COCOAPODS: 1.10.0

@@ -14,12 +14,15 @@ struct Constants {
         static let sideMenuNavigationController = "SideMenuNavigationController"
         static let dashboard = "DashboardStoryboard"
         static let budget = "BudgetViewStoryboard"
-        static let category = "CategoriesViewStoryboard"
         static let account = "AccountsViewStoryboard"
         static let settings = "SettingsViewStoryboard"
         static let updateProfile = "updateProfileStoryboard"
         static let tabBar = "tabBarController"
         static let goalAchieved = "GoalAchievedStoryboard"
+        static let savings = "SavingStoryboard"
+        static let manageCategoryTab = "ManageCategoryTabStoryboard"
+        static let expense = "ExpenseStoryboard"
+        static let income = "IncomeStoryboard"
     }
     
     struct TableViewIdentifier {
@@ -27,6 +30,9 @@ struct Constants {
         static let headerViewIdentifier = "sideMenuHeader"
         static let headerView = "HeaderView"
         static let settingsCellIdentifier = "settingsTableCell"
+        static let expenseCellIdentifier = "expenseTableCellIdentifier"
+        static let incomeCellIdentifier = "incomeTableCellIdentifier"
+        static let loginCollectionCellIdentifier = "loginCollectionCellIdentifier"
     }
     
     struct Images {

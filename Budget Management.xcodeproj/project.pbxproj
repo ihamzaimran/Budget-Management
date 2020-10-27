@@ -34,6 +34,9 @@
 		ECC8DB6A2542E37B008F41FA /* BudgetsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8DB692542E37B008F41FA /* BudgetsTabViewController.swift */; };
 		ECC8DB6D2542EB3F008F41FA /* ActivitiesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8DB6C2542EB3F008F41FA /* ActivitiesTabViewController.swift */; };
 		ECC8DB702542EB53008F41FA /* SavingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8DB6F2542EB53008F41FA /* SavingsViewController.swift */; };
+		ECCD9B5C25481C4C009D8B6F /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCD9B5B25481C4C009D8B6F /* ExpenseViewController.swift */; };
+		ECCD9B5F25481C60009D8B6F /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCD9B5E25481C60009D8B6F /* IncomeViewController.swift */; };
+		ECCD9B6325482F86009D8B6F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCD9B6225482F86009D8B6F /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		ECC8DB692542E37B008F41FA /* BudgetsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetsTabViewController.swift; sourceTree = "<group>"; };
 		ECC8DB6C2542EB3F008F41FA /* ActivitiesTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTabViewController.swift; sourceTree = "<group>"; };
 		ECC8DB6F2542EB53008F41FA /* SavingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsViewController.swift; sourceTree = "<group>"; };
+		ECCD9B5B25481C4C009D8B6F /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
+		ECCD9B5E25481C60009D8B6F /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
+		ECCD9B6225482F86009D8B6F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,9 @@
 				ECC8DB6F2542EB53008F41FA /* SavingsViewController.swift */,
 				EC8868922546B5640056A8A3 /* GoalAchievedViewController.swift */,
 				EC8868972546B9E30056A8A3 /* PagerViewForsavingsViewController.swift */,
+				ECCD9B5B25481C4C009D8B6F /* ExpenseViewController.swift */,
+				ECCD9B5E25481C60009D8B6F /* IncomeViewController.swift */,
+				ECCD9B6225482F86009D8B6F /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -348,7 +357,10 @@
 				EC510860253FFDA000A98A3E /* AppDelegate.swift in Sources */,
 				EC5108C925403DF500A98A3E /* AccountsViewController.swift in Sources */,
 				EC5108C625403DDD00A98A3E /* CategoriesViewController.swift in Sources */,
+				ECCD9B5F25481C60009D8B6F /* IncomeViewController.swift in Sources */,
 				EC5108C325403DCF00A98A3E /* BudgetViewController.swift in Sources */,
+				ECCD9B6325482F86009D8B6F /* LoginViewController.swift in Sources */,
+				ECCD9B5C25481C4C009D8B6F /* ExpenseViewController.swift in Sources */,
 				ECC8DB6A2542E37B008F41FA /* BudgetsTabViewController.swift in Sources */,
 				ECC8DB6D2542EB3F008F41FA /* ActivitiesTabViewController.swift in Sources */,
 				EC4D809E254298AC00D0EA31 /* BudgetBrain.swift in Sources */,

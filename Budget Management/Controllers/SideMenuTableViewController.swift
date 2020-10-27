@@ -76,7 +76,7 @@ extension SideMenuTableViewController: UITableViewDataSource, UITableViewDelegat
             break
         case 2:
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let newVC = storyboard.instantiateViewController(identifier: Constants.StoryboardIDs.category) as! CategoriesViewController
+            let newVC = storyboard.instantiateViewController(identifier: Constants.StoryboardIDs.manageCategoryTab) as! CategoriesViewController
             self.navigationController?.pushViewController(newVC, animated: false)
             revealViewController()?.revealToggle(animated: true)
             break

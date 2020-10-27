@@ -40,6 +40,7 @@ class DashBoard: UIViewController {
 // MARK:- Side Menu Setup
 
 extension DashBoard {
+    
     private func updateMenus() {
         let settings = makeSettings()
         SideMenuManager.default.leftMenuNavigationController?.settings = settings
