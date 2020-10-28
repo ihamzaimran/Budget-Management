@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4BC0BCDE68931BC7D2F14929 /* Pods_Budget_Management.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4FAED8B1BAFD1378411C38 /* Pods_Budget_Management.framework */; };
+		EC44D9FB25493665009B39E5 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44D9FA25493665009B39E5 /* ProfileModel.swift */; };
+		EC44DA1A25496299009B39E5 /* LoginCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44DA1925496299009B39E5 /* LoginCollectionViewCell.swift */; };
 		EC4D809E254298AC00D0EA31 /* BudgetBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D809D254298AC00D0EA31 /* BudgetBrain.swift */; };
 		EC510860253FFDA000A98A3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51085F253FFDA000A98A3E /* AppDelegate.swift */; };
 		EC510862253FFDA000A98A3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC510861253FFDA000A98A3E /* SceneDelegate.swift */; };
@@ -43,6 +45,8 @@
 		4E4FAED8B1BAFD1378411C38 /* Pods_Budget_Management.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Budget_Management.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F481472DB10F78842114AAF /* Pods-Budget Management.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget Management.debug.xcconfig"; path = "Target Support Files/Pods-Budget Management/Pods-Budget Management.debug.xcconfig"; sourceTree = "<group>"; };
 		78E854B9E3E284EFF63C69C5 /* Pods-Budget Management.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget Management.release.xcconfig"; path = "Target Support Files/Pods-Budget Management/Pods-Budget Management.release.xcconfig"; sourceTree = "<group>"; };
+		EC44D9FA25493665009B39E5 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		EC44DA1925496299009B39E5 /* LoginCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC4D809D254298AC00D0EA31 /* BudgetBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetBrain.swift; sourceTree = "<group>"; };
 		EC51085C253FFDA000A98A3E /* Budget Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Budget Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC51085F253FFDA000A98A3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				EC4D809D254298AC00D0EA31 /* BudgetBrain.swift */,
+				EC44D9FA25493665009B39E5 /* ProfileModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				ECC58F282541963500495610 /* SettingsTableViewCell.swift */,
+				EC44DA1925496299009B39E5 /* LoginCollectionViewCell.swift */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -351,7 +357,9 @@
 				EC5108D9254057D800A98A3E /* UpdateProfileViewController.swift in Sources */,
 				EC5108922540038300A98A3E /* Constants.swift in Sources */,
 				ECC8DB702542EB53008F41FA /* SavingsViewController.swift in Sources */,
+				EC44DA1A25496299009B39E5 /* LoginCollectionViewCell.swift in Sources */,
 				EC5108962540078000A98A3E /* SideMenuTableViewController.swift in Sources */,
+				EC44D9FB25493665009B39E5 /* ProfileModel.swift in Sources */,
 				EC8868982546B9E30056A8A3 /* PagerViewForsavingsViewController.swift in Sources */,
 				EC510864253FFDA000A98A3E /* DashBoard.swift in Sources */,
 				EC510860253FFDA000A98A3E /* AppDelegate.swift in Sources */,

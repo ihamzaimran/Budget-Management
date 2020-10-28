@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SideMenuTableViewController: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
+    
+    let realm = try! Realm()
     
     private let nameArr = ["Dashboard", "Budgets", "Categories", "Accounts", "Share", "Settings"]
     private let imagesArr = ["dashboard", "budget", "categories", "accounts", "share", "settings"]
@@ -134,10 +137,29 @@ extension SideMenuTableViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! HeaderView
-        header.delegate = self
-        header.HeaderLabel.text = "Guest"
-        header.headerImage.image = UIImage(named: "user_image")
-//        header.headerImage.makeRoundedImage()
+        
+        let data = realm.objects(ProfileModel.self)
+//        let details = realm.objects(ProfileDetails.self)
+        
+        for data in data
+        {
+            print("email = \(data.email)")
+            
+            if let details = self.realm.objects(ProfileModel.self).filter("email = %@", data.email).first {
+                let detail = details.details
+                
+                for detail in detail {
+                    print("name = \(detail.name)")
+                    print("imageData = \(detail.profileImageData)")
+                    
+                    header.delegate = self
+                    header.HeaderLabel.text = detail.name
+                    header.headerImage.image = UIImage(data: detail.profileImageData!)
+                    header.headerImage.makeRoundedImage()
+                }
+            }
+        }
+        
     }
 }
 

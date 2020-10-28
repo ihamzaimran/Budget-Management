@@ -12,12 +12,16 @@ class IncomeViewController: UIViewController, IndicatorInfoProvider {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var childNumber: String = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
+    // MARK: - IndicatorInfoProvider
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "INCOME")
+        return IndicatorInfo(title: "\(childNumber)")
     }
+    
 }

@@ -11,5 +11,6 @@ pod 'GoogleSignIn'
 pod 'SKCountryPicker'
 pod 'XLPagerTabStrip', '~> 9.0'
 pod 'RealmSwift'
+pod 'SDWebImage', '~> 5.0'
 
 end

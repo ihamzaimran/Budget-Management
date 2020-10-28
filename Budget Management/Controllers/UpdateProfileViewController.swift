@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class UpdateProfileViewController: UIViewController {
     
@@ -18,6 +19,7 @@ class UpdateProfileViewController: UIViewController {
     @IBOutlet weak var professionTxt: UITextField!
     
     private var imagePickerController = UIImagePickerController()
+    private let focusedTextFieldColor = UIColor(named: "PrimaryColor")!
     
     override var prefersStatusBarHidden: Bool {
         true
@@ -114,20 +116,23 @@ extension UpdateProfileViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == emailTxt {
-            textField.setTextFieldStyle(with: UIColor(named: "PrimaryColor")!, for: 2.0)
+//            GIDSignIn.sharedInstance().presentingViewController = self
+//            GIDSignIn.sharedInstance()?.signIn()
+            textField.setTextFieldStyle(with: focusedTextFieldColor, for: 2.0)
         } else if textField == nameTxt{
-            textField.setTextFieldStyle(with: UIColor(named: "PrimaryColor")!, for: 2.0)
+            textField.setTextFieldStyle(with: focusedTextFieldColor, for: 2.0)
         } else if textField == mobileTxt {
-            textField.setTextFieldStyle(with: UIColor(named: "PrimaryColor")!, for: 2.0)
+            textField.setTextFieldStyle(with: focusedTextFieldColor, for: 2.0)
         } else if textField == selectGenderTxt {
-            textField.setTextFieldStyle(with: UIColor(named: "PrimaryColor")!, for: 2.0)
+            textField.setTextFieldStyle(with: focusedTextFieldColor, for: 2.0)
         } else if textField == professionTxt {
-            textField.setTextFieldStyle(with: UIColor(named: "PrimaryColor")!, for: 2.0)
+            textField.setTextFieldStyle(with: focusedTextFieldColor, for: 2.0)
         }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == emailTxt {
+            dismiss(animated: true, completion: nil)
             textField.setTextFieldStyle()
         } else if textField == nameTxt{
             textField.setTextFieldStyle()
