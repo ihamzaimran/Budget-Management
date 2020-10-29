@@ -31,6 +31,9 @@
 		EC5108D9254057D800A98A3E /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5108D8254057D800A98A3E /* UpdateProfileViewController.swift */; };
 		EC8868932546B5640056A8A3 /* GoalAchievedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8868922546B5640056A8A3 /* GoalAchievedViewController.swift */; };
 		EC8868982546B9E30056A8A3 /* PagerViewForsavingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8868972546B9E30056A8A3 /* PagerViewForsavingsViewController.swift */; };
+		ECC1F625254AB46400C7D91C /* LoginPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC1F624254AB46400C7D91C /* LoginPagerViewController.swift */; };
+		ECC1F628254ABFB500C7D91C /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC1F627254ABFB500C7D91C /* Slide.swift */; };
+		ECC1F62B254ABFC900C7D91C /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECC1F62A254ABFC900C7D91C /* Slide.xib */; };
 		ECC58F252541744C00495610 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC58F242541744C00495610 /* Extensions.swift */; };
 		ECC58F292541963500495610 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC58F282541963500495610 /* SettingsTableViewCell.swift */; };
 		ECC8DB6A2542E37B008F41FA /* BudgetsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8DB692542E37B008F41FA /* BudgetsTabViewController.swift */; };
@@ -72,6 +75,9 @@
 		EC5108D8254057D800A98A3E /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
 		EC8868922546B5640056A8A3 /* GoalAchievedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalAchievedViewController.swift; sourceTree = "<group>"; };
 		EC8868972546B9E30056A8A3 /* PagerViewForsavingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewForsavingsViewController.swift; sourceTree = "<group>"; };
+		ECC1F624254AB46400C7D91C /* LoginPagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPagerViewController.swift; sourceTree = "<group>"; };
+		ECC1F627254ABFB500C7D91C /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		ECC1F62A254ABFC900C7D91C /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		ECC58F242541744C00495610 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ECC58F282541963500495610 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		ECC8DB692542E37B008F41FA /* BudgetsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetsTabViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +178,7 @@
 				ECCD9B5B25481C4C009D8B6F /* ExpenseViewController.swift */,
 				ECCD9B5E25481C60009D8B6F /* IncomeViewController.swift */,
 				ECCD9B6225482F86009D8B6F /* LoginViewController.swift */,
+				ECC1F624254AB46400C7D91C /* LoginPagerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -182,6 +189,8 @@
 				EC510865253FFDA000A98A3E /* Main.storyboard */,
 				EC5108BA2540248300A98A3E /* HeaderView.xib */,
 				EC5108BF254024AF00A98A3E /* HeaderView.swift */,
+				ECC1F627254ABFB500C7D91C /* Slide.swift */,
+				ECC1F62A254ABFC900C7D91C /* Slide.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -284,6 +293,7 @@
 				EC5108BB2540248300A98A3E /* HeaderView.xib in Resources */,
 				EC510867253FFDA000A98A3E /* Main.storyboard in Resources */,
 				EC510881253FFE9500A98A3E /* open_san.ttf in Resources */,
+				ECC1F62B254ABFC900C7D91C /* Slide.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +374,7 @@
 				EC510864253FFDA000A98A3E /* DashBoard.swift in Sources */,
 				EC510860253FFDA000A98A3E /* AppDelegate.swift in Sources */,
 				EC5108C925403DF500A98A3E /* AccountsViewController.swift in Sources */,
+				ECC1F628254ABFB500C7D91C /* Slide.swift in Sources */,
 				EC5108C625403DDD00A98A3E /* CategoriesViewController.swift in Sources */,
 				ECCD9B5F25481C60009D8B6F /* IncomeViewController.swift in Sources */,
 				EC5108C325403DCF00A98A3E /* BudgetViewController.swift in Sources */,
@@ -379,6 +390,7 @@
 				EC5108C0254024AF00A98A3E /* HeaderView.swift in Sources */,
 				EC5108CC25403E0B00A98A3E /* SettingsViewController.swift in Sources */,
 				ECC58F252541744C00495610 /* Extensions.swift in Sources */,
+				ECC1F625254AB46400C7D91C /* LoginPagerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

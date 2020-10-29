@@ -16,7 +16,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
     
     private let profileData = ProfileModel()
     private let realm = try! Realm()
-    
+    private let images = Constants.Images.loginPager
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,18 +100,25 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
 }
 
 
-extension LoginViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension LoginViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.TableViewIdentifier.loginCollectionCellIdentifier, for: indexPath) as! LoginCollectionViewCell
         cell.backgroundColor = nil
-        cell.loginCollectionViewImage.image = UIImage(named: "splash")
+        cell.loginCollectionViewImage.image = UIImage(named: images[indexPath.row])
         
         return cell
     }
     
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let padding: CGFloat = 0
+        let collectionCellSize = collectionView.frame.size.width - padding
+        return CGSize(width: collectionCellSize, height: collectionCellSize)
+    }
+    
 }
+    

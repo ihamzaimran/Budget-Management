@@ -23,6 +23,7 @@ struct Constants {
         static let manageCategoryTab = "ManageCategoryTabStoryboard"
         static let expense = "ExpenseStoryboard"
         static let income = "IncomeStoryboard"
+        static let loginPager = "LoginPagerStoryboard"
     }
     
     struct TableViewIdentifier {
@@ -36,11 +37,12 @@ struct Constants {
     }
     
     struct Images {
-        static let settingsImages = ["user_profile_mini", "icon_currency", "icon_currency", "wipe_all_data", "like_app" ,"share_app"]
+        static let settings = ["user_profile_mini", "icon_currency", "icon_currency", "wipe_all_data", "like_app" ,"share_app"]
         static let dashboard = "dash_bottom_colored"
         static let budgetTab = "budget_bottm_colored"
         static let activityTab = "activity_bottm_color"
         static let savingsTab = "savings_bottom_colored"
+        static let loginPager = ["into_image_1", "into_image_2", "into_image_3", "into_image_4"]
     }
     
     struct Text {

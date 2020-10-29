@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         // Initialize Google sign-in
+        
+        createDirectory()
         GIDSignIn.sharedInstance().clientID = "117501428831-i2g7aivm9tj0dmlve0pb6i6i85tkafhv.apps.googleusercontent.com"   
         return true
     }
@@ -42,3 +44,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 }
 
+
+
+extension AppDelegate {
+    
+    private func createDirectory(){
+        let docDirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
+        
+        if let docDirPath = docDirPath {
+//            let directoryPath = docDirPath.appending("/Avengers Assemble")
+            print(docDirPath)
+            let fileManager = FileManager.default
+            
+            if !fileManager.fileExists(atPath: docDirPath) {
+                do {
+                    try fileManager.createDirectory(atPath: docDirPath, withIntermediateDirectories: false, attributes: nil)
+                    
+                    print("Directory creation successfull.")
+                } catch {
+                    print("Error Creating Directory: \(error.localizedDescription)")
+                }
+            }
+        }
+    }
+}

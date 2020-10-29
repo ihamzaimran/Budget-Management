@@ -139,26 +139,28 @@ extension SideMenuTableViewController: UITableViewDataSource, UITableViewDelegat
         let header = view as! HeaderView
         
         let data = realm.objects(ProfileModel.self)
-//        let details = realm.objects(ProfileDetails.self)
-        
-        for data in data
-        {
-            print("email = \(data.email)")
-            
-            if let details = self.realm.objects(ProfileModel.self).filter("email = %@", data.email).first {
-                let detail = details.details
+        header.delegate = self
+       
+            for data in data
+            {
+//                print("email = \(data.email)")
                 
-                for detail in detail {
-                    print("name = \(detail.name)")
-                    print("imageData = \(detail.profileImageData)")
+                if let details = self.realm.objects(ProfileModel.self).filter("email = %@", data.email).first {
+                    let detail = details.details
                     
-                    header.delegate = self
-                    header.HeaderLabel.text = detail.name
-                    header.headerImage.image = UIImage(data: detail.profileImageData!)
-                    header.headerImage.makeRoundedImage()
+                    for detail in detail {
+//                        print("name = \(detail.name)")
+//                        print("imageData = \(detail.profileImageData)")
+                        
+                        header.HeaderLabel.text = detail.name
+                        header.headerImage.image = UIImage(data: detail.profileImageData!)
+                        header.headerImage.makeRoundedImage()
+                    }
                 }
             }
-        }
+        
+//        header.HeaderLabel.text = "Name"
+//        header.headerImage.image = UIImage(named: "user_dummy")
         
     }
 }

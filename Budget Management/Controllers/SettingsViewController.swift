@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private let images = Constants.Images.settingsImages
+    private let images = Constants.Images.settings
     private let text = Constants.Text.settingsText
     private let subTitle = Constants.Text.settingssubText
     private let budgetBrain = BudgetBrain()
