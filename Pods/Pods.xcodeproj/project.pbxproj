@@ -18,6 +18,7 @@
 				7511F0875C675237EA230BEE19448E20 /* PBXTargetDependency */,
 			);
 			name = GoogleSignIn;
+			productName = GoogleSignIn;
 		};
 /* End PBXAggregateTarget section */
 
@@ -1318,7 +1319,7 @@
 		05A0B5AE09B9552E685823EE924A4FFB /* SL@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "SL@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/SL@2x.png"; sourceTree = "<group>"; };
 		05F281242652F791A5E9FC7155F0EF7C /* SH@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "SH@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/SH@2x.png"; sourceTree = "<group>"; };
 		0675AEDE05544F2E767B41D8801865E3 /* GTMMIMEDocument.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMMIMEDocument.h; path = Source/GTMMIMEDocument.h; sourceTree = "<group>"; };
-		067B81FADA20D1CE841840B7088DDC38 /* RLMRealm+Sync.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = "RLMRealm+Sync.mm"; path = "Realm/RLMRealm+Sync.mm"; sourceTree = "<group>"; };
+		067B81FADA20D1CE841840B7088DDC38 /* RLMRealm+Sync.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = "RLMRealm+Sync.mm"; path = "Realm/RLMRealm+Sync.mm"; sourceTree = "<group>"; };
 		0681760B964AFD44468A15CD25226A9A /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0685241983E07C71A7DCC08A3C07935D /* RLMObjectSchema_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMObjectSchema_Private.h; path = include/RLMObjectSchema_Private.h; sourceTree = "<group>"; };
 		06ACA4F209B7081E7315C35DB9485E3A /* JM@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "JM@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/JM@2x.png"; sourceTree = "<group>"; };
@@ -1351,16 +1352,16 @@
 		0D120EB0E96CB9ACBA99FE56A2AC3200 /* list.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = list.cpp; path = Realm/ObjectStore/src/list.cpp; sourceTree = "<group>"; };
 		0DB1D0673B10CC58415B54AC3D8E18CE /* object.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = object.cpp; path = Realm/ObjectStore/src/object.cpp; sourceTree = "<group>"; };
 		0E023BC34049B22D793128ADCC0D0F36 /* RealmSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RealmSwift-Info.plist"; sourceTree = "<group>"; };
-		0E3654C5B2D090A80B74E3D5E4BB5E0E /* realm-sync.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = "realm-sync.xcframework"; path = "core/realm-sync.xcframework"; sourceTree = "<group>"; };
+		0E3654C5B2D090A80B74E3D5E4BB5E0E /* realm-sync.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = "realm-sync.xcframework"; path = "core/realm-sync.xcframework"; sourceTree = "<group>"; };
 		0E9B537B62394D02327A88B7F494BA25 /* CO@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "CO@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/CO@2x.png"; sourceTree = "<group>"; };
-		0EA927BAAABCD4BDBFAF2B3C1ABD313B /* RLMCollection.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMCollection.mm; path = Realm/RLMCollection.mm; sourceTree = "<group>"; };
+		0EA927BAAABCD4BDBFAF2B3C1ABD313B /* RLMCollection.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMCollection.mm; path = Realm/RLMCollection.mm; sourceTree = "<group>"; };
 		0EA969A9D13F80B98A8FDB2F39E1F91C /* BO.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = BO.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/BO.png; sourceTree = "<group>"; };
 		0F5ABB9CA60F6D9B1E43C744094144A2 /* BH.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = BH.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/BH.png; sourceTree = "<group>"; };
 		103A21CADEA1DD3E097B3126DE42CA81 /* GS@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "GS@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/GS@2x.png"; sourceTree = "<group>"; };
 		105B856CE6CC9B04EDF48B500EC5B59C /* KI@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "KI@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/KI@2x.png"; sourceTree = "<group>"; };
 		1074AFBF258AF2F38D3EB32F7CFC4426 /* GH.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = GH.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/GH.png; sourceTree = "<group>"; };
 		1087AF78FF68605DB6D30DBD6EC8EDF6 /* RLMProperty_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMProperty_Private.h; path = include/RLMProperty_Private.h; sourceTree = "<group>"; };
-		11824F606FD0785D72B482C960B2CF23 /* RLMPredicateUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMPredicateUtil.mm; path = Realm/RLMPredicateUtil.mm; sourceTree = "<group>"; };
+		11824F606FD0785D72B482C960B2CF23 /* RLMPredicateUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMPredicateUtil.mm; path = Realm/RLMPredicateUtil.mm; sourceTree = "<group>"; };
 		119BC73276631DBEF411D8B2C7AFF52A /* UG@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "UG@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/UG@2x.png"; sourceTree = "<group>"; };
 		120EF3652EEA663E4ABE4509442A26A9 /* GB.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = GB.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/GB.png; sourceTree = "<group>"; };
 		12195BD5479304DEA3F6F43983EA291F /* GU@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "GU@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/GU@2x.png"; sourceTree = "<group>"; };
@@ -1372,7 +1373,7 @@
 		137ED5FA8430714AEFBD06B1E1E6395F /* GT@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "GT@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/GT@2x.png"; sourceTree = "<group>"; };
 		138366BD589853E6A5D3AC796152C8FA /* PK@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "PK@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/PK@2x.png"; sourceTree = "<group>"; };
 		1436E5F701918A067C7F28C4155AF8C8 /* Sync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sync.swift; path = RealmSwift/Sync.swift; sourceTree = "<group>"; };
-		1477420B48B4BFA547CB3A1DCAB488D8 /* RLMThreadSafeReference.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMThreadSafeReference.mm; path = Realm/RLMThreadSafeReference.mm; sourceTree = "<group>"; };
+		1477420B48B4BFA547CB3A1DCAB488D8 /* RLMThreadSafeReference.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMThreadSafeReference.mm; path = Realm/RLMThreadSafeReference.mm; sourceTree = "<group>"; };
 		14B364C12D8A8F3314BD2FC37E41D2D0 /* US@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "US@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/US@2x.png"; sourceTree = "<group>"; };
 		14D8B1095B7A19E99F3057C29C499E9C /* Initializable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Initializable.swift; path = Pod/Classes/Initializable.swift; sourceTree = "<group>"; };
 		14D8DB3927F49F73B5738A2827FF50E7 /* AG@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "AG@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/AG@2x.png"; sourceTree = "<group>"; };
@@ -1385,7 +1386,7 @@
 		16328E125F37353B96F9F8A025CCBB9D /* RealmConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RealmConfiguration.swift; path = RealmSwift/RealmConfiguration.swift; sourceTree = "<group>"; };
 		167857FFC58900395D4D8107F8793D41 /* OIDClientMetadataParameters.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OIDClientMetadataParameters.m; path = Source/AppAuthCore/OIDClientMetadataParameters.m; sourceTree = "<group>"; };
 		16FC506F722C561362BBA1091B4ED25F /* collection_notifier.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = collection_notifier.cpp; path = Realm/ObjectStore/src/impl/collection_notifier.cpp; sourceTree = "<group>"; };
-		170817A60248C21296C317447F90C71D /* RLMArray.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMArray.mm; path = Realm/RLMArray.mm; sourceTree = "<group>"; };
+		170817A60248C21296C317447F90C71D /* RLMArray.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMArray.mm; path = Realm/RLMArray.mm; sourceTree = "<group>"; };
 		172EE1C3D2D2FE2BA8C42BA956B1244D /* SDAsyncBlockOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAsyncBlockOperation.h; path = SDWebImage/Private/SDAsyncBlockOperation.h; sourceTree = "<group>"; };
 		174245962BB491CE7A4CF962E13A26F6 /* SDWebImageDownloaderConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderConfig.h; path = SDWebImage/Core/SDWebImageDownloaderConfig.h; sourceTree = "<group>"; };
 		177E1BCF936EC7FFD46751B35F930CBC /* RealmSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RealmSwift-dummy.m"; sourceTree = "<group>"; };
@@ -1405,7 +1406,7 @@
 		1B8290A1ADA44CA112B7EA87C2BB1E02 /* SDWebImage-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SDWebImage-Info.plist"; sourceTree = "<group>"; };
 		1BA1003AFC4D743518F9CE6FE4016B6F /* Pods-Budget Management-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Budget Management-Info.plist"; sourceTree = "<group>"; };
 		1BB76942E5EA7BB9A0DD29BCD4695390 /* SDAnimatedImageRep.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAnimatedImageRep.m; path = SDWebImage/Core/SDAnimatedImageRep.m; sourceTree = "<group>"; };
-		1BF4E1BED45EDF214A595C1672B4DC98 /* RLMObjectSchema.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMObjectSchema.mm; path = Realm/RLMObjectSchema.mm; sourceTree = "<group>"; };
+		1BF4E1BED45EDF214A595C1672B4DC98 /* RLMObjectSchema.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMObjectSchema.mm; path = Realm/RLMObjectSchema.mm; sourceTree = "<group>"; };
 		1C1DEBADFA86AD94DBD01D881491650A /* MM.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = MM.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/MM.png; sourceTree = "<group>"; };
 		1C5060570D8C0D49A82EBB294B6DE18D /* RLMNetworkTransport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMNetworkTransport.h; path = include/RLMNetworkTransport.h; sourceTree = "<group>"; };
 		1C83C675573845059C70F8B717555C7A /* GP.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = GP.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/GP.png; sourceTree = "<group>"; };
@@ -1437,21 +1438,21 @@
 		22D998BEAAFB797CF462FE33C546B4B9 /* TL@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "TL@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/TL@2x.png"; sourceTree = "<group>"; };
 		22FD533051EE7ECD138B7CA74D0ED584 /* GTMAppAuthFetcherAuthorization+Keychain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMAppAuthFetcherAuthorization+Keychain.m"; path = "Source/GTMAppAuthFetcherAuthorization+Keychain.m"; sourceTree = "<group>"; };
 		232654A89329ED331C80A97475467E29 /* SDDiskCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDDiskCache.h; path = SDWebImage/Core/SDDiskCache.h; sourceTree = "<group>"; };
-		232D54F80FAF3CEE910C19849CB3C345 /* RLMUpdateResult.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMUpdateResult.mm; path = Realm/RLMUpdateResult.mm; sourceTree = "<group>"; };
+		232D54F80FAF3CEE910C19849CB3C345 /* RLMUpdateResult.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMUpdateResult.mm; path = Realm/RLMUpdateResult.mm; sourceTree = "<group>"; };
 		237A890413902D1FFD1BF6E047EAC16C /* GY.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = GY.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/GY.png; sourceTree = "<group>"; };
 		23946C6ADEDC0C4D69D05472727C1BCE /* CI@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "CI@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/CI@2x.png"; sourceTree = "<group>"; };
 		2394CF3C613C7703AA7477FE56F09B44 /* RLMProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMProperty.h; path = include/RLMProperty.h; sourceTree = "<group>"; };
 		23AF8C9F4A202DF41872D22861E4ED15 /* HM.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = HM.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/HM.png; sourceTree = "<group>"; };
 		247FC7CE3E56FDD42F1A5E583DA9AB2F /* RLMUpdateResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMUpdateResult.h; path = include/RLMUpdateResult.h; sourceTree = "<group>"; };
-		24C19234FB8584AC278DC199174B863F /* RLMSyncUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMSyncUtil.mm; path = Realm/RLMSyncUtil.mm; sourceTree = "<group>"; };
+		24C19234FB8584AC278DC199174B863F /* RLMSyncUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMSyncUtil.mm; path = Realm/RLMSyncUtil.mm; sourceTree = "<group>"; };
 		24C35931F7D3789C2CB0ACAE8E484FCC /* GF@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "GF@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/GF@2x.png"; sourceTree = "<group>"; };
 		24D1FB1FED30E0027808E7BDCF84370C /* HN@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "HN@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/HN@2x.png"; sourceTree = "<group>"; };
 		2550EF11DC1666B4A8D38C3FCDFD95BD /* MC.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = MC.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/MC.png; sourceTree = "<group>"; };
 		262EB71A6F86D59E941F0B49C9E92C27 /* MK@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "MK@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/MK@2x.png"; sourceTree = "<group>"; };
 		26536EC8A16B1B66F6BECBA3AC3E9669 /* UIImage+ForceDecode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ForceDecode.m"; path = "SDWebImage/Core/UIImage+ForceDecode.m"; sourceTree = "<group>"; };
 		267E11C00B6355FE6EA7213CB05937CD /* SKCountryPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SKCountryPicker.debug.xcconfig; sourceTree = "<group>"; };
-		26C5F73982912688FB1E4595306B7B06 /* RLMRealm.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMRealm.mm; path = Realm/RLMRealm.mm; sourceTree = "<group>"; };
-		26DFAC80F49FCE1AFA68A9360962AFD7 /* RLMRealmConfiguration.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMRealmConfiguration.mm; path = Realm/RLMRealmConfiguration.mm; sourceTree = "<group>"; };
+		26C5F73982912688FB1E4595306B7B06 /* RLMRealm.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMRealm.mm; path = Realm/RLMRealm.mm; sourceTree = "<group>"; };
+		26DFAC80F49FCE1AFA68A9360962AFD7 /* RLMRealmConfiguration.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMRealmConfiguration.mm; path = Realm/RLMRealmConfiguration.mm; sourceTree = "<group>"; };
 		26FF0E7A429BA21A00EF83BD000CBD71 /* LR@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "LR@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/LR@2x.png"; sourceTree = "<group>"; };
 		2719B5E1CF97750505B45AB7B3A0C3DA /* PH@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "PH@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/PH@2x.png"; sourceTree = "<group>"; };
 		281897CBE970F42CEAAE50C43424399E /* SideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-prefix.pch"; sourceTree = "<group>"; };
@@ -1462,7 +1463,7 @@
 		2ADEE25EF212AFDAB7058FDE9EAA96B1 /* CZ@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "CZ@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/CZ@2x.png"; sourceTree = "<group>"; };
 		2AF3587B72BF209F7AFF9D5C48742A39 /* QA.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = QA.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/QA.png; sourceTree = "<group>"; };
 		2B327C6CD29ED6D2065CAAC206C95481 /* ID.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = ID.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/ID.png; sourceTree = "<group>"; };
-		2B714B2E0EAC44258E5396BB4C929307 /* RLMAccessor.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMAccessor.mm; path = Realm/RLMAccessor.mm; sourceTree = "<group>"; };
+		2B714B2E0EAC44258E5396BB4C929307 /* RLMAccessor.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMAccessor.mm; path = Realm/RLMAccessor.mm; sourceTree = "<group>"; };
 		2BB19BBBE710B1AA2DF4477A3C2F52A1 /* RealmSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RealmSwift.release.xcconfig; sourceTree = "<group>"; };
 		2BFC656E3C2C94C7F66FADF9711C4295 /* AX.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = AX.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/AX.png; sourceTree = "<group>"; };
 		2BFD15918BAE211FA94F39122979BC94 /* AppAuth-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AppAuth-dummy.m"; sourceTree = "<group>"; };
@@ -1486,9 +1487,9 @@
 		310A7E52AFF11012213B38EB4B44A1FF /* XLPagerTabStrip-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "XLPagerTabStrip-Info.plist"; sourceTree = "<group>"; };
 		310C365704E1C1AC0BE63350A69A3DF5 /* collection_change_builder.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = collection_change_builder.cpp; path = Realm/ObjectStore/src/impl/collection_change_builder.cpp; sourceTree = "<group>"; };
 		312EC7D3B36859237E37E2067A8B0E57 /* BY@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "BY@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/BY@2x.png"; sourceTree = "<group>"; };
-		3145485C473D15ADDE4B16DE203CFB50 /* RLMPushClient.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMPushClient.mm; path = Realm/RLMPushClient.mm; sourceTree = "<group>"; };
+		3145485C473D15ADDE4B16DE203CFB50 /* RLMPushClient.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMPushClient.mm; path = Realm/RLMPushClient.mm; sourceTree = "<group>"; };
 		319878D15174DD855E439BFA1F6BA11C /* TG.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TG.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/TG.png; sourceTree = "<group>"; };
-		319D06AA0D1D0BA345459C039040A1ED /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SideMenu.framework; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		319D06AA0D1D0BA345459C039040A1ED /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		320DF44E06E5306FD772C69C4595F085 /* AE.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = AE.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/AE.png; sourceTree = "<group>"; };
 		327EAB1D738292F7AD000A455A233255 /* IM.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = IM.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/IM.png; sourceTree = "<group>"; };
 		327FB7635D22CC20335672919FC36A10 /* ZM.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = ZM.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/ZM.png; sourceTree = "<group>"; };
@@ -1537,12 +1538,12 @@
 		3E00E85497E89C1B9875007F38057061 /* countries.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = countries.plist; path = CountryPicker/CountryPicker/CountryPickerController.bundle/countries.plist; sourceTree = "<group>"; };
 		3F128836D81E7DC79F7D99DEC431EB5E /* SideMenuPresentationStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPresentationStyle.swift; path = Pod/Classes/SideMenuPresentationStyle.swift; sourceTree = "<group>"; };
 		3F22E0B8E56CB6CD54EF68FED94A971B /* RLMConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMConstants.h; path = include/RLMConstants.h; sourceTree = "<group>"; };
-		3FD1B4C1246D643E9476438C28048FA8 /* AppAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AppAuth.framework; path = AppAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FD1B4C1246D643E9476438C28048FA8 /* AppAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF945456780B556BE0CADA758F3881A /* SDAnimatedImagePlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAnimatedImagePlayer.h; path = SDWebImage/Core/SDAnimatedImagePlayer.h; sourceTree = "<group>"; };
 		4064A65E48B9755195FB2FAED15340E1 /* LT@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "LT@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/LT@2x.png"; sourceTree = "<group>"; };
 		4096BAF9043A9372E74B10007BE799FC /* Pods-Budget Management-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Budget Management-resources.sh"; sourceTree = "<group>"; };
 		40AEFDB76539A5459A25DF42FA04A17B /* BJ@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "BJ@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/BJ@2x.png"; sourceTree = "<group>"; };
-		40EA148289A983DA10C767180C545F0D /* RLMObject.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMObject.mm; path = Realm/RLMObject.mm; sourceTree = "<group>"; };
+		40EA148289A983DA10C767180C545F0D /* RLMObject.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMObject.mm; path = Realm/RLMObject.mm; sourceTree = "<group>"; };
 		4171315BC1F41959986A9FD67473340C /* FXPageControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FXPageControl.h; path = Sources/FXPageControl.h; sourceTree = "<group>"; };
 		41CB5518A91390B5783497E2373626E1 /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+HighlightedWebCache.h"; path = "SDWebImage/Core/UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
 		420A086699FC406E1BAA90506DFC885F /* SDImageAPNGCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageAPNGCoder.m; path = SDWebImage/Core/SDImageAPNGCoder.m; sourceTree = "<group>"; };
@@ -1554,7 +1555,7 @@
 		428EFBCAE4E2DBEA270FBBFD5F0B5876 /* Pods-Budget Management-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Budget Management-acknowledgements.plist"; sourceTree = "<group>"; };
 		43667A21C05EB49593DB7FE1ED9CD5D2 /* MongoClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MongoClient.swift; path = RealmSwift/MongoClient.swift; sourceTree = "<group>"; };
 		43722C85B416D4922146FB5E48AED31E /* SDWebImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SDWebImage.release.xcconfig; sourceTree = "<group>"; };
-		437919EE08EC6BFCCBAC3BD346309742 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RealmSwift.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		437919EE08EC6BFCCBAC3BD346309742 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43CD6278F216CB85F173C7203907674D /* JE.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = JE.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/JE.png; sourceTree = "<group>"; };
 		44771DC992A926744F8853F42181F1D8 /* BE@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "BE@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/BE@2x.png"; sourceTree = "<group>"; };
 		452E663CB4CB8404D39AF2FFE302B93F /* OIDEndSessionRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OIDEndSessionRequest.m; path = Source/AppAuthCore/OIDEndSessionRequest.m; sourceTree = "<group>"; };
@@ -1603,7 +1604,7 @@
 		50FF5F2C9FD740ED8C6948B2AD6D9B05 /* SDWebImageDownloaderDecryptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloaderDecryptor.m; path = SDWebImage/Core/SDWebImageDownloaderDecryptor.m; sourceTree = "<group>"; };
 		511188A91EB87213F620BF30B80A0361 /* PW.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = PW.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/PW.png; sourceTree = "<group>"; };
 		512849A417A74FD8B278E6FF1A9C452F /* SortDescriptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SortDescriptor.swift; path = RealmSwift/SortDescriptor.swift; sourceTree = "<group>"; };
-		514FE9E8DD14C280AE8C049D0C58B5B5 /* RLMManagedArray.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMManagedArray.mm; path = Realm/RLMManagedArray.mm; sourceTree = "<group>"; };
+		514FE9E8DD14C280AE8C049D0C58B5B5 /* RLMManagedArray.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMManagedArray.mm; path = Realm/RLMManagedArray.mm; sourceTree = "<group>"; };
 		516B57714827DE862801BFD69B987977 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImagePrefetcher.h; path = SDWebImage/Core/SDWebImagePrefetcher.h; sourceTree = "<group>"; };
 		5175FAB22674B0D2AAD8A3B67868810E /* object_schema.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = object_schema.cpp; path = Realm/ObjectStore/src/object_schema.cpp; sourceTree = "<group>"; };
 		51BAE95B83A0B93A3C3BE0AE01377930 /* ButtonBarViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonBarViewCell.swift; path = Sources/ButtonBarViewCell.swift; sourceTree = "<group>"; };
@@ -1613,7 +1614,7 @@
 		5327E1790CE94CF2D6172A764A8ECF66 /* CC.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = CC.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/CC.png; sourceTree = "<group>"; };
 		5366BD4C52472AAB9A9EC1D290E3DA8E /* SDWeakProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWeakProxy.h; path = SDWebImage/Private/SDWeakProxy.h; sourceTree = "<group>"; };
 		539D7FBF505DC16F3EBC18FC92F665F5 /* CY.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = CY.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/CY.png; sourceTree = "<group>"; };
-		539FB29114C0DEFDEE2651893CB4C49E /* RLMEmbeddedObject.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMEmbeddedObject.mm; path = Realm/RLMEmbeddedObject.mm; sourceTree = "<group>"; };
+		539FB29114C0DEFDEE2651893CB4C49E /* RLMEmbeddedObject.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMEmbeddedObject.mm; path = Realm/RLMEmbeddedObject.mm; sourceTree = "<group>"; };
 		53C018A650BE6EA439EA335F62C9B105 /* GTMReadMonitorInputStream.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTMReadMonitorInputStream.m; path = Source/GTMReadMonitorInputStream.m; sourceTree = "<group>"; };
 		5418279F7D3061EE23E0263FC3D404D8 /* SV.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = SV.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/SV.png; sourceTree = "<group>"; };
 		542A2D8C966E1CF4C1BF8C8061E5ABE3 /* SDWebImageDownloaderDecryptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderDecryptor.h; path = SDWebImage/Core/SDWebImageDownloaderDecryptor.h; sourceTree = "<group>"; };
@@ -1661,14 +1662,14 @@
 		5E4D4C0553AC66B49C146BA33A269997 /* RLMObjectStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMObjectStore.h; path = include/RLMObjectStore.h; sourceTree = "<group>"; };
 		5E721006BD84BE0DAE07DEB9647F09FD /* sync_file.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = sync_file.cpp; path = Realm/ObjectStore/src/sync/impl/sync_file.cpp; sourceTree = "<group>"; };
 		5EA1462AA60DA619E18C9A614ED4A7C5 /* BO@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "BO@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/BO@2x.png"; sourceTree = "<group>"; };
-		5EB1DFD8DBC07824ABA7011CE2DBF0FA /* RLMSyncConfiguration.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMSyncConfiguration.mm; path = Realm/RLMSyncConfiguration.mm; sourceTree = "<group>"; };
+		5EB1DFD8DBC07824ABA7011CE2DBF0FA /* RLMSyncConfiguration.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMSyncConfiguration.mm; path = Realm/RLMSyncConfiguration.mm; sourceTree = "<group>"; };
 		5F735094FF6FE5ADDB64572F9C747B0D /* AQ.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = AQ.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/AQ.png; sourceTree = "<group>"; };
-		604E84F0D32DB18571D7B80452F7D5E1 /* RLMProperty.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMProperty.mm; path = Realm/RLMProperty.mm; sourceTree = "<group>"; };
+		604E84F0D32DB18571D7B80452F7D5E1 /* RLMProperty.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMProperty.mm; path = Realm/RLMProperty.mm; sourceTree = "<group>"; };
 		609342DE44E278F83CC80053E5164776 /* SDWebImageIndicator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageIndicator.h; path = SDWebImage/Core/SDWebImageIndicator.h; sourceTree = "<group>"; };
 		60D58670EB1A992B6856BCC35E57D675 /* YT@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "YT@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/YT@2x.png"; sourceTree = "<group>"; };
 		60DC46B48B425E69BAFE85DE8D129152 /* KM.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = KM.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/KM.png; sourceTree = "<group>"; };
 		611255F904B328AF064C92F2C4C2C2BA /* VN.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = VN.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/VN.png; sourceTree = "<group>"; };
-		614FCB0877C9A385F92F73CAEB158B5A /* RLMAnalytics.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMAnalytics.mm; path = Realm/RLMAnalytics.mm; sourceTree = "<group>"; };
+		614FCB0877C9A385F92F73CAEB158B5A /* RLMAnalytics.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMAnalytics.mm; path = Realm/RLMAnalytics.mm; sourceTree = "<group>"; };
 		616E2A5F02EB19892D83611391D2AF7D /* KE@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "KE@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/KE@2x.png"; sourceTree = "<group>"; };
 		6180962B6B02C7CEC48FD48EE6ACD227 /* SDImageLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageLoader.h; path = SDWebImage/Core/SDImageLoader.h; sourceTree = "<group>"; };
 		61A2E674C7D5380884BD4499272C5B2D /* AO@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "AO@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/AO@2x.png"; sourceTree = "<group>"; };
@@ -1683,7 +1684,7 @@
 		6371E0A5F3A8299F59CB69C48C594D27 /* GTMAppAuth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMAppAuth.h; path = Source/GTMAppAuth.h; sourceTree = "<group>"; };
 		6401F2972F1A4777DA21375132B21E22 /* PK.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = PK.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/PK.png; sourceTree = "<group>"; };
 		64967B70E0F71020A0168894B3D9D245 /* BG@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "BG@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/BG@2x.png"; sourceTree = "<group>"; };
-		64D964CF11958A2D4B0977EAF028760E /* RLMSyncSession.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMSyncSession.mm; path = Realm/RLMSyncSession.mm; sourceTree = "<group>"; };
+		64D964CF11958A2D4B0977EAF028760E /* RLMSyncSession.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMSyncSession.mm; path = Realm/RLMSyncSession.mm; sourceTree = "<group>"; };
 		64DD47F9FE1521FAA3DA4FF34EB99F71 /* GTMOAuth2KeychainCompatibility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTMOAuth2KeychainCompatibility.m; path = Source/GTMOAuth2KeychainCompatibility/GTMOAuth2KeychainCompatibility.m; sourceTree = "<group>"; };
 		65B53443547BB7D1CFDF8F45C5CE4A72 /* Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Combine.swift; path = RealmSwift/Combine.swift; sourceTree = "<group>"; };
 		663E51B1D8AE8FEA31AB719DA89559B9 /* SDAsyncBlockOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAsyncBlockOperation.m; path = SDWebImage/Private/SDAsyncBlockOperation.m; sourceTree = "<group>"; };
@@ -1694,7 +1695,7 @@
 		66837EB4016EF2D557F1C8381D5CA0BE /* object_notifier.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = object_notifier.cpp; path = Realm/ObjectStore/src/impl/object_notifier.cpp; sourceTree = "<group>"; };
 		6690B8D8234744F7F20BE86C1DBD019C /* TN.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TN.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/TN.png; sourceTree = "<group>"; };
 		66B6F188834FB8D07C47A9F96A6AFA8F /* EE.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = EE.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/EE.png; sourceTree = "<group>"; };
-		66CC554AB791DBAC67775C2E2C282AF3 /* RLMCredentials.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMCredentials.mm; path = Realm/RLMCredentials.mm; sourceTree = "<group>"; };
+		66CC554AB791DBAC67775C2E2C282AF3 /* RLMCredentials.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMCredentials.mm; path = Realm/RLMCredentials.mm; sourceTree = "<group>"; };
 		675287832296B72A14E092B6E2550D56 /* TD@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "TD@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/TD@2x.png"; sourceTree = "<group>"; };
 		675792B9D55E3C326B0C778FAC2E8CAB /* TF@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "TF@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/TF@2x.png"; sourceTree = "<group>"; };
 		675D7C7110929BBBD980667F5F34B7FA /* MT.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = MT.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/MT.png; sourceTree = "<group>"; };
@@ -1705,11 +1706,11 @@
 		68CF7F3153B5955CE0BF964C5FE41235 /* RU.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = RU.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/RU.png; sourceTree = "<group>"; };
 		68FAC65F71313D4D5ED6FC9169858734 /* NG@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NG@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/NG@2x.png"; sourceTree = "<group>"; };
 		693A0928C8774B5FF7BD8CD6C58620F7 /* SDImageCachesManagerOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCachesManagerOperation.m; path = SDWebImage/Private/SDImageCachesManagerOperation.m; sourceTree = "<group>"; };
-		6979DCB864C14EE6CABFD36011BF85C3 /* RLMEmailPasswordAuth.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMEmailPasswordAuth.mm; path = Realm/RLMEmailPasswordAuth.mm; sourceTree = "<group>"; };
+		6979DCB864C14EE6CABFD36011BF85C3 /* RLMEmailPasswordAuth.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMEmailPasswordAuth.mm; path = Realm/RLMEmailPasswordAuth.mm; sourceTree = "<group>"; };
 		69BCB8955B96A8AC2B5EA2555F813932 /* RLMSyncManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMSyncManager.h; path = include/RLMSyncManager.h; sourceTree = "<group>"; };
 		6A30A21DCA80B6ECF4301C41B8120984 /* TV@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "TV@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/TV@2x.png"; sourceTree = "<group>"; };
 		6A41BE83C3E614AD46CC90112E859FE7 /* ER.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = ER.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/ER.png; sourceTree = "<group>"; };
-		6A7B8BF8939D702A6CBF7ADFA5B1A6A9 /* RLMUpdateChecker.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMUpdateChecker.mm; path = Realm/RLMUpdateChecker.mm; sourceTree = "<group>"; };
+		6A7B8BF8939D702A6CBF7ADFA5B1A6A9 /* RLMUpdateChecker.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMUpdateChecker.mm; path = Realm/RLMUpdateChecker.mm; sourceTree = "<group>"; };
 		6AD4707C1F523CE0C5D94DD235AE6D28 /* Pods-Budget Management-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Budget Management-frameworks.sh"; sourceTree = "<group>"; };
 		6B382B8EA6BDCDA445B366F135C3AA17 /* OIDTokenRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OIDTokenRequest.m; path = Source/AppAuthCore/OIDTokenRequest.m; sourceTree = "<group>"; };
 		6B4C61C7AE1BF206CF0B96AACBCA20F9 /* keychain_helper.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = keychain_helper.cpp; path = Realm/ObjectStore/src/impl/apple/keychain_helper.cpp; sourceTree = "<group>"; };
@@ -1722,15 +1723,15 @@
 		6CA0F6086E835B99B99E520420026253 /* SG@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "SG@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/SG@2x.png"; sourceTree = "<group>"; };
 		6D9A8D58492776F4EA538B391A62A465 /* GY@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "GY@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/GY@2x.png"; sourceTree = "<group>"; };
 		6DBF8E76BE3665B2AFB92C22D0974C30 /* Realm-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Realm-prefix.pch"; sourceTree = "<group>"; };
-		6DC48A96EF42A6EBC52D3B55E4CA5E58 /* RLMSchema.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMSchema.mm; path = Realm/RLMSchema.mm; sourceTree = "<group>"; };
-		6E25BD73B5D40B1117FAE35986929A63 /* RLMFindOptions.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMFindOptions.mm; path = Realm/RLMFindOptions.mm; sourceTree = "<group>"; };
+		6DC48A96EF42A6EBC52D3B55E4CA5E58 /* RLMSchema.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMSchema.mm; path = Realm/RLMSchema.mm; sourceTree = "<group>"; };
+		6E25BD73B5D40B1117FAE35986929A63 /* RLMFindOptions.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMFindOptions.mm; path = Realm/RLMFindOptions.mm; sourceTree = "<group>"; };
 		6EEBF98E8E2C45EA74034D892C62591E /* SDImageCodersManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCodersManager.h; path = SDWebImage/Core/SDImageCodersManager.h; sourceTree = "<group>"; };
 		6EF54C1B6DDC2EE8B0CC1340811E5EB2 /* object_changeset.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = object_changeset.cpp; path = Realm/ObjectStore/src/object_changeset.cpp; sourceTree = "<group>"; };
 		6EF65E140EDAD8DEF8CCFC6A332827D6 /* SDInternalMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDInternalMacros.h; path = SDWebImage/Private/SDInternalMacros.h; sourceTree = "<group>"; };
 		6EF6805AD4CEFD150858D00237A3157B /* UY@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "UY@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/UY@2x.png"; sourceTree = "<group>"; };
 		6F30E12C7351B7E3290AE404F920BCE5 /* DZ@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DZ@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/DZ@2x.png"; sourceTree = "<group>"; };
 		6F40E4F7A7AB1F6B3EC921A743748BEB /* SY@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "SY@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/SY@2x.png"; sourceTree = "<group>"; };
-		6FD122EA0AB9AB2A8FFA5F676C795DF0 /* GTMAppAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GTMAppAuth.framework; path = GTMAppAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FD122EA0AB9AB2A8FFA5F676C795DF0 /* GTMAppAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GTMAppAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FE677CDA63322FDF3C0EB27F04F16EC /* KP.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = KP.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/KP.png; sourceTree = "<group>"; };
 		707F9A83EA0532E0B5C88464EDB1A1DA /* KH.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = KH.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/KH.png; sourceTree = "<group>"; };
 		70893DF483C2FAAC6BAA203AFDBD8505 /* OIDTokenResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OIDTokenResponse.m; path = Source/AppAuthCore/OIDTokenResponse.m; sourceTree = "<group>"; };
@@ -1738,7 +1739,7 @@
 		715BD328FBE5395B9F2C0545BB9FB7A3 /* LR.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = LR.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/LR.png; sourceTree = "<group>"; };
 		71613BD603728453C7ACAE567AA49783 /* KM@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "KM@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/KM@2x.png"; sourceTree = "<group>"; };
 		718CF26EAADC2E284E34E496BE63E7A8 /* ZA@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ZA@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/ZA@2x.png"; sourceTree = "<group>"; };
-		71BA3783D41C8BF2B2DD8FE97E1A3121 /* RLMUserAPIKey.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMUserAPIKey.mm; path = Realm/RLMUserAPIKey.mm; sourceTree = "<group>"; };
+		71BA3783D41C8BF2B2DD8FE97E1A3121 /* RLMUserAPIKey.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMUserAPIKey.mm; path = Realm/RLMUserAPIKey.mm; sourceTree = "<group>"; };
 		71EE433A055B1AA0B296441781EFAEF2 /* IndicatorInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IndicatorInfo.swift; path = Sources/IndicatorInfo.swift; sourceTree = "<group>"; };
 		720C4E5B80A9FF5F5B2B3174E5770B92 /* MX@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "MX@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/MX@2x.png"; sourceTree = "<group>"; };
 		7244DDD7A27553F0D1DF79CDBE5126DA /* BD.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = BD.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/BD.png; sourceTree = "<group>"; };
@@ -1779,13 +1780,13 @@
 		78194F11538AD821B4E7D1E677791480 /* PT.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = PT.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/PT.png; sourceTree = "<group>"; };
 		7835554B0D826FCDCDC347DC4478F9B3 /* UZ.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = UZ.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/UZ.png; sourceTree = "<group>"; };
 		7873C8524D43BEF8B439EF5AC546CF16 /* MD.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = MD.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/MD.png; sourceTree = "<group>"; };
-		78BA4BB1A553AB4136F879792D99C87D /* XLPagerTabStrip.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = XLPagerTabStrip.bundle; path = "XLPagerTabStrip-XLPagerTabStrip.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78BA4BB1A553AB4136F879792D99C87D /* XLPagerTabStrip.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XLPagerTabStrip.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		796B51B7682FA8857A6F7AC9929421C9 /* MO@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "MO@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/MO@2x.png"; sourceTree = "<group>"; };
 		79882513A8B25EC060209F90F164D82A /* RLMApp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMApp.h; path = include/RLMApp.h; sourceTree = "<group>"; };
 		79927E1D21659983A0B70EB5CD61A508 /* LV@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "LV@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/LV@2x.png"; sourceTree = "<group>"; };
 		799A4E077D16378227D1BE30DEDC9EA3 /* OIDEndSessionResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OIDEndSessionResponse.h; path = Source/AppAuthCore/OIDEndSessionResponse.h; sourceTree = "<group>"; };
 		7A1E191087495B9E620A227D3269FAD6 /* AQ@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "AQ@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/AQ@2x.png"; sourceTree = "<group>"; };
-		7A4FB06FFE5BC80502BC5B307E56E610 /* RLMMongoCollection.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMMongoCollection.mm; path = Realm/RLMMongoCollection.mm; sourceTree = "<group>"; };
+		7A4FB06FFE5BC80502BC5B307E56E610 /* RLMMongoCollection.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMMongoCollection.mm; path = Realm/RLMMongoCollection.mm; sourceTree = "<group>"; };
 		7A54EAFB94E000865611F7F629FE361A /* RLMThreadSafeReference.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMThreadSafeReference.h; path = include/RLMThreadSafeReference.h; sourceTree = "<group>"; };
 		7A5AA217C52566EAFEFDCD7276D9193C /* RLMSchema_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMSchema_Private.h; path = include/RLMSchema_Private.h; sourceTree = "<group>"; };
 		7A9C518A4F2173503403CF83349E6BC0 /* IN.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = IN.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/IN.png; sourceTree = "<group>"; };
@@ -1858,9 +1859,9 @@
 		8A0DBA9186E9F631D5089DB87BEFEFDF /* HN.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = HN.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/HN.png; sourceTree = "<group>"; };
 		8A60BE816C97C07DEED32481B3FF6CB3 /* ME.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = ME.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/ME.png; sourceTree = "<group>"; };
 		8A797124C652258201A2CD89DD4276B4 /* SC@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "SC@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/SC@2x.png"; sourceTree = "<group>"; };
-		8B9D0D7469A7C1D6294C5497081D6122 /* RLMOptionalBase.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMOptionalBase.mm; path = Realm/RLMOptionalBase.mm; sourceTree = "<group>"; };
+		8B9D0D7469A7C1D6294C5497081D6122 /* RLMOptionalBase.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMOptionalBase.mm; path = Realm/RLMOptionalBase.mm; sourceTree = "<group>"; };
 		8C386FB6872DEA58AF0AE49BE37AC7F5 /* AppAuth.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AppAuth.modulemap; sourceTree = "<group>"; };
-		8C6BCDA35FFF7339ECE5DAC513253716 /* RLMDecimal128.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMDecimal128.mm; path = Realm/RLMDecimal128.mm; sourceTree = "<group>"; };
+		8C6BCDA35FFF7339ECE5DAC513253716 /* RLMDecimal128.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMDecimal128.mm; path = Realm/RLMDecimal128.mm; sourceTree = "<group>"; };
 		8CA55231958AB66E6DE1561AD5E06E48 /* UIImage+MemoryCacheCost.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MemoryCacheCost.h"; path = "SDWebImage/Core/UIImage+MemoryCacheCost.h"; sourceTree = "<group>"; };
 		8CCBED6520FDBE8B909F05CE72E22012 /* BL@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "BL@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/BL@2x.png"; sourceTree = "<group>"; };
 		8CD65A180C36919A172D98B03C9593E0 /* CountryPickerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryPickerController.swift; path = CountryPicker/CountryPicker/CountryPickerController.swift; sourceTree = "<group>"; };
@@ -1882,16 +1883,16 @@
 		9056413E0DEDBD225768FAA0CA6DB6F5 /* EC@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "EC@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/EC@2x.png"; sourceTree = "<group>"; };
 		910C29E8EA22F5ED15DC063BB8FEF9F3 /* GN@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "GN@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/GN@2x.png"; sourceTree = "<group>"; };
 		91B3F5558FC5E85AA61D653C206C8433 /* VI@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "VI@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/VI@2x.png"; sourceTree = "<group>"; };
-		921BE4A82C4A7A5C72A0C6F8B8FEF200 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Realm.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		921BE4A82C4A7A5C72A0C6F8B8FEF200 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		925A6F7ED70D1EADA524D461B87E13CD /* WF@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "WF@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/WF@2x.png"; sourceTree = "<group>"; };
-		92902A197F4949C4422A53AAA865A1FD /* RLMApp.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMApp.mm; path = Realm/RLMApp.mm; sourceTree = "<group>"; };
+		92902A197F4949C4422A53AAA865A1FD /* RLMApp.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMApp.mm; path = Realm/RLMApp.mm; sourceTree = "<group>"; };
 		92D6E04DEF00A34BB41E1EED87A8E6C4 /* KN.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = KN.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/KN.png; sourceTree = "<group>"; };
 		93331BD0445025E72D996399CF083161 /* XLPagerTabStrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XLPagerTabStrip.release.xcconfig; sourceTree = "<group>"; };
 		936D1321FF689237A06BE88D709CED30 /* ResourceBundle-CountryPickerController-SKCountryPicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-CountryPickerController-SKCountryPicker-Info.plist"; sourceTree = "<group>"; };
 		93ACB18E2FAFE621E994D857C5113712 /* GN.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = GN.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/GN.png; sourceTree = "<group>"; };
 		93C49F2FF4F37AA1533B52766F650A2C /* BarPagerTabStripViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarPagerTabStripViewController.swift; path = Sources/BarPagerTabStripViewController.swift; sourceTree = "<group>"; };
 		93ED23E41AF327FB949E845073E089FD /* SDAnimatedImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAnimatedImageView.m; path = SDWebImage/Core/SDAnimatedImageView.m; sourceTree = "<group>"; };
-		94243194897C71810ADBBEC4CE68EF74 /* RLMObjectStore.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMObjectStore.mm; path = Realm/RLMObjectStore.mm; sourceTree = "<group>"; };
+		94243194897C71810ADBBEC4CE68EF74 /* RLMObjectStore.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMObjectStore.mm; path = Realm/RLMObjectStore.mm; sourceTree = "<group>"; };
 		949B3151A5D5ECDFDAEE3B19D388854C /* network_reachability_observer.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = network_reachability_observer.cpp; path = Realm/ObjectStore/src/sync/impl/apple/network_reachability_observer.cpp; sourceTree = "<group>"; };
 		94BEDF02BFF03CCFF064B87F8E944CC0 /* external_commit_helper.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = external_commit_helper.cpp; path = Realm/ObjectStore/src/impl/apple/external_commit_helper.cpp; sourceTree = "<group>"; };
 		95113563CFA29A6DD54CFEA6D7D3C4C0 /* NI.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NI.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/NI.png; sourceTree = "<group>"; };
@@ -1910,7 +1911,7 @@
 		98EA78C5F586D719D24AE6F3AF938F4C /* SDImageCacheDefine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCacheDefine.m; path = SDWebImage/Core/SDImageCacheDefine.m; sourceTree = "<group>"; };
 		98EB4DF032A95C4E06F35B68AEED8476 /* SDImageFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageFrame.h; path = SDWebImage/Core/SDImageFrame.h; sourceTree = "<group>"; };
 		9906840CCE0B296BC121365BD53CD4E1 /* RLMProviderClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMProviderClient.h; path = include/RLMProviderClient.h; sourceTree = "<group>"; };
-		991622D4A4C3535C1F18A1C4AAEC86AC /* RLMAPIKeyAuth.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMAPIKeyAuth.mm; path = Realm/RLMAPIKeyAuth.mm; sourceTree = "<group>"; };
+		991622D4A4C3535C1F18A1C4AAEC86AC /* RLMAPIKeyAuth.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMAPIKeyAuth.mm; path = Realm/RLMAPIKeyAuth.mm; sourceTree = "<group>"; };
 		99AB08D3C08840BE2F68B9ECB6D93352 /* EG.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = EG.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/EG.png; sourceTree = "<group>"; };
 		99AD53664922470F334DC7983B104937 /* SDWebImageIndicator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageIndicator.m; path = SDWebImage/Core/SDWebImageIndicator.m; sourceTree = "<group>"; };
 		99B6C695640F545E84629C2A0A5E8290 /* SN.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = SN.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/SN.png; sourceTree = "<group>"; };
@@ -1927,7 +1928,7 @@
 		9D23B41BC42D21991AADDE35EB93D7D2 /* RO@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "RO@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/RO@2x.png"; sourceTree = "<group>"; };
 		9D390EDB109CCD02DF5F3D34D784E2C1 /* results.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = results.cpp; path = Realm/ObjectStore/src/results.cpp; sourceTree = "<group>"; };
 		9D8BFEB41737201A2FAD915BF6533D36 /* ButtonBarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonBarView.swift; path = Sources/ButtonBarView.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DC9144E338EC9E74905A24317C84439 /* HR@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "HR@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/HR@2x.png"; sourceTree = "<group>"; };
 		9E5460CFAFCEA377D2147AD39B0078DE /* CA.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = CA.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/CA.png; sourceTree = "<group>"; };
 		9E5F78F10BE2D42361209F3C71DE15A8 /* XLPagerTabStrip-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XLPagerTabStrip-umbrella.h"; sourceTree = "<group>"; };
@@ -1956,9 +1957,9 @@
 		A5054A9BE231D1B50283AC5653967B76 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleSignIn.bundle; path = Resources/GoogleSignIn.bundle; sourceTree = "<group>"; };
 		A5170B48889FE0EBCFAC21F75B1748A8 /* RU@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "RU@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/RU@2x.png"; sourceTree = "<group>"; };
 		A5192746CBD734B6D3144AC5148B895C /* SDImageTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageTransformer.m; path = SDWebImage/Core/SDImageTransformer.m; sourceTree = "<group>"; };
-		A58A9D812A8DBF56DE4F215B203E788F /* RLMMongoClient.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMMongoClient.mm; path = Realm/RLMMongoClient.mm; sourceTree = "<group>"; };
+		A58A9D812A8DBF56DE4F215B203E788F /* RLMMongoClient.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMMongoClient.mm; path = Realm/RLMMongoClient.mm; sourceTree = "<group>"; };
 		A6358978E7C2A7009F118D13024FE0D7 /* GE.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = GE.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/GE.png; sourceTree = "<group>"; };
-		A70477E4ABA60947A69D78B8BC5E0F69 /* RLMListBase.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMListBase.mm; path = Realm/RLMListBase.mm; sourceTree = "<group>"; };
+		A70477E4ABA60947A69D78B8BC5E0F69 /* RLMListBase.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMListBase.mm; path = Realm/RLMListBase.mm; sourceTree = "<group>"; };
 		A70EC50C271EA39A1F4C0888CA023E5B /* ZW.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = ZW.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/ZW.png; sourceTree = "<group>"; };
 		A719417F84B688B1590179840E8062AE /* LC@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "LC@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/LC@2x.png"; sourceTree = "<group>"; };
 		A76DC040E4FD4FF9E884C7A1D0269156 /* RLMSyncConfiguration_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMSyncConfiguration_Private.h; path = include/RLMSyncConfiguration_Private.h; sourceTree = "<group>"; };
@@ -1975,7 +1976,7 @@
 		A9E7185DFC31F2B021C032C351D4AC16 /* RLMFindOneAndModifyOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMFindOneAndModifyOptions.h; path = include/RLMFindOneAndModifyOptions.h; sourceTree = "<group>"; };
 		AA2A29B3E9BD291AEBCF02A36435826F /* TF.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TF.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/TF.png; sourceTree = "<group>"; };
 		AA7D41F1F25CB8DA8C8E2B288EE662A3 /* schema.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = schema.cpp; path = Realm/ObjectStore/src/schema.cpp; sourceTree = "<group>"; };
-		AAC0B5E06BD7F5FBDBDC664D25143513 /* RLMProviderClient.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMProviderClient.mm; path = Realm/RLMProviderClient.mm; sourceTree = "<group>"; };
+		AAC0B5E06BD7F5FBDBDC664D25143513 /* RLMProviderClient.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMProviderClient.mm; path = Realm/RLMProviderClient.mm; sourceTree = "<group>"; };
 		AB78DA6315DF928676DC6F59DFF6F8A6 /* KG.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = KG.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/KG.png; sourceTree = "<group>"; };
 		ABC6DFF5F740BB540A7E11D33DEAA133 /* XLPagerTabStrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XLPagerTabStrip.debug.xcconfig; sourceTree = "<group>"; };
 		AC380833BC11498F8452C5E3C34B74A4 /* RLMMigration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMMigration.h; path = include/RLMMigration.h; sourceTree = "<group>"; };
@@ -1989,19 +1990,19 @@
 		AD366B70CE28F2BC254624100582B5A0 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCacheOperation.m"; path = "SDWebImage/Core/UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		AD905D4BABA03C04478ADDA05BFB7471 /* CM@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "CM@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/CM@2x.png"; sourceTree = "<group>"; };
 		ADBA82D1624AAD6D05C535160F57F3FD /* MP.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = MP.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/MP.png; sourceTree = "<group>"; };
-		AE17CEA4F9A119D390669B964A3D1BEC /* RLMSyncManager.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMSyncManager.mm; path = Realm/RLMSyncManager.mm; sourceTree = "<group>"; };
+		AE17CEA4F9A119D390669B964A3D1BEC /* RLMSyncManager.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMSyncManager.mm; path = Realm/RLMSyncManager.mm; sourceTree = "<group>"; };
 		AE3B5A1C682F3A0C45E1439A4A3D0A8D /* SC.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = SC.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/SC.png; sourceTree = "<group>"; };
 		AE4FE43CF440A5963C42C4AEA85023BD /* BH@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "BH@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/BH@2x.png"; sourceTree = "<group>"; };
 		AE72BF5FF207A1BBBB6EC3233A93A187 /* NZ.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NZ.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/NZ.png; sourceTree = "<group>"; };
 		AED8FF023A0F828CC5EC113F3FB0EDF9 /* XLPagerTabStrip.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = XLPagerTabStrip.modulemap; sourceTree = "<group>"; };
 		AF2BF689B865A2668D9306410D0E71FE /* SDImageAWebPCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageAWebPCoder.h; path = SDWebImage/Core/SDImageAWebPCoder.h; sourceTree = "<group>"; };
 		AF2CEB8369AAC1D8E0D095DA0816B3C0 /* AF@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "AF@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/AF@2x.png"; sourceTree = "<group>"; };
-		AF45B6C6F370ADF829E1C56AA6C37FA6 /* RLMUser.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMUser.mm; path = Realm/RLMUser.mm; sourceTree = "<group>"; };
+		AF45B6C6F370ADF829E1C56AA6C37FA6 /* RLMUser.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMUser.mm; path = Realm/RLMUser.mm; sourceTree = "<group>"; };
 		AF82661B5BAB94B8BDD3EE56819EEFFC /* DO@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DO@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/DO@2x.png"; sourceTree = "<group>"; };
 		AFBEBA843C7128B1CC6DC572996AB3F8 /* SO@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "SO@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/SO@2x.png"; sourceTree = "<group>"; };
 		B097ACE1D975ECBA31D87D7BFC92C0F0 /* ThreadSafeReference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThreadSafeReference.swift; path = RealmSwift/ThreadSafeReference.swift; sourceTree = "<group>"; };
 		B0A1B59E66A8DB97F538D3BE092DCF29 /* JP.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = JP.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/JP.png; sourceTree = "<group>"; };
-		B0B214D775196BA7CA8E17E53048A493 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDWebImage.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0B214D775196BA7CA8E17E53048A493 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E0E5663232EB33D35AB143D0B16F28 /* HT.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = HT.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/HT.png; sourceTree = "<group>"; };
 		B11A5D2E1174D440B4204D80EE08C551 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignIn.framework; path = Frameworks/GoogleSignIn.framework; sourceTree = "<group>"; };
 		B1A7794AF16FFEB863522FD89B5A64B3 /* OM@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "OM@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/OM@2x.png"; sourceTree = "<group>"; };
@@ -2024,20 +2025,20 @@
 		B53404FBE5B6CC93DF0D05DE6C602B6D /* RLMSyncUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMSyncUtil.h; path = include/RLMSyncUtil.h; sourceTree = "<group>"; };
 		B55620E65EEF1E323511A5C9478CBB22 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+WebCache.h"; path = "SDWebImage/Core/UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		B567B900CE6AC4D5C3FE0BC80331E79C /* BT@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "BT@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/BT@2x.png"; sourceTree = "<group>"; };
-		B5D922CE0438D0342E574CFB20E6F07D /* RLMClassInfo.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMClassInfo.mm; path = Realm/RLMClassInfo.mm; sourceTree = "<group>"; };
+		B5D922CE0438D0342E574CFB20E6F07D /* RLMClassInfo.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMClassInfo.mm; path = Realm/RLMClassInfo.mm; sourceTree = "<group>"; };
 		B6155E4F8F5787554EAD48698CDA546E /* SKCountryPicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SKCountryPicker-Info.plist"; sourceTree = "<group>"; };
 		B6195C232952991C57660ACDE094F5D4 /* CR.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = CR.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/CR.png; sourceTree = "<group>"; };
 		B63D9C1B68CB0B156303D5928145EC8C /* CN@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "CN@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/CN@2x.png"; sourceTree = "<group>"; };
-		B69A8A24C0F7CBBA07C75050ACBEA3CB /* RLMObservation.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMObservation.mm; path = Realm/RLMObservation.mm; sourceTree = "<group>"; };
+		B69A8A24C0F7CBBA07C75050ACBEA3CB /* RLMObservation.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMObservation.mm; path = Realm/RLMObservation.mm; sourceTree = "<group>"; };
 		B6D76B2864265BC5A24229821081B654 /* CO.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = CO.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/CO.png; sourceTree = "<group>"; };
 		B70DD4A162FCC36A207124C37AA25E2B /* BT.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = BT.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/BT.png; sourceTree = "<group>"; };
-		B722C2ED6B316748F18ACDE829AFE3EF /* RLMRealmUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMRealmUtil.mm; path = Realm/RLMRealmUtil.mm; sourceTree = "<group>"; };
+		B722C2ED6B316748F18ACDE829AFE3EF /* RLMRealmUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMRealmUtil.mm; path = Realm/RLMRealmUtil.mm; sourceTree = "<group>"; };
 		B7567E4755FC52D95D0406D20F15830B /* CU.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = CU.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/CU.png; sourceTree = "<group>"; };
 		B78D3D6EBA309039901AA8192584CD9A /* index_set.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = index_set.cpp; path = Realm/ObjectStore/src/index_set.cpp; sourceTree = "<group>"; };
 		B7ADE1887E9D3730EDF4A1E0506CC031 /* AS@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "AS@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/AS@2x.png"; sourceTree = "<group>"; };
 		B7B18D68D2A6D203BC29572281559743 /* SideMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-umbrella.h"; sourceTree = "<group>"; };
 		B7B7B3EA2D7E5436621CF9FE1B49D179 /* NI@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NI@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/NI@2x.png"; sourceTree = "<group>"; };
-		B7C2D3648D5592846143D0DC60A2E1E9 /* RLMMigration.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMMigration.mm; path = Realm/RLMMigration.mm; sourceTree = "<group>"; };
+		B7C2D3648D5592846143D0DC60A2E1E9 /* RLMMigration.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMMigration.mm; path = Realm/RLMMigration.mm; sourceTree = "<group>"; };
 		B850EE999B22AC12E84FFF571D6A599C /* OIDError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OIDError.h; path = Source/AppAuthCore/OIDError.h; sourceTree = "<group>"; };
 		B858135489A0AAB0D159F034A5F7880D /* RLMMongoCollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMMongoCollection.h; path = include/RLMMongoCollection.h; sourceTree = "<group>"; };
 		B8605BF3EF891B324C3BE50F158E0AAF /* ZW@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ZW@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/ZW@2x.png"; sourceTree = "<group>"; };
@@ -2079,7 +2080,7 @@
 		C0D047DE3DCE0021047A1E5B11EA9340 /* BZ.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = BZ.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/BZ.png; sourceTree = "<group>"; };
 		C1093FEE19BF56B28AB5DA2A83F06A10 /* sync_session.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = sync_session.cpp; path = Realm/ObjectStore/src/sync/sync_session.cpp; sourceTree = "<group>"; };
 		C1233B9557B5A9D4922EB3D5E5BBFF9A /* PG@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "PG@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/PG@2x.png"; sourceTree = "<group>"; };
-		C1998E0D8085221AD87F89B614C10E52 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GTMSessionFetcher.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1998E0D8085221AD87F89B614C10E52 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C199D535A7ADB9F671A9DF486ECAEEFC /* AW@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "AW@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/AW@2x.png"; sourceTree = "<group>"; };
 		C1DD6F314DE322536866A7936BC4AF84 /* ZM@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ZM@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/ZM@2x.png"; sourceTree = "<group>"; };
 		C1E0E4F40967F1A3495DFFF4C8E901A6 /* NC@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NC@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/NC@2x.png"; sourceTree = "<group>"; };
@@ -2087,7 +2088,7 @@
 		C268A50085FA4E17A383BD25CB83FAD2 /* ES.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = ES.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/ES.png; sourceTree = "<group>"; };
 		C28261E345BC4E13BEF4AFA411E3F18A /* AO.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = AO.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/AO.png; sourceTree = "<group>"; };
 		C2C281E15252765BEE083D0A983261F0 /* CR@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "CR@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/CR@2x.png"; sourceTree = "<group>"; };
-		C2D5311288D317595FB79CC59A9C8541 /* RLMQueryUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMQueryUtil.mm; path = Realm/RLMQueryUtil.mm; sourceTree = "<group>"; };
+		C2D5311288D317595FB79CC59A9C8541 /* RLMQueryUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMQueryUtil.mm; path = Realm/RLMQueryUtil.mm; sourceTree = "<group>"; };
 		C2E51F15F66D721455084AD5D2856580 /* OIDScopes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OIDScopes.h; path = Source/AppAuthCore/OIDScopes.h; sourceTree = "<group>"; };
 		C31503B8869FEFFFF9F429C70F5E99EA /* TL.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TL.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/TL.png; sourceTree = "<group>"; };
 		C32398C5284DDAC8EF09760DA90CACF7 /* YT.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = YT.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/YT.png; sourceTree = "<group>"; };
@@ -2122,11 +2123,11 @@
 		C9EB79FC350DE2EAB25A373CAFB6893E /* CountryCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryCell.swift; path = CountryPicker/CountryPicker/CountryCell.swift; sourceTree = "<group>"; };
 		CA2E8527598790034522D502802520EF /* IT.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = IT.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/IT.png; sourceTree = "<group>"; };
 		CA6F21C0F13E2DA9633087905B5A6DF3 /* TO.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TO.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/TO.png; sourceTree = "<group>"; };
-		CA99182D2913A251727E9F69D04F1B4A /* RLMObjectId.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMObjectId.mm; path = Realm/RLMObjectId.mm; sourceTree = "<group>"; };
+		CA99182D2913A251727E9F69D04F1B4A /* RLMObjectId.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMObjectId.mm; path = Realm/RLMObjectId.mm; sourceTree = "<group>"; };
 		CB0262405E6AF777690FB83FDDAA625B /* MK.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = MK.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/MK.png; sourceTree = "<group>"; };
 		CB313C25B298291D56AE690BA631F5F5 /* KY.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = KY.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/KY.png; sourceTree = "<group>"; };
 		CC0433987F971623ED2A8165C398EE22 /* CX@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "CX@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/CX@2x.png"; sourceTree = "<group>"; };
-		CC15634B6F3BFA2F357DA0BA0D0B51EB /* RLMUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMUtil.mm; path = Realm/RLMUtil.mm; sourceTree = "<group>"; };
+		CC15634B6F3BFA2F357DA0BA0D0B51EB /* RLMUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMUtil.mm; path = Realm/RLMUtil.mm; sourceTree = "<group>"; };
 		CC41D4273E900DBF0327144AED8E968C /* RLMObjectSchema.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMObjectSchema.h; path = include/RLMObjectSchema.h; sourceTree = "<group>"; };
 		CC47A2F89C009BB624A778CFD8A4B477 /* SideMenuManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuManager.swift; path = Pod/Classes/SideMenuManager.swift; sourceTree = "<group>"; };
 		CD3642E65BDDAD211D7438E7F4BF2BF3 /* GTMSessionFetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMSessionFetcher.h; path = Source/GTMSessionFetcher.h; sourceTree = "<group>"; };
@@ -2169,7 +2170,7 @@
 		D86F10199D10FFCFED5A19DEA377F746 /* TT.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TT.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/TT.png; sourceTree = "<group>"; };
 		D896B89AF86452F2E8E71CC60F9592FA /* OIDAuthState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OIDAuthState.m; path = Source/AppAuthCore/OIDAuthState.m; sourceTree = "<group>"; };
 		D8A50805E581057ECD5A1A1F481302B8 /* MZ@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "MZ@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/MZ@2x.png"; sourceTree = "<group>"; };
-		D8A77D500880FB5A38138430F1EECD25 /* RLMFindOneAndModifyOptions.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMFindOneAndModifyOptions.mm; path = Realm/RLMFindOneAndModifyOptions.mm; sourceTree = "<group>"; };
+		D8A77D500880FB5A38138430F1EECD25 /* RLMFindOneAndModifyOptions.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMFindOneAndModifyOptions.mm; path = Realm/RLMFindOneAndModifyOptions.mm; sourceTree = "<group>"; };
 		D90511A9026795032DA0D436501F5F28 /* LA.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = LA.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/LA.png; sourceTree = "<group>"; };
 		D947B0E6C63225F6DD9F7CF732DEC452 /* RLMRealm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMRealm.h; path = include/RLMRealm.h; sourceTree = "<group>"; };
 		D952F5F7979C923CB233947A2B483580 /* ButtonBarPagerTabStripViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonBarPagerTabStripViewController.swift; path = Sources/ButtonBarPagerTabStripViewController.swift; sourceTree = "<group>"; };
@@ -2183,7 +2184,7 @@
 		DA7202893C4C86706591056544CFC7A1 /* Realm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Realm.h; path = include/Realm.h; sourceTree = "<group>"; };
 		DA922ED1A9F2E93D1579C4DC6DAEA0DC /* OIDIDToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OIDIDToken.m; path = Source/AppAuthCore/OIDIDToken.m; sourceTree = "<group>"; };
 		DAA184BD1FA2F998B6E2C9953648BF7B /* HK@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "HK@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/HK@2x.png"; sourceTree = "<group>"; };
-		DAB5E78008E6575E31D2ADB39FA0319A /* RLMResults.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMResults.mm; path = Realm/RLMResults.mm; sourceTree = "<group>"; };
+		DAB5E78008E6575E31D2ADB39FA0319A /* RLMResults.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMResults.mm; path = Realm/RLMResults.mm; sourceTree = "<group>"; };
 		DAF1887B74FF1F4BF8C0929D45DE8BB8 /* SH.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = SH.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/SH.png; sourceTree = "<group>"; };
 		DB15EA669C46D60B7FC90F976C30F7C1 /* AM.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = AM.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/AM.png; sourceTree = "<group>"; };
 		DB34257E16D25D52FEAB238236DEA2D3 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2195,7 +2196,7 @@
 		DD325BAADFB508D7F4EC6D88FCB765D8 /* NU@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NU@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/NU@2x.png"; sourceTree = "<group>"; };
 		DD691161BB269AA334EFA05E7C3F7C71 /* AE@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "AE@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/AE@2x.png"; sourceTree = "<group>"; };
 		DDB0D86E3A6158E0F0E540FDBDE7283C /* AppAuth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppAuth.release.xcconfig; sourceTree = "<group>"; };
-		DE277629B5C09BE727E2EA152C0F7D19 /* CountryPickerController.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CountryPickerController.bundle; path = "SKCountryPicker-CountryPickerController.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE277629B5C09BE727E2EA152C0F7D19 /* CountryPickerController.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountryPickerController.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5567375A1C48846D483E4630036A80 /* Constant.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = CountryPicker/CountryPicker/Constant.swift; sourceTree = "<group>"; };
 		DE5BA9BCF388859125BC8AF4B2F615AD /* NO.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NO.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/NO.png; sourceTree = "<group>"; };
 		DE7F58D6A454F90830CE32A3ACFE5256 /* system_configuration.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = system_configuration.cpp; path = Realm/ObjectStore/src/sync/impl/apple/system_configuration.cpp; sourceTree = "<group>"; };
@@ -2222,7 +2223,7 @@
 		E21FA71E38D3B9BA5D1322EE109F9210 /* FR@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "FR@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/FR@2x.png"; sourceTree = "<group>"; };
 		E233F8DB900EB7F2DA7453199FB913EA /* list_notifier.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = list_notifier.cpp; path = Realm/ObjectStore/src/impl/list_notifier.cpp; sourceTree = "<group>"; };
 		E3307B62555163B25C8109A19FA052F1 /* object_store.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = object_store.cpp; path = Realm/ObjectStore/src/object_store.cpp; sourceTree = "<group>"; };
-		E35D40CE0FDD4C4651AABDFD4367BC74 /* SKCountryPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SKCountryPicker.framework; path = SKCountryPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E35D40CE0FDD4C4651AABDFD4367BC74 /* SKCountryPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SKCountryPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3FCAEDECBE80AC3BF787CF9557F58F7 /* JP@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "JP@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/JP@2x.png"; sourceTree = "<group>"; };
 		E47D4C96190F160034C18F09BE038F2C /* RLMListBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMListBase.h; path = include/RLMListBase.h; sourceTree = "<group>"; };
 		E4A1D53C3E0030EB31FAB492697AB979 /* PG.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = PG.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/PG.png; sourceTree = "<group>"; };
@@ -2232,7 +2233,7 @@
 		E5619D3AD884F86B464C4A79F4E73555 /* generic_network_transport.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = generic_network_transport.cpp; path = Realm/ObjectStore/src/sync/generic_network_transport.cpp; sourceTree = "<group>"; };
 		E62985CF6730E125655542A2A894184A /* SK.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = SK.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/SK.png; sourceTree = "<group>"; };
 		E659CE868D603369E65FB5C4434B2DBB /* EH.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = EH.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/EH.png; sourceTree = "<group>"; };
-		E672A0AFAD74982E84663448B97950EA /* RLMRealmConfiguration+Sync.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = "RLMRealmConfiguration+Sync.mm"; path = "Realm/RLMRealmConfiguration+Sync.mm"; sourceTree = "<group>"; };
+		E672A0AFAD74982E84663448B97950EA /* RLMRealmConfiguration+Sync.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = "RLMRealmConfiguration+Sync.mm"; path = "Realm/RLMRealmConfiguration+Sync.mm"; sourceTree = "<group>"; };
 		E68280F42CDCC3D57642C8064571471B /* CD.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = CD.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/CD.png; sourceTree = "<group>"; };
 		E691CC4CF57BB46684159D54D37F3EB4 /* GTMAppAuth-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GTMAppAuth-Info.plist"; sourceTree = "<group>"; };
 		E715576D9B6CCAE41DA947DC26003071 /* PN.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = PN.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/PN.png; sourceTree = "<group>"; };
@@ -2253,12 +2254,12 @@
 		E9CDB33AE5836A0CDF368DF8128429B0 /* SX@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "SX@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/SX@2x.png"; sourceTree = "<group>"; };
 		E9DE32C83C158B7D9EDA62651340F52D /* Results.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Results.swift; path = RealmSwift/Results.swift; sourceTree = "<group>"; };
 		EAC3F8326931849FB360E52EDDB0E42C /* RealmSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RealmSwift-umbrella.h"; sourceTree = "<group>"; };
-		EAEB3AF81C7F2C724BE9543722863DE2 /* RLMObjectBase.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMObjectBase.mm; path = Realm/RLMObjectBase.mm; sourceTree = "<group>"; };
+		EAEB3AF81C7F2C724BE9543722863DE2 /* RLMObjectBase.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMObjectBase.mm; path = Realm/RLMObjectBase.mm; sourceTree = "<group>"; };
 		EB53C0A50FF4FC2B90BE22DE68F09225 /* FK@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "FK@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/FK@2x.png"; sourceTree = "<group>"; };
 		EB55A466541BE1E425413AB86867FE78 /* CA@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "CA@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/CA@2x.png"; sourceTree = "<group>"; };
 		EB8D82429530B1C6BE16F1D49A47C64C /* BG.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = BG.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/BG.png; sourceTree = "<group>"; };
 		EBADCC34C2D4867F52CE9FF557B3699E /* CH@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "CH@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/CH@2x.png"; sourceTree = "<group>"; };
-		EBC3F8E0CBE993373B518F893DCF14C0 /* RLMBSON.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMBSON.mm; path = Realm/RLMBSON.mm; sourceTree = "<group>"; };
+		EBC3F8E0CBE993373B518F893DCF14C0 /* RLMBSON.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMBSON.mm; path = Realm/RLMBSON.mm; sourceTree = "<group>"; };
 		EC52DFD8517E3E0F705F64A563CE37D9 /* LI.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = LI.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/LI.png; sourceTree = "<group>"; };
 		EC55CBD493F29F272896AD6385C0D687 /* HT@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "HT@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/HT@2x.png"; sourceTree = "<group>"; };
 		ECEA974FD97B0F5B2FCE4619BE102C0C /* GH@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "GH@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/GH@2x.png"; sourceTree = "<group>"; };
@@ -2287,7 +2288,7 @@
 		F121182870D85F760A548812D097D913 /* UIImage+ExtendedCacheData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ExtendedCacheData.m"; path = "SDWebImage/Core/UIImage+ExtendedCacheData.m"; sourceTree = "<group>"; };
 		F1A83E812524B5C796A3D6F5AB459A26 /* AppAuth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppAuth.debug.xcconfig; sourceTree = "<group>"; };
 		F1B6EC9EBD7E48C66EA27959F896B673 /* RLMAPIKeyAuth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMAPIKeyAuth.h; path = include/RLMAPIKeyAuth.h; sourceTree = "<group>"; };
-		F1DDEA945255A18F0B9913AB1C2AB718 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XLPagerTabStrip.framework; path = XLPagerTabStrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1DDEA945255A18F0B9913AB1C2AB718 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XLPagerTabStrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F220651598C76EFB7C59061086602249 /* OIDServiceDiscovery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OIDServiceDiscovery.m; path = Source/AppAuthCore/OIDServiceDiscovery.m; sourceTree = "<group>"; };
 		F2360D9143E39E7E07BA9F751C00EFA1 /* NA@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NA@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/NA@2x.png"; sourceTree = "<group>"; };
 		F25035C4741AE57D1E80EC2DFA644521 /* OIDAuthorizationResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OIDAuthorizationResponse.m; path = Source/AppAuthCore/OIDAuthorizationResponse.m; sourceTree = "<group>"; };
@@ -2333,14 +2334,14 @@
 		FB60089CC835DD6C170AEBE592F7A74A /* SideMenuInteractionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuInteractionController.swift; path = Pod/Classes/SideMenuInteractionController.swift; sourceTree = "<group>"; };
 		FBC76E7BC4EF2CE360DD916F308B259E /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Pod/Classes/Extensions.swift; sourceTree = "<group>"; };
 		FBE968D4367CBE19145957F91C5DF5E0 /* NSImage+Compatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSImage+Compatibility.h"; path = "SDWebImage/Core/NSImage+Compatibility.h"; sourceTree = "<group>"; };
-		FBFEF76957F284496E90E54DCF1504E5 /* Pods_Budget_Management.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Budget_Management.framework; path = "Pods-Budget Management.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBFEF76957F284496E90E54DCF1504E5 /* Pods_Budget_Management.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Budget_Management.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF30AC5E7A087CA6F09C0E4284A75CF /* RLMPushClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMPushClient.h; path = include/RLMPushClient.h; sourceTree = "<group>"; };
 		FD5936A84E6282F62A3CEA8E51CAD9F2 /* CountryPickerWithSectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryPickerWithSectionViewController.swift; path = CountryPicker/CountryPicker/CountryPickerWithSectionViewController.swift; sourceTree = "<group>"; };
 		FD6C3B778B63A4944CEAA237D23523E7 /* SDAnimatedImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAnimatedImageView.h; path = SDWebImage/Core/SDAnimatedImageView.h; sourceTree = "<group>"; };
 		FD781D77BBAEE843AAB64493436B8051 /* CL.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = CL.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/CL.png; sourceTree = "<group>"; };
 		FD9E1BFAA40230F0F4FC4C34F1FE9FE2 /* LU.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = LU.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/LU.png; sourceTree = "<group>"; };
 		FDFD3E443A3A0D83CBBF6A0135E316B6 /* ST@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ST@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/ST@2x.png"; sourceTree = "<group>"; };
-		FE30D0040D3A9B5909A49BFDBA999F14 /* RLMNetworkTransport.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMNetworkTransport.mm; path = Realm/RLMNetworkTransport.mm; sourceTree = "<group>"; };
+		FE30D0040D3A9B5909A49BFDBA999F14 /* RLMNetworkTransport.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMNetworkTransport.mm; path = Realm/RLMNetworkTransport.mm; sourceTree = "<group>"; };
 		FE7569C80EEF9B122BA2DE91FB82FA28 /* shared_realm.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = shared_realm.cpp; path = Realm/ObjectStore/src/shared_realm.cpp; sourceTree = "<group>"; };
 		FE77D61489CB795D83EBCAB82A78AA62 /* FJ@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "FJ@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/FJ@2x.png"; sourceTree = "<group>"; };
 		FE82D7DE0ED7B31EEBAC15489BBDAA55 /* SDImageHEICCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageHEICCoder.h; path = SDWebImage/Core/SDImageHEICCoder.h; sourceTree = "<group>"; };
@@ -2479,7 +2480,6 @@
 				F935889C060D8421BED140EC0F2C9683 /* Resources */,
 				3705CC3D0D36BEF9B2FF14B8FCF9E04A /* Support Files */,
 			);
-			name = SKCountryPicker;
 			path = SKCountryPicker;
 			sourceTree = "<group>";
 		};
@@ -2686,7 +2686,6 @@
 				5169FC3EA48852E972266FBD34B392E1 /* Resources */,
 				51B70727AFE4C7E6498027B9E0AF39DF /* Support Files */,
 			);
-			name = GoogleSignIn;
 			path = GoogleSignIn;
 			sourceTree = "<group>";
 		};
@@ -2737,7 +2736,6 @@
 				97AF69F082F2CCE8457824BB042E9743 /* UITableViewVibrantCell.swift */,
 				602157B3CF032F80D6317513176E676B /* Support Files */,
 			);
-			name = SideMenu;
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
@@ -2771,7 +2769,6 @@
 				64DD47F9FE1521FAA3DA4FF34EB99F71 /* GTMOAuth2KeychainCompatibility.m */,
 				522D9449540FF6696B0AB1C1F035CE98 /* Support Files */,
 			);
-			name = GTMAppAuth;
 			path = GTMAppAuth;
 			sourceTree = "<group>";
 		};
@@ -2943,7 +2940,6 @@
 				3B7D149102BE08C59956495F7D122812 /* Headers */,
 				DA7B71E51BB82016ED6430206A6C362C /* Support Files */,
 			);
-			name = Realm;
 			path = Realm;
 			sourceTree = "<group>";
 		};
@@ -3078,7 +3074,6 @@
 				125C860C9E4F2BD061C5B4248F47FC28 /* Core */,
 				582413E24A056DB9D6A1ADFE636396E0 /* Support Files */,
 			);
-			name = SDWebImage;
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
@@ -3122,7 +3117,6 @@
 				79641C8A7F9B268A4351A38B42ADBC08 /* Full */,
 				11FBE863BEDAE79A84DDF5EB2F5FD84B /* Support Files */,
 			);
-			name = GTMSessionFetcher;
 			path = GTMSessionFetcher;
 			sourceTree = "<group>";
 		};
@@ -3189,7 +3183,6 @@
 				F8D94EC78E3DC301B51DEE7F878F013F /* Util.swift */,
 				D1941F8C48C04629586B3E7EEBB53332 /* Support Files */,
 			);
-			name = RealmSwift;
 			path = RealmSwift;
 			sourceTree = "<group>";
 		};
@@ -3264,7 +3257,6 @@
 				5BFA9474EA0AF11C91D8463F1861D87B /* ExternalUserAgent */,
 				1F9982FAE31315259A23BF2A83467ABD /* Support Files */,
 			);
-			name = AppAuth;
 			path = AppAuth;
 			sourceTree = "<group>";
 		};
@@ -3322,7 +3314,6 @@
 				A03FFDC6EEDC7B78BB9DAA1FB47BE35F /* Resources */,
 				39F0DDB9CB35E4665748C110A86E1A7A /* Support Files */,
 			);
-			name = XLPagerTabStrip;
 			path = XLPagerTabStrip;
 			sourceTree = "<group>";
 		};
@@ -4341,7 +4332,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1200;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -5517,7 +5508,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SideMenu/SideMenu-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SideMenu/SideMenu-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5552,7 +5543,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SDWebImage/SDWebImage-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SDWebImage/SDWebImage-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5578,7 +5569,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SKCountryPicker";
 				IBSC_MODULE = SKCountryPicker;
 				INFOPLIST_FILE = "Target Support Files/SKCountryPicker/ResourceBundle-CountryPickerController-SKCountryPicker-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = CountryPickerController;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -5602,7 +5593,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/GTMAppAuth/GTMAppAuth-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/GTMAppAuth/GTMAppAuth-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5638,7 +5629,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SideMenu/SideMenu-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SideMenu/SideMenu-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5709,7 +5700,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/RealmSwift/RealmSwift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/RealmSwift/RealmSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5744,7 +5735,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/XLPagerTabStrip/XLPagerTabStrip-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/XLPagerTabStrip/XLPagerTabStrip-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5778,7 +5769,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/AppAuth/AppAuth-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/AppAuth/AppAuth-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5813,7 +5804,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/XLPagerTabStrip/XLPagerTabStrip-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/XLPagerTabStrip/XLPagerTabStrip-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5839,7 +5830,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5864,7 +5855,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/RealmSwift/RealmSwift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/RealmSwift/RealmSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5890,7 +5881,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SKCountryPicker";
 				IBSC_MODULE = SKCountryPicker;
 				INFOPLIST_FILE = "Target Support Files/SKCountryPicker/ResourceBundle-CountryPickerController-SKCountryPicker-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = CountryPickerController;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -5980,7 +5971,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Realm/Realm-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Realm/Realm-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -6076,7 +6067,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/GTMSessionFetcher/GTMSessionFetcher-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/GTMSessionFetcher/GTMSessionFetcher-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -6110,7 +6101,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/AppAuth/AppAuth-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/AppAuth/AppAuth-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -6136,7 +6127,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/XLPagerTabStrip";
 				IBSC_MODULE = XLPagerTabStrip;
 				INFOPLIST_FILE = "Target Support Files/XLPagerTabStrip/ResourceBundle-XLPagerTabStrip-XLPagerTabStrip-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = XLPagerTabStrip;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -6161,7 +6152,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SKCountryPicker/SKCountryPicker-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SKCountryPicker/SKCountryPicker-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -6188,7 +6179,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/XLPagerTabStrip";
 				IBSC_MODULE = XLPagerTabStrip;
 				INFOPLIST_FILE = "Target Support Files/XLPagerTabStrip/ResourceBundle-XLPagerTabStrip-XLPagerTabStrip-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = XLPagerTabStrip;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -6212,7 +6203,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Realm/Realm-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Realm/Realm-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -6248,7 +6239,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SKCountryPicker/SKCountryPicker-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SKCountryPicker/SKCountryPicker-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -6273,7 +6264,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -6299,7 +6290,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/GTMAppAuth/GTMAppAuth-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/GTMAppAuth/GTMAppAuth-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -6333,7 +6324,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/GTMSessionFetcher/GTMSessionFetcher-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/GTMSessionFetcher/GTMSessionFetcher-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -6368,7 +6359,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SDWebImage/SDWebImage-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SDWebImage/SDWebImage-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4BC0BCDE68931BC7D2F14929 /* Pods_Budget_Management.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4FAED8B1BAFD1378411C38 /* Pods_Budget_Management.framework */; };
+		EC07563C254FD710001FBBA3 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC07563B254FD710001FBBA3 /* LoginPageViewController.swift */; };
+		EC07563F254FD980001FBBA3 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC07563E254FD980001FBBA3 /* LoginPageView.swift */; };
+		EC075642254FD9A3001FBBA3 /* LoginPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC075641254FD9A3001FBBA3 /* LoginPageView.xib */; };
 		EC44D9FB25493665009B39E5 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44D9FA25493665009B39E5 /* ProfileModel.swift */; };
 		EC44DA1A25496299009B39E5 /* LoginCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44DA1925496299009B39E5 /* LoginCollectionViewCell.swift */; };
 		EC4D809E254298AC00D0EA31 /* BudgetBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D809D254298AC00D0EA31 /* BudgetBrain.swift */; };
@@ -31,9 +34,6 @@
 		EC5108D9254057D800A98A3E /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5108D8254057D800A98A3E /* UpdateProfileViewController.swift */; };
 		EC8868932546B5640056A8A3 /* GoalAchievedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8868922546B5640056A8A3 /* GoalAchievedViewController.swift */; };
 		EC8868982546B9E30056A8A3 /* PagerViewForsavingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8868972546B9E30056A8A3 /* PagerViewForsavingsViewController.swift */; };
-		ECC1F625254AB46400C7D91C /* LoginPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC1F624254AB46400C7D91C /* LoginPagerViewController.swift */; };
-		ECC1F628254ABFB500C7D91C /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC1F627254ABFB500C7D91C /* Slide.swift */; };
-		ECC1F62B254ABFC900C7D91C /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECC1F62A254ABFC900C7D91C /* Slide.xib */; };
 		ECC58F252541744C00495610 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC58F242541744C00495610 /* Extensions.swift */; };
 		ECC58F292541963500495610 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC58F282541963500495610 /* SettingsTableViewCell.swift */; };
 		ECC8DB6A2542E37B008F41FA /* BudgetsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8DB692542E37B008F41FA /* BudgetsTabViewController.swift */; };
@@ -41,13 +41,16 @@
 		ECC8DB702542EB53008F41FA /* SavingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8DB6F2542EB53008F41FA /* SavingsViewController.swift */; };
 		ECCD9B5C25481C4C009D8B6F /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCD9B5B25481C4C009D8B6F /* ExpenseViewController.swift */; };
 		ECCD9B5F25481C60009D8B6F /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCD9B5E25481C60009D8B6F /* IncomeViewController.swift */; };
-		ECCD9B6325482F86009D8B6F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCD9B6225482F86009D8B6F /* LoginViewController.swift */; };
+		ECD3C8D525501424002A0CEF /* GuestLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD3C8D425501424002A0CEF /* GuestLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4E4FAED8B1BAFD1378411C38 /* Pods_Budget_Management.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Budget_Management.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F481472DB10F78842114AAF /* Pods-Budget Management.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget Management.debug.xcconfig"; path = "Target Support Files/Pods-Budget Management/Pods-Budget Management.debug.xcconfig"; sourceTree = "<group>"; };
 		78E854B9E3E284EFF63C69C5 /* Pods-Budget Management.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget Management.release.xcconfig"; path = "Target Support Files/Pods-Budget Management/Pods-Budget Management.release.xcconfig"; sourceTree = "<group>"; };
+		EC07563B254FD710001FBBA3 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
+		EC07563E254FD980001FBBA3 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
+		EC075641254FD9A3001FBBA3 /* LoginPageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginPageView.xib; sourceTree = "<group>"; };
 		EC44D9FA25493665009B39E5 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		EC44DA1925496299009B39E5 /* LoginCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC4D809D254298AC00D0EA31 /* BudgetBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetBrain.swift; sourceTree = "<group>"; };
@@ -75,9 +78,6 @@
 		EC5108D8254057D800A98A3E /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
 		EC8868922546B5640056A8A3 /* GoalAchievedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalAchievedViewController.swift; sourceTree = "<group>"; };
 		EC8868972546B9E30056A8A3 /* PagerViewForsavingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewForsavingsViewController.swift; sourceTree = "<group>"; };
-		ECC1F624254AB46400C7D91C /* LoginPagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPagerViewController.swift; sourceTree = "<group>"; };
-		ECC1F627254ABFB500C7D91C /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
-		ECC1F62A254ABFC900C7D91C /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		ECC58F242541744C00495610 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ECC58F282541963500495610 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		ECC8DB692542E37B008F41FA /* BudgetsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetsTabViewController.swift; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		ECC8DB6F2542EB53008F41FA /* SavingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsViewController.swift; sourceTree = "<group>"; };
 		ECCD9B5B25481C4C009D8B6F /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
 		ECCD9B5E25481C60009D8B6F /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
-		ECCD9B6225482F86009D8B6F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ECD3C8D425501424002A0CEF /* GuestLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestLoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,8 +177,8 @@
 				EC8868972546B9E30056A8A3 /* PagerViewForsavingsViewController.swift */,
 				ECCD9B5B25481C4C009D8B6F /* ExpenseViewController.swift */,
 				ECCD9B5E25481C60009D8B6F /* IncomeViewController.swift */,
-				ECCD9B6225482F86009D8B6F /* LoginViewController.swift */,
-				ECC1F624254AB46400C7D91C /* LoginPagerViewController.swift */,
+				EC07563B254FD710001FBBA3 /* LoginPageViewController.swift */,
+				ECD3C8D425501424002A0CEF /* GuestLoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -189,8 +189,8 @@
 				EC510865253FFDA000A98A3E /* Main.storyboard */,
 				EC5108BA2540248300A98A3E /* HeaderView.xib */,
 				EC5108BF254024AF00A98A3E /* HeaderView.swift */,
-				ECC1F627254ABFB500C7D91C /* Slide.swift */,
-				ECC1F62A254ABFC900C7D91C /* Slide.xib */,
+				EC07563E254FD980001FBBA3 /* LoginPageView.swift */,
+				EC075641254FD9A3001FBBA3 /* LoginPageView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -291,9 +291,9 @@
 				EC51086C253FFDA100A98A3E /* LaunchScreen.storyboard in Resources */,
 				EC510869253FFDA100A98A3E /* Assets.xcassets in Resources */,
 				EC5108BB2540248300A98A3E /* HeaderView.xib in Resources */,
+				EC075642254FD9A3001FBBA3 /* LoginPageView.xib in Resources */,
 				EC510867253FFDA000A98A3E /* Main.storyboard in Resources */,
 				EC510881253FFE9500A98A3E /* open_san.ttf in Resources */,
-				ECC1F62B254ABFC900C7D91C /* Slide.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,11 +374,9 @@
 				EC510864253FFDA000A98A3E /* DashBoard.swift in Sources */,
 				EC510860253FFDA000A98A3E /* AppDelegate.swift in Sources */,
 				EC5108C925403DF500A98A3E /* AccountsViewController.swift in Sources */,
-				ECC1F628254ABFB500C7D91C /* Slide.swift in Sources */,
 				EC5108C625403DDD00A98A3E /* CategoriesViewController.swift in Sources */,
 				ECCD9B5F25481C60009D8B6F /* IncomeViewController.swift in Sources */,
 				EC5108C325403DCF00A98A3E /* BudgetViewController.swift in Sources */,
-				ECCD9B6325482F86009D8B6F /* LoginViewController.swift in Sources */,
 				ECCD9B5C25481C4C009D8B6F /* ExpenseViewController.swift in Sources */,
 				ECC8DB6A2542E37B008F41FA /* BudgetsTabViewController.swift in Sources */,
 				ECC8DB6D2542EB3F008F41FA /* ActivitiesTabViewController.swift in Sources */,
@@ -386,11 +384,13 @@
 				ECC58F292541963500495610 /* SettingsTableViewCell.swift in Sources */,
 				EC5108A825401AA200A98A3E /* SideMenuTableViewCell.swift in Sources */,
 				EC510862253FFDA000A98A3E /* SceneDelegate.swift in Sources */,
+				EC07563F254FD980001FBBA3 /* LoginPageView.swift in Sources */,
 				EC5108882540018E00A98A3E /* SWRevealViewController.m in Sources */,
 				EC5108C0254024AF00A98A3E /* HeaderView.swift in Sources */,
+				EC07563C254FD710001FBBA3 /* LoginPageViewController.swift in Sources */,
+				ECD3C8D525501424002A0CEF /* GuestLoginViewController.swift in Sources */,
 				EC5108CC25403E0B00A98A3E /* SettingsViewController.swift in Sources */,
 				ECC58F252541744C00495610 /* Extensions.swift in Sources */,
-				ECC1F625254AB46400C7D91C /* LoginPagerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

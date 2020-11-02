@@ -10,13 +10,17 @@ import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-     
+
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         // Initialize Google sign-in
         
         createDirectory()
-        GIDSignIn.sharedInstance().clientID = "117501428831-i2g7aivm9tj0dmlve0pb6i6i85tkafhv.apps.googleusercontent.com"   
+//        checkUserLoggedIn()
+        GIDSignIn.sharedInstance().clientID = "117501428831-i2g7aivm9tj0dmlve0pb6i6i85tkafhv.apps.googleusercontent.com"
+        
         return true
     }
     
@@ -52,7 +56,7 @@ extension AppDelegate {
         let docDirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
         
         if let docDirPath = docDirPath {
-//            let directoryPath = docDirPath.appending("/Avengers Assemble")
+            //            let directoryPath = docDirPath.appending("/Avengers Assemble")
             print(docDirPath)
             let fileManager = FileManager.default
             
@@ -67,4 +71,38 @@ extension AppDelegate {
             }
         }
     }
+    
+    private func checkUserLoggedIn(){
+//        let controller = UIStoryboard(name: "Main", bundle: nil)
+//        let loginVC = controller.instantiateViewController(identifier: Constants.StoryboardIDs.login) as! LoginPageViewController
+//        let dasboardVC = controller.instantiateViewController(identifier: Constants.StoryboardIDs.dashboard) as! DashBoard
+//
+//
+//        if GIDSignIn.sharedInstance()?.currentUser != nil {
+//            print("Logged in...")
+//            self.window?.rootViewController = loginVC
+//
+//        } else {
+//            print("Not Logged in...")
+//            self.window?.rootViewController = dasboardVC
+//        }
+        
+//        if let navigationController = self.window?.rootViewController as? UINavigationController {
+//            navigationController.pushViewController(dasboardVC, animated: true)
+//        } else {
+//            print("Navigation Controller not found!")
+//        }
+        
+        
+//        if let window = self.window, let rootViewController = window.rootViewController {
+//            var currentController = rootViewController
+//
+//            while let presentedController = currentController.presentedViewController {
+//                currentController = presentedController
+//            }
+//            currentController.present(navController, animated: true, completion: nil)
+//        }
+    }
+    
+   
 }

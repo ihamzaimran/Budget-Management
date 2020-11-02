@@ -23,7 +23,8 @@ struct Constants {
         static let manageCategoryTab = "ManageCategoryTabStoryboard"
         static let expense = "ExpenseStoryboard"
         static let income = "IncomeStoryboard"
-        static let loginPager = "LoginPagerStoryboard"
+        static let login = "LoginPagerStoryboard"
+        static let GuestLogin = "GuestLoginStoryboard"
     }
     
     struct TableViewIdentifier {
