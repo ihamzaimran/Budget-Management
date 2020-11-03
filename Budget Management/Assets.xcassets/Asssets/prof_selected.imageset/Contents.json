@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "prof_selected.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "prof_selected.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

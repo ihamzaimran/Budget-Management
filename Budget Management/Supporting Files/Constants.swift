@@ -38,7 +38,7 @@ struct Constants {
     }
     
     struct Images {
-        static let settings = ["user_profile_mini", "icon_currency", "icon_currency", "wipe_all_data", "like_app" ,"share_app"]
+        static let settings = ["user_profile_mini", "icon_currency", "icon_currency", "wipe_all_data", "like_app" ,"share_app", "logout"]
         static let dashboard = "dash_bottom_colored"
         static let budgetTab = "budget_bottm_colored"
         static let activityTab = "activity_bottm_color"
@@ -47,8 +47,8 @@ struct Constants {
     }
     
     struct Text {
-        static let settingsText = ["Profile", "Currency", "Country", "Wipe All Data" , "Rate Our App", "Share Our App"]
-        static let settingssubText = ["name, email, gender, profile picture", "Set your native currency", "Set your Country of Origin", "This Action will clear records" , "Like our app on App Store", "Share our app with others"]
+        static let settingsText = ["Profile", "Currency", "Country", "Wipe All Data" , "Rate Our App", "Share Our App", "Sign Out"]
+        static let settingssubText = ["name, email, gender, profile picture", "Set your native currency", "Set your Country of Origin", "This Action will clear records" , "Like our app on App Store", "Share our app with others", "sign out of your google account."]
     }
     struct Links {
         static let appStore = "https://itunes.apple.com/pk/developer/suave-solutions/id415880778"

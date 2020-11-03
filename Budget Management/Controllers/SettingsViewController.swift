@@ -7,6 +7,7 @@
 
 import UIKit
 import SKCountryPicker
+import GoogleSignIn
 
 class SettingsViewController: UIViewController {
     
@@ -67,7 +68,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             let newVC = storyboard.instantiateViewController(identifier: Constants.StoryboardIDs.updateProfile) as! UpdateProfileViewController
             self.navigationController?.pushViewController(newVC, animated: false)
         case 1:
-//            break
+            //            break
             selectCurrency()
         case 2:
             selectCountry()
@@ -77,14 +78,32 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             budgetBrain.openExternalLink(with: Constants.Links.appStore)
         case 5:
             showShareSheet()
+        case 6:
+            disconnectGoogleAccount()
         default:
             break
+        }
+    }
+    
+    private func disconnectGoogleAccount() {
+        
+        if GIDSignIn.sharedInstance()?.currentUser != nil {
+            let alert = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (_) in
+                GIDSignIn.sharedInstance()?.signOut()
+                print("Log Out successful.")
+                let loginVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.login) as! LoginPageViewController
+                self.navigationController?.pushViewController(loginVC, animated: true)
+            }))
+            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
         }
         
     }
 }
 
- 
+
 //MARK:- extension to show share sheet
 
 extension SettingsViewController {
@@ -104,10 +123,10 @@ extension SettingsViewController {
         }
         countryController.flagStyle = .circular
         countryController.isCountryDialHidden = true
-//        countryController.detailColor = UIColor(named: "PrimaryColor")!
+        //        countryController.detailColor = UIColor(named: "PrimaryColor")!
     }
     fileprivate func selectCurrency(){
-   
+        
     }
 }
 

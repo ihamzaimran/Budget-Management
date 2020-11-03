@@ -22,6 +22,8 @@ class UpdateProfileViewController: UIViewController {
     private var imagePickerController = UIImagePickerController()
     private let focusedTextFieldColor = UIColor(named: "PrimaryColor")!
     private let realm = try! Realm()
+    private var userPickedImage: UIImage?
+    private var userEmail: String?
     
     override var prefersStatusBarHidden: Bool {
         true
@@ -51,7 +53,7 @@ class UpdateProfileViewController: UIViewController {
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+        if ((notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue) != nil {
             if self.view.frame.origin.y == 0 {
                 self.view.frame.origin.y -= 200
             }
@@ -65,21 +67,28 @@ class UpdateProfileViewController: UIViewController {
     }
     
     private func getDataFromRealm(){
+        
         let data = realm.objects(ProfileModel.self)
         
-        for data in data
-        {
-            if let details = self.realm.objects(ProfileModel.self).filter("email = %@", data.email).first {
+        if ((GIDSignIn.sharedInstance()?.hasPreviousSignIn()) != nil)  {
+           print(GIDSignIn.sharedInstance()?.currentUser.profile.email)
+            userEmail = GIDSignIn.sharedInstance()?.currentUser.profile.email
+        }
+        
+//        for data in data
+//        {
+            if let details = self.realm.objects(ProfileModel.self).filter("email = %@", userEmail).first {
                 let detail = details.details
                 
                 for detail in detail {
-                    emailTxt.text = data.email
+                    emailTxt.text = userEmail
                     nameTxt.text = detail.name
+//                    userEmail = data.email
                     profileImage.image = UIImage(data: detail.profileImageData!)
                     profileImage.makeRoundedImage()
                 }
             }
-        }
+//        }
     }
     
     
@@ -94,7 +103,8 @@ class UpdateProfileViewController: UIViewController {
     }
     
     @IBAction func saveIconButton(_ sender: UIButton) {
-        
+        print("Saving Data...")
+        saveImage(image: userPickedImage)
     }
     
     @IBAction func gallerButton(_ sender: UIButton) {
@@ -117,21 +127,21 @@ class UpdateProfileViewController: UIViewController {
         removeUIPickerView()
     }
     
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        removeUIPickerView()
-//
-//        if emailTxt.isFirstResponder {
-//            emailTxt.resignFirstResponder()
-//        } else if nameTxt.isFirstResponder {
-//            nameTxt.resignFirstResponder()
-//        } else if mobileTxt.isFirstResponder {
-//            mobileTxt.resignFirstResponder()
-//        } else if selectGenderTxt.isFirstResponder {
-//            selectGenderTxt.resignFirstResponder()
-//        } else if professionTxt.isFirstResponder {
-//            professionTxt.resignFirstResponder()
-//        }
-//    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        removeUIPickerView()
+
+        if emailTxt.isFirstResponder {
+            emailTxt.resignFirstResponder()
+        } else if nameTxt.isFirstResponder {
+            nameTxt.resignFirstResponder()
+        } else if mobileTxt.isFirstResponder {
+            mobileTxt.resignFirstResponder()
+        } else if selectGenderTxt.isFirstResponder {
+            selectGenderTxt.resignFirstResponder()
+        } else if professionTxt.isFirstResponder {
+            professionTxt.resignFirstResponder()
+        }
+    }
     
     private func removeUIPickerView(){
         self.uiviewPicker.removeFromSuperview()
@@ -151,23 +161,46 @@ class UpdateProfileViewController: UIViewController {
         selectGenderTxt.setTextFieldStyle()
         professionTxt.setTextFieldStyle()
     }
-    
 }
 
 
 //MARK:- extension uiimagepicker controller
 
 extension UpdateProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let pickedImage = info[.originalImage] as? UIImage else {
             fatalError("An unexpected error occured!")
         }
         
         profileImage.image = pickedImage
-        profileImage.contentMode = .scaleAspectFill
+        userPickedImage = pickedImage
+        profileImage.contentMode = .scaleAspectFit
         profileImage.makeRoundedImage()
-        
         imagePickerController.dismiss(animated: true, completion: nil)
+    }
+    
+    private func saveImage(image: UIImage?){
+        
+        if let email = userEmail {
+            if let details = self.realm.objects(ProfileModel.self).filter("email = %@", email).first {
+                do {
+                    try self.realm.write {
+                        let profileDetails = ProfileDetails()
+                        if let image = userPickedImage{
+                            let imageData = image.jpegData(compressionQuality: 0.2)
+                            profileDetails.profileImageData = imageData
+                            details.details.append(profileDetails)
+                            print("Image saved successfully!")
+                        }
+                    }
+                } catch {
+                    print("Error saving new items, \(error)")
+                }
+            }
+        } else {
+            print("Not a registered user!")
+        }
     }
 }
 
@@ -192,7 +225,6 @@ extension UpdateProfileViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == emailTxt {
-            dismiss(animated: true, completion: nil)
             textField.setTextFieldStyle()
         } else if textField == nameTxt{
             textField.setTextFieldStyle()

@@ -17,6 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // Initialize Google sign-in
         
+//        var paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+//        let documentsDirectory = paths[0]
+//        let fileName = "\(Date()).log"
+//        let logFilePath = (documentsDirectory as NSString).appendingPathComponent(fileName)
+//        freopen(logFilePath.cString(using: String.Encoding.ascii)!, "a+", stderr)
+        
         createDirectory()
 //        checkUserLoggedIn()
         GIDSignIn.sharedInstance().clientID = "117501428831-i2g7aivm9tj0dmlve0pb6i6i85tkafhv.apps.googleusercontent.com"

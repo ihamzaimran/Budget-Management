@@ -147,12 +147,12 @@
 		EC51085E253FFDA000A98A3E /* Budget Management */ = {
 			isa = PBXGroup;
 			children = (
-				EC4D809C2542988B00D0EA31 /* Models */,
 				ECC58F272541960D00495610 /* Table View Cells */,
 				EC510883253FFE9D00A98A3E /* Fonts */,
-				EC510878253FFDF000A98A3E /* Supporting Files */,
-				EC510875253FFDD700A98A3E /* Controllers */,
+				EC4D809C2542988B00D0EA31 /* Models */,
 				EC510877253FFDE500A98A3E /* Views */,
+				EC510875253FFDD700A98A3E /* Controllers */,
+				EC510878253FFDF000A98A3E /* Supporting Files */,
 				EC510868253FFDA100A98A3E /* Assets.xcassets */,
 				EC51086A253FFDA100A98A3E /* LaunchScreen.storyboard */,
 				EC51086D253FFDA100A98A3E /* Info.plist */,

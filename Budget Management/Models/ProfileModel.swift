@@ -12,6 +12,10 @@ class ProfileModel: Object {
     
     @objc dynamic var email = ""
     let details = List<ProfileDetails>()
+    
+    override static func primaryKey() -> String? {
+        return "email"
+    }
 }
 
 
