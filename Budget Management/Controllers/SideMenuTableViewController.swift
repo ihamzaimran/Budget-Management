@@ -45,7 +45,7 @@ extension SideMenuTableViewController: UITableViewDataSource, UITableViewDelegat
         self.navigationController?.pushViewController(newVC, animated: false)
         revealViewController()?.revealToggle(animated: true)
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         nameArr.count
     }
@@ -90,10 +90,10 @@ extension SideMenuTableViewController: UITableViewDataSource, UITableViewDelegat
             revealViewController()?.revealToggle(animated: true)
             break
         case 4:
-//            self.dismiss(animated: true) {
-//                print("Dismiss Completion working.")
-//                self.shareDelegate?.MenuDismissed()
-//            }
+            //            self.dismiss(animated: true) {
+            //                print("Dismiss Completion working.")
+            //                self.shareDelegate?.MenuDismissed()
+            //            }
             let description = "Budget Management is a free to download app.\n Download it now from the App Store."
             let shareAll = [description]
             let activityViewController = UIActivityViewController(activityItems: shareAll, applicationActivities: nil)
@@ -140,30 +140,20 @@ extension SideMenuTableViewController: UITableViewDataSource, UITableViewDelegat
         
         let data = realm.objects(ProfileModel.self)
         header.delegate = self
-       
-            for data in data
-            {
-//                print("email = \(data.email)")
+        
+        for data in data
+        {
+            if let details = self.realm.objects(ProfileModel.self).filter("email = %@", data.email).first {
                 
-                if let details = self.realm.objects(ProfileModel.self).filter("email = %@", data.email).first {
-                    let detail = details.details
-                    
-                    for detail in detail {
-//                        print("name = \(detail.name)")
-//                        print("imageData = \(detail.profileImageData)")
-                        
-                        header.HeaderLabel.text = detail.name
-                        header.headerImage.image = UIImage(data: detail.profileImageData!)
-                        header.headerImage.makeRoundedImage()
-                    }
-                }
+                header.HeaderLabel.text = details.name
+                header.headerImage.contentMode = .scaleAspectFill
+                header.headerImage.image = UIImage(data: details.profileImageData!)
+                header.headerImage.makeRoundedImage()
             }
-        
-//        header.HeaderLabel.text = "Name"
-//        header.headerImage.image = UIImage(named: "user_dummy")
-        
+        }
     }
 }
+
 
 
 

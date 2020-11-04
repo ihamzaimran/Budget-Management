@@ -47,8 +47,9 @@ class LoginPageViewController: UIViewController, GIDSignInDelegate {
     private func checkPreviousSignIn() {
         
         if GIDSignIn.sharedInstance()?.hasPreviousSignIn() != nil {
-            print("this user has previous sign in")
-            GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+//            print("this user has previous sign in")
+//            GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+            goToDashboardVC()
         }
     }
     
@@ -66,12 +67,9 @@ class LoginPageViewController: UIViewController, GIDSignInDelegate {
             if let details = self.realm.objects(ProfileModel.self).filter("email = %@", email).first {
                 do {
                     try self.realm.write {
-                        let profileDetails = ProfileDetails()
                         if let name = fname, let image = imgData {
-                            profileDetails.name = name
-                            profileDetails.profileImageData = image
-                            details.details.append(profileDetails)
-//                            print(details.details.isEqual(profileDetails))
+                            details.name = name
+                            details.profileImageData = image
                             print("data saved!")
                         }
                     }

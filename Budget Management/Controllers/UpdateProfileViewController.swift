@@ -18,6 +18,26 @@ class UpdateProfileViewController: UIViewController {
     @IBOutlet weak var mobileTxt: UITextField!
     @IBOutlet weak var selectGenderTxt: UITextField!
     @IBOutlet weak var professionTxt: UITextField!
+    @IBOutlet var genderViewPicker: UIView!
+    @IBOutlet weak var femaleGenderTxt: UILabel!
+    @IBOutlet weak var maleGenderTxt: UILabel!
+    @IBOutlet weak var femaleGenderView: UIView!
+    @IBOutlet weak var maleGenderView: UIView!
+    @IBOutlet weak var femaleImageView: UIImageView!
+    @IBOutlet weak var maleImageView: UIImageView!
+    @IBOutlet weak var studentView: UIView!
+    @IBOutlet weak var studentImageView: UIImageView!
+    @IBOutlet weak var professionalView: UIView!
+    @IBOutlet weak var professionalImageView: UIImageView!
+    @IBOutlet weak var housewifeView: UIView!
+    @IBOutlet weak var housewifeImageView: UIImageView!
+    @IBOutlet weak var retiredView: UIView!
+    @IBOutlet weak var retiredImageView: UIImageView!
+    @IBOutlet var professionView: UIView!
+    @IBOutlet weak var studentTxt: UILabel!
+    @IBOutlet weak var professionaltxt: UILabel!
+    @IBOutlet weak var housewifeTxt: UILabel!
+    @IBOutlet weak var retiredTxt: UILabel!
     
     private var imagePickerController = UIImagePickerController()
     private let focusedTextFieldColor = UIColor(named: "PrimaryColor")!
@@ -32,9 +52,12 @@ class UpdateProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        
         navigationItem.hidesBackButton = true
         imagePickerController.delegate = self
         
+        profileImage.contentMode = .scaleAspectFill
         nameTxt.delegate = self
         emailTxt.delegate = self
         mobileTxt.delegate = self
@@ -43,7 +66,7 @@ class UpdateProfileViewController: UIViewController {
         
         setTextFieldBorderColor()
         getDataFromRealm()
-        registerNotification()
+        //        registerNotification()
     }
     
     private func registerNotification() {
@@ -59,7 +82,7 @@ class UpdateProfileViewController: UIViewController {
             }
         }
     }
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y += 200
@@ -68,33 +91,32 @@ class UpdateProfileViewController: UIViewController {
     
     private func getDataFromRealm(){
         
-        let data = realm.objects(ProfileModel.self)
-        
-        if ((GIDSignIn.sharedInstance()?.hasPreviousSignIn()) != nil)  {
-           print(GIDSignIn.sharedInstance()?.currentUser.profile.email)
+        if ((GIDSignIn.sharedInstance()?.currentUser) != nil)  {
             userEmail = GIDSignIn.sharedInstance()?.currentUser.profile.email
+        } else {
+            print("User is not signed in. May need internet connection to sign in.")
         }
         
-//        for data in data
-//        {
+        if let userEmail = userEmail {
             if let details = self.realm.objects(ProfileModel.self).filter("email = %@", userEmail).first {
-                let detail = details.details
                 
-                for detail in detail {
-                    emailTxt.text = userEmail
-                    nameTxt.text = detail.name
-//                    userEmail = data.email
-                    profileImage.image = UIImage(data: detail.profileImageData!)
+                emailTxt.text = userEmail
+                nameTxt.text = details.name
+                mobileTxt.text = details.mobile
+                selectGenderTxt.text = details.gender
+                
+                if let image = details.profileImageData {
+                    profileImage.image = UIImage(data: image)
+                    userPickedImage = UIImage(data: image)
                     profileImage.makeRoundedImage()
                 }
             }
-//        }
+        }
     }
     
     
     @IBAction func profileImageButton(_ sender: UIButton) {
-        self.uiviewPicker.frame = self.view.frame
-        self.view.addSubview(uiviewPicker)
+        showPicker(forView: uiviewPicker)
     }
     
     
@@ -104,14 +126,14 @@ class UpdateProfileViewController: UIViewController {
     
     @IBAction func saveIconButton(_ sender: UIButton) {
         print("Saving Data...")
-        saveImage(image: userPickedImage)
+        saveData()
     }
     
     @IBAction func gallerButton(_ sender: UIButton) {
         self.imagePickerController.sourceType = .photoLibrary
         self.imagePickerController.allowsEditing = false
         self.present(imagePickerController, animated: true, completion: {
-            self.removeUIPickerView()
+            self.uiviewPicker.removeFromSuperview()
         })
     }
     
@@ -119,17 +141,43 @@ class UpdateProfileViewController: UIViewController {
         self.imagePickerController.sourceType = .camera
         self.imagePickerController.allowsEditing = false
         self.present(imagePickerController, animated: true, completion: {
-            self.removeUIPickerView()
+            self.uiviewPicker.removeFromSuperview()
         })
     }
     
     @IBAction func uiPickerViewCancelButton(_ sender: UIButton) {
-        removeUIPickerView()
+        self.uiviewPicker.removeFromSuperview()
     }
     
+    @IBAction func selectGenderOKBtn(_ sender: UIButton) {
+        
+        if femaleGenderView.tag == 1 {
+            selectGenderTxt.text = "Female"
+        } else if maleGenderView.tag == 1 {
+            selectGenderTxt.text = "Male"
+        }
+        
+        removeUIView()
+    }
+    
+    @IBAction func selectGenderCancelBtn(_ sender: UIButton) {
+        removeUIView()
+    }
+    
+    @IBAction func prefessionOKBtn(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func professionCancelBtn(_ sender: UIButton) {
+        self.professionView.removeFromSuperview()
+    }
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        removeUIPickerView()
-
+        
+        //        self.removeUIView()
+        //        self.uiviewPicker.removeFromSuperview()
+        
         if emailTxt.isFirstResponder {
             emailTxt.resignFirstResponder()
         } else if nameTxt.isFirstResponder {
@@ -143,8 +191,13 @@ class UpdateProfileViewController: UIViewController {
         }
     }
     
-    private func removeUIPickerView(){
-        self.uiviewPicker.removeFromSuperview()
+    private func showPicker(forView: UIView){
+        forView.frame = self.view.frame
+        self.view.addSubview(forView)
+    }
+    
+    private func removeUIView(){
+        self.genderViewPicker.removeFromSuperview()
     }
     
     private func setTextFieldBorderColor(){
@@ -161,6 +214,98 @@ class UpdateProfileViewController: UIViewController {
         selectGenderTxt.setTextFieldStyle()
         professionTxt.setTextFieldStyle()
     }
+    
+    @IBAction func femaleViewTapGestureRecogniser(_ sender: UITapGestureRecognizer) {
+        
+        maleGenderTxt.textColor = .darkGray
+        femaleGenderTxt.textColor = UIColor(named: "HeaderColor")
+        femaleImageView.backgroundColor = UIColor(named: "HeaderColor")
+        maleImageView.backgroundColor = nil
+        femaleGenderView.tag = 1
+        maleGenderView.tag = 0
+        print("female")
+//        removeUIView()
+    }
+    
+    @IBAction func maleViewTapGestureRecogniser(_ sender: UITapGestureRecognizer) {
+        
+        femaleGenderTxt.textColor = .darkGray
+        maleGenderTxt.textColor = UIColor(named: "HeaderColor")
+        femaleImageView.backgroundColor = nil
+        maleImageView.backgroundColor = UIColor(named: "HeaderColor")
+        femaleGenderView.tag = 0
+        maleGenderView.tag = 1
+        print("male")
+//        removeUIView()
+    }
+    
+    @IBAction func studentTapRecogniserView(_ sender: UITapGestureRecognizer) {
+        studentImageView.image = UIImage(named: "student_selected")
+        professionalImageView.image = UIImage(named: "icon_professional")
+        housewifeImageView.image = UIImage(named: "icon_housewife")
+        retiredImageView.image = UIImage(named: "icon_retired")
+        
+        studentTxt.textColor = UIColor(named: "HeaderColor")
+        professionaltxt.textColor = .darkGray
+        housewifeTxt.textColor = .darkGray
+        retiredTxt.textColor = .darkGray
+        
+        studentView.tag = 1
+        professionalView.tag = 0
+        housewifeView.tag = 0
+        retiredView.tag = 0
+    }
+    
+    @IBAction func professionalTapRecogniserView(_ sender: UITapGestureRecognizer) {
+        studentImageView.image = UIImage(named: "icon_student")
+        professionalImageView.image = UIImage(named: "prof_selected")
+        housewifeImageView.image = UIImage(named: "icon_housewife")
+        retiredImageView.image = UIImage(named: "icon_retired")
+        
+        studentTxt.textColor = .darkGray
+        professionaltxt.textColor = UIColor(named: "HeaderColor")
+        housewifeTxt.textColor = .darkGray
+        retiredTxt.textColor = .darkGray
+        
+        studentView.tag = 0
+        professionalView.tag = 1
+        housewifeView.tag = 0
+        retiredView.tag = 0
+    }
+    
+    @IBAction func housewifeTapRecogniserView(_ sender: UITapGestureRecognizer) {
+        studentImageView.image = UIImage(named: "icon_student")
+        professionalImageView.image = UIImage(named: "icon_professional")
+        housewifeImageView.image = UIImage(named: "house_selected")
+        retiredImageView.image = UIImage(named: "icon_retired")
+        
+        studentTxt.textColor = .darkGray
+        professionaltxt.textColor = .darkGray
+        housewifeTxt.textColor = UIColor(named: "HeaderColor")
+        retiredTxt.textColor = .darkGray
+        
+        studentView.tag = 0
+        professionalView.tag = 0
+        housewifeView.tag = 1
+        retiredView.tag = 0
+    }
+    
+    @IBAction func reiredTapRecogniserView(_ sender: UITapGestureRecognizer) {
+        studentImageView.image = UIImage(named: "icon_student")
+        professionalImageView.image = UIImage(named: "icon_professional")
+        housewifeImageView.image = UIImage(named: "icon_housewife")
+        retiredImageView.image = UIImage(named: "retired_selected")
+        
+        studentTxt.textColor = .darkGray
+        professionaltxt.textColor = .darkGray
+        housewifeTxt.textColor = .darkGray
+        retiredTxt.textColor = UIColor(named: "HeaderColor")
+        
+        studentView.tag = 0
+        professionalView.tag = 0
+        housewifeView.tag = 0
+        retiredView.tag = 1
+    }
 }
 
 
@@ -175,24 +320,24 @@ extension UpdateProfileViewController: UIImagePickerControllerDelegate, UINaviga
         
         profileImage.image = pickedImage
         userPickedImage = pickedImage
-        profileImage.contentMode = .scaleAspectFit
+        profileImage.contentMode = .scaleAspectFill
         profileImage.makeRoundedImage()
         imagePickerController.dismiss(animated: true, completion: nil)
     }
     
-    private func saveImage(image: UIImage?){
+    private func saveData(){
         
         if let email = userEmail {
             if let details = self.realm.objects(ProfileModel.self).filter("email = %@", email).first {
                 do {
                     try self.realm.write {
-                        let profileDetails = ProfileDetails()
-                        if let image = userPickedImage{
-                            let imageData = image.jpegData(compressionQuality: 0.2)
-                            profileDetails.profileImageData = imageData
-                            details.details.append(profileDetails)
-                            print("Image saved successfully!")
-                        }
+                        
+                        let imageData = userPickedImage?.jpegData(compressionQuality: 0.2)
+                        details.mobile = mobileTxt.text ?? ""
+                        details.profileImageData = imageData
+                        details.gender = selectGenderTxt.text ?? ""
+                        print("Data saved successfully!")
+                        gotoSettingsVC()
                     }
                 } catch {
                     print("Error saving new items, \(error)")
@@ -202,8 +347,11 @@ extension UpdateProfileViewController: UIImagePickerControllerDelegate, UINaviga
             print("Not a registered user!")
         }
     }
+    
+    private func gotoSettingsVC(){
+        self.navigationController?.popViewController(animated: true)
+    }
 }
-
 
 //MARK:- uitextfieldDelegate
 
@@ -211,15 +359,21 @@ extension UpdateProfileViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == emailTxt {
+            GIDSignIn.sharedInstance()?.signIn()
+            textField.resignFirstResponder()
             textField.setTextFieldStyle(with: focusedTextFieldColor, for: 2.0)
         } else if textField == nameTxt{
             textField.setTextFieldStyle(with: focusedTextFieldColor, for: 2.0)
         } else if textField == mobileTxt {
             textField.setTextFieldStyle(with: focusedTextFieldColor, for: 2.0)
         } else if textField == selectGenderTxt {
+            textField.resignFirstResponder()
             textField.setTextFieldStyle(with: focusedTextFieldColor, for: 2.0)
+            showPicker(forView: genderViewPicker)
         } else if textField == professionTxt {
             textField.setTextFieldStyle(with: focusedTextFieldColor, for: 2.0)
+            textField.resignFirstResponder()
+            showPicker(forView: professionView)
         }
     }
     
@@ -246,6 +400,7 @@ extension UpdateProfileViewController: UITextFieldDelegate {
         } else if mobileTxt.isFirstResponder {
             selectGenderTxt.becomeFirstResponder()
         } else if selectGenderTxt.isFirstResponder {
+            //            removeUIView(from: genderViewPicker)
             professionTxt.becomeFirstResponder()
         } else if professionTxt.isFirstResponder {
             professionTxt.resignFirstResponder()

@@ -8,6 +8,7 @@
 import UIKit
 import SideMenu
 import XLPagerTabStrip
+import GoogleSignIn
 
 class DashBoard: UIViewController {
     
@@ -27,10 +28,21 @@ class DashBoard: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        GIDSignIn.sharedInstance()?.delegate = self
+        checkPreviousSignIn()
+        
         navigationItem.hidesBackButton = true
         setupSideMenu()
         updateMenus()
         sideMenuVC?.shareDelegate = self
+    }
+    
+    private func checkPreviousSignIn() {
+        
+        if GIDSignIn.sharedInstance()?.hasPreviousSignIn() != nil {
+            print("This user have signed in previously. Restoring Sign in.")
+            GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+        }
     }
 }
 
@@ -98,3 +110,16 @@ extension DashBoard: ShareSheetProtocol {
     }
 }
 
+//MARK:- google sign in delegate
+
+extension DashBoard: GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
+        if let e = error {
+            print("Error = \(e.localizedDescription)")
+
+            return
+        }
+    }
+}

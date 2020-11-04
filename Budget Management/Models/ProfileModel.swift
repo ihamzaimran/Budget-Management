@@ -11,7 +11,12 @@ import RealmSwift
 class ProfileModel: Object {
     
     @objc dynamic var email = ""
-    let details = List<ProfileDetails>()
+    @objc dynamic var name = ""
+    @objc dynamic var mobile = ""
+    @objc dynamic var gender = ""
+    @objc dynamic var profession = ""
+    @objc dynamic var profileImageData: Data? = nil
+//    let details = List<ProfileDetails>()
     
     override static func primaryKey() -> String? {
         return "email"
@@ -19,11 +24,11 @@ class ProfileModel: Object {
 }
 
 
-class ProfileDetails: Object {
-    @objc dynamic var name = ""
-    @objc dynamic var mobile = ""
-    @objc dynamic var gender = ""
-    @objc dynamic var profession = ""
-    @objc dynamic var profileImageData: Data? = nil
-    var parentDetails = LinkingObjects(fromType: ProfileModel.self, property: "details")
-}
+//class ProfileDetails: Object {
+//    @objc dynamic var name = ""
+//    @objc dynamic var mobile = ""
+//    @objc dynamic var gender = ""
+//    @objc dynamic var profession = ""
+//    @objc dynamic var profileImageData: Data? = nil
+//    var parentDetails = LinkingObjects(fromType: ProfileModel.self, property: "details")
+//}
