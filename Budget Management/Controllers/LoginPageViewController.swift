@@ -24,6 +24,8 @@ class LoginPageViewController: UIViewController, GIDSignInDelegate {
     private var fname: String?
     private var em: String?
     private var imgData: Data?
+    private var userID: String?
+    let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,35 +43,28 @@ class LoginPageViewController: UIViewController, GIDSignInDelegate {
         loginPageControl.numberOfPages = slides.count
         loginPageControl.currentPage = 0
         view.bringSubviewToFront(loginPageControl)
-        checkPreviousSignIn()
     }
     
-    private func checkPreviousSignIn() {
-        
-        if GIDSignIn.sharedInstance()?.hasPreviousSignIn() != nil {
-//            print("this user has previous sign in")
-//            GIDSignIn.sharedInstance()?.restorePreviousSignIn()
-            goToDashboardVC()
-        }
-    }
     
     
     private func saveData(){
         
-        print("save data func calling.")
-        if let email = em{
-            self.profileData.email = email
-            
+        print("save data function called.")
+        if let id = userID{
+            self.profileData.id = id
+            userDefaults.setValue(id, forKey: "UserID")
+            userDefaults.synchronize()
             try! self.realm.write {
                 self.realm.add(self.profileData, update: .modified)
             }
             
-            if let details = self.realm.objects(ProfileModel.self).filter("email = %@", email).first {
+            if let details = self.realm.objects(ProfileModel.self).filter("id = %@", id).first {
                 do {
                     try self.realm.write {
-                        if let name = fname, let image = imgData {
+                        if let name = fname, let image = imgData, let email = em{
                             details.name = name
                             details.profileImageData = image
+                            details.email = email
                             print("data saved!")
                         }
                     }
@@ -89,14 +84,15 @@ class LoginPageViewController: UIViewController, GIDSignInDelegate {
             return
         }
         // Perform any operations on signed in user here.
-        //        let userId = user.userID                  // For client-side use only!
+        let userId = user.userID                  // For client-side use only!
         //        let idToken = user.authentication.idToken // Safe to send to the server
         let fullName = user.profile.name
         let email = user.profile.email
         let pic = user.profile.imageURL(withDimension: UInt(1080))
         
-        fname = user.profile.name
-        em = user.profile.email
+        fname = fullName
+        em = email
+        userID = userId
         
         SDWebImageManager.shared.loadImage(with: pic, options: .continueInBackground) { (receivedSize, expectedSize, pic) in
             print("OK")
@@ -124,8 +120,8 @@ class LoginPageViewController: UIViewController, GIDSignInDelegate {
     }
     
     private func goToDashboardVC(){
-        let dashboardVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.dashboard) as! DashBoard
-        self.navigationController?.pushViewController(dashboardVC, animated: true)
+        let tabController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.tabBar) as! UITabBarController
+        self.navigationController?.pushViewController(tabController, animated: true)
     }
 }
 

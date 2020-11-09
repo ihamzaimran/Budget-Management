@@ -17,6 +17,7 @@ class SettingsViewController: UIViewController {
     private let text = Constants.Text.settingsText
     private let subTitle = Constants.Text.settingssubText
     private let budgetBrain = BudgetBrain()
+    private let userDefault = UserDefaults.standard
     
     override var prefersStatusBarHidden: Bool {
         true
@@ -87,11 +88,13 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     private func disconnectGoogleAccount() {
         
-        if GIDSignIn.sharedInstance()?.currentUser != nil {
+        if userDefault.string(forKey: "UserID") != nil {
             let alert = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (_) in
+            alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { [self] (_) in
                 GIDSignIn.sharedInstance()?.signOut()
                 print("Log Out successful.")
+                self.userDefault.removeObject(forKey: "UserID")
+                self.userDefault.synchronize()
                 let loginVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.login) as! LoginPageViewController
                 self.navigationController?.pushViewController(loginVC, animated: true)
             }))

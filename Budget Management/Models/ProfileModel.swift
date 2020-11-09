@@ -10,25 +10,26 @@ import RealmSwift
 
 class ProfileModel: Object {
     
+    @objc dynamic var id = ""
     @objc dynamic var email = ""
     @objc dynamic var name = ""
     @objc dynamic var mobile = ""
     @objc dynamic var gender = ""
     @objc dynamic var profession = ""
     @objc dynamic var profileImageData: Data? = nil
-//    let details = List<ProfileDetails>()
+    let goalDetails = List<GoalDetails>()
     
     override static func primaryKey() -> String? {
-        return "email"
+        return "id"
     }
 }
 
 
-//class ProfileDetails: Object {
-//    @objc dynamic var name = ""
-//    @objc dynamic var mobile = ""
-//    @objc dynamic var gender = ""
-//    @objc dynamic var profession = ""
-//    @objc dynamic var profileImageData: Data? = nil
-//    var parentDetails = LinkingObjects(fromType: ProfileModel.self, property: "details")
-//}
+class GoalDetails: Object {
+    
+    @objc dynamic var goalName = ""
+    @objc dynamic var targetDate = ""
+    @objc dynamic var goalDescription = ""
+    @objc dynamic var goalAmount = ""
+    var parentDetails = LinkingObjects(fromType: ProfileModel.self, property: "goalDetails")
+}

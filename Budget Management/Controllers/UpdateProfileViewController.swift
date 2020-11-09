@@ -8,6 +8,7 @@
 import UIKit
 import GoogleSignIn
 import RealmSwift
+import Toast_Swift
 
 class UpdateProfileViewController: UIViewController {
     
@@ -43,7 +44,9 @@ class UpdateProfileViewController: UIViewController {
     private let focusedTextFieldColor = UIColor(named: "PrimaryColor")!
     private let realm = try! Realm()
     private var userPickedImage: UIImage?
-    private var userEmail: String?
+    private var userId: String?
+    private let userDefault = UserDefaults.standard
+    private let settingsVC = SettingsViewController()
     
     override var prefersStatusBarHidden: Bool {
         true
@@ -53,6 +56,7 @@ class UpdateProfileViewController: UIViewController {
         super.viewDidLoad()
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
+        //        GIDSignIn.sharedInstance()?.delegate = self
         
         navigationItem.hidesBackButton = true
         imagePickerController.delegate = self
@@ -91,24 +95,29 @@ class UpdateProfileViewController: UIViewController {
     
     private func getDataFromRealm(){
         
-        if ((GIDSignIn.sharedInstance()?.currentUser) != nil)  {
-            userEmail = GIDSignIn.sharedInstance()?.currentUser.profile.email
+        if let userid = userDefault.string(forKey: "UserID")  {
+            userId = userid
         } else {
-            print("User is not signed in. May need internet connection to sign in.")
+            print("Error! User is not signed in.")
         }
         
-        if let userEmail = userEmail {
-            if let details = self.realm.objects(ProfileModel.self).filter("email = %@", userEmail).first {
-                
-                emailTxt.text = userEmail
-                nameTxt.text = details.name
-                mobileTxt.text = details.mobile
-                selectGenderTxt.text = details.gender
-                
-                if let image = details.profileImageData {
-                    profileImage.image = UIImage(data: image)
-                    userPickedImage = UIImage(data: image)
-                    profileImage.makeRoundedImage()
+        if userId != nil {
+            let details = self.realm.objects(ProfileModel.self)
+            
+            for data in details {
+                if let details = self.realm.objects(ProfileModel.self).filter("id = %@", data.id).first {
+                    
+                    emailTxt.text = details.email
+                    nameTxt.text = details.name
+                    mobileTxt.text = details.mobile
+                    selectGenderTxt.text = details.gender
+                    print(details.email)
+                    
+                    if let image = details.profileImageData {
+                        profileImage.image = UIImage(data: image)
+                        userPickedImage = UIImage(data: image)
+                        profileImage.makeRoundedImage()
+                    }
                 }
             }
         }
@@ -166,6 +175,18 @@ class UpdateProfileViewController: UIViewController {
     
     @IBAction func prefessionOKBtn(_ sender: UIButton) {
         
+        if studentView.tag == 1 {
+            professionTxt.text = "Student"
+        } else if professionalView.tag == 1 {
+            professionTxt.text = "Professional"
+        } else if housewifeView.tag == 1 {
+            professionTxt.text = "Housewife"
+        } else if retiredView.tag == 1 {
+            professionTxt.text = "Retired"
+        }
+        
+        self.professionView.removeFromSuperview()
+        
     }
     
     @IBAction func professionCancelBtn(_ sender: UIButton) {
@@ -174,9 +195,6 @@ class UpdateProfileViewController: UIViewController {
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        //        self.removeUIView()
-        //        self.uiviewPicker.removeFromSuperview()
         
         if emailTxt.isFirstResponder {
             emailTxt.resignFirstResponder()
@@ -224,7 +242,7 @@ class UpdateProfileViewController: UIViewController {
         femaleGenderView.tag = 1
         maleGenderView.tag = 0
         print("female")
-//        removeUIView()
+        //        removeUIView()
     }
     
     @IBAction func maleViewTapGestureRecogniser(_ sender: UITapGestureRecognizer) {
@@ -236,7 +254,7 @@ class UpdateProfileViewController: UIViewController {
         femaleGenderView.tag = 0
         maleGenderView.tag = 1
         print("male")
-//        removeUIView()
+        //        removeUIView()
     }
     
     @IBAction func studentTapRecogniserView(_ sender: UITapGestureRecognizer) {
@@ -327,8 +345,8 @@ extension UpdateProfileViewController: UIImagePickerControllerDelegate, UINaviga
     
     private func saveData(){
         
-        if let email = userEmail {
-            if let details = self.realm.objects(ProfileModel.self).filter("email = %@", email).first {
+        if let userId = userId {
+            if let details = self.realm.objects(ProfileModel.self).filter("id = %@", userId).first {
                 do {
                     try self.realm.write {
                         
@@ -336,8 +354,13 @@ extension UpdateProfileViewController: UIImagePickerControllerDelegate, UINaviga
                         details.mobile = mobileTxt.text ?? ""
                         details.profileImageData = imageData
                         details.gender = selectGenderTxt.text ?? ""
+                        details.profession = professionaltxt.text ?? ""
                         print("Data saved successfully!")
-                        gotoSettingsVC()
+                        self.view.makeToast("changes saved successfully", duration: 1.0, position: .bottom)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+                            self.gotoSettingsVC()
+                        }
+
                     }
                 } catch {
                     print("Error saving new items, \(error)")
@@ -398,12 +421,12 @@ extension UpdateProfileViewController: UITextFieldDelegate {
         } else if emailTxt.isFirstResponder {
             mobileTxt.becomeFirstResponder()
         } else if mobileTxt.isFirstResponder {
-            selectGenderTxt.becomeFirstResponder()
+//            selectGenderTxt.becomeFirstResponder()
         } else if selectGenderTxt.isFirstResponder {
             //            removeUIView(from: genderViewPicker)
-            professionTxt.becomeFirstResponder()
+//            professionTxt.becomeFirstResponder()
         } else if professionTxt.isFirstResponder {
-            professionTxt.resignFirstResponder()
+//            professionTxt.resignFirstResponder()
         }
         
         return false

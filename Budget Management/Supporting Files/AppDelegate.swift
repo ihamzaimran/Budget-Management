@@ -10,22 +10,16 @@ import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         // Initialize Google sign-in
         
-//        var paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-//        let documentsDirectory = paths[0]
-//        let fileName = "\(Date()).log"
-//        let logFilePath = (documentsDirectory as NSString).appendingPathComponent(fileName)
-//        freopen(logFilePath.cString(using: String.Encoding.ascii)!, "a+", stderr)
         
-        createDirectory()
-//        checkUserLoggedIn()
         GIDSignIn.sharedInstance().clientID = "117501428831-i2g7aivm9tj0dmlve0pb6i6i85tkafhv.apps.googleusercontent.com"
+        createDirectory()
         
         return true
     }
@@ -78,37 +72,4 @@ extension AppDelegate {
         }
     }
     
-    private func checkUserLoggedIn(){
-//        let controller = UIStoryboard(name: "Main", bundle: nil)
-//        let loginVC = controller.instantiateViewController(identifier: Constants.StoryboardIDs.login) as! LoginPageViewController
-//        let dasboardVC = controller.instantiateViewController(identifier: Constants.StoryboardIDs.dashboard) as! DashBoard
-//
-//
-//        if GIDSignIn.sharedInstance()?.currentUser != nil {
-//            print("Logged in...")
-//            self.window?.rootViewController = loginVC
-//
-//        } else {
-//            print("Not Logged in...")
-//            self.window?.rootViewController = dasboardVC
-//        }
-        
-//        if let navigationController = self.window?.rootViewController as? UINavigationController {
-//            navigationController.pushViewController(dasboardVC, animated: true)
-//        } else {
-//            print("Navigation Controller not found!")
-//        }
-        
-        
-//        if let window = self.window, let rootViewController = window.rootViewController {
-//            var currentController = rootViewController
-//
-//            while let presentedController = currentController.presentedViewController {
-//                currentController = presentedController
-//            }
-//            currentController.present(navController, animated: true, completion: nil)
-//        }
-    }
-    
-   
 }

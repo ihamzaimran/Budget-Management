@@ -143,11 +143,17 @@ extension SideMenuTableViewController: UITableViewDataSource, UITableViewDelegat
         
         for data in data
         {
-            if let details = self.realm.objects(ProfileModel.self).filter("email = %@", data.email).first {
+            if let details = self.realm.objects(ProfileModel.self).filter("id = %@", data.id).first {
                 
                 header.HeaderLabel.text = details.name
                 header.headerImage.contentMode = .scaleAspectFill
-                header.headerImage.image = UIImage(data: details.profileImageData!)
+                
+                if let imageData = details.profileImageData {
+                    header.headerImage.image = UIImage(data: imageData)
+                } else {
+                    header.headerImage.image = UIImage(named: "user_dummy")
+                }
+                
                 header.headerImage.makeRoundedImage()
             }
         }

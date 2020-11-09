@@ -17,6 +17,20 @@ extension UITextField {
         self.layer.borderColor = color.cgColor
         self.layer.cornerRadius = 2
     }
+    
+    func textFieldStyle(color: UIColor) {
+           self.borderStyle = .none
+           let whiteColor = color
+           let border = CALayer()
+           let width = CGFloat(1.0)
+           
+           border.borderColor = whiteColor.cgColor
+           border.borderWidth = width
+           border.frame = CGRect(x: 0, y: bounds.size.height - width, width: bounds.size.width, height: bounds.size.height)
+           
+           self.layer.addSublayer(border)
+           self.layer.masksToBounds = true
+       }
 }
 
 
@@ -56,4 +70,25 @@ extension ButtonBarPagerTabStripViewController {
     }
 }
 
+
+extension UIViewController {
+
+func showToast(message : String, font: UIFont) {
+
+    let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-50, width: 150, height: 35))
+    toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+    toastLabel.textColor = UIColor.white
+    toastLabel.font = font
+    toastLabel.textAlignment = .center;
+    toastLabel.text = message
+    toastLabel.alpha = 1.0
+    toastLabel.layer.cornerRadius = 10;
+    toastLabel.clipsToBounds  =  true
+    
+    UIView.animate(withDuration: 2, delay: 1, options: .transitionCurlUp, animations: {
+         toastLabel.alpha = 0.0
+    }, completion: {(isCompleted) in
+        toastLabel.removeFromSuperview()
+    })
+} }
 

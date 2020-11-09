@@ -10,7 +10,7 @@ import SideMenu
 import XLPagerTabStrip
 import GoogleSignIn
 
-class DashBoard: UIViewController {
+class DashBoard: UIViewController, UIGestureRecognizerDelegate {
     
     var sideMenuVC: SideMenuTableViewController?
     
@@ -24,28 +24,19 @@ class DashBoard: UIViewController {
         tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
         tabBarItem = UITabBarItem(title: "Dashboard", image: UIImage(named: Constants.Images.dashboard), tag: 0)
     }
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        GIDSignIn.sharedInstance()?.delegate = self
-        checkPreviousSignIn()
-        
+    
         navigationItem.hidesBackButton = true
         setupSideMenu()
         updateMenus()
         sideMenuVC?.shareDelegate = self
-    }
-    
-    private func checkPreviousSignIn() {
         
-        if GIDSignIn.sharedInstance()?.hasPreviousSignIn() != nil {
-            print("This user have signed in previously. Restoring Sign in.")
-            GIDSignIn.sharedInstance()?.restorePreviousSignIn()
-        }
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
 }
-
 
 // MARK:- Side Menu Setup
 
@@ -110,16 +101,3 @@ extension DashBoard: ShareSheetProtocol {
     }
 }
 
-//MARK:- google sign in delegate
-
-extension DashBoard: GIDSignInDelegate {
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        
-        if let e = error {
-            print("Error = \(e.localizedDescription)")
-
-            return
-        }
-    }
-}

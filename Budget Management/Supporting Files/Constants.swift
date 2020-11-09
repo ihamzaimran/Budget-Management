@@ -25,6 +25,8 @@ struct Constants {
         static let income = "IncomeStoryboard"
         static let login = "LoginPagerStoryboard"
         static let GuestLogin = "GuestLoginStoryboard"
+        static let addGoal = "AddGoalStoryboard"
+        static let newGoal = "NewGoalStoryboard"
     }
     
     struct TableViewIdentifier {
@@ -35,6 +37,7 @@ struct Constants {
         static let expenseCellIdentifier = "expenseTableCellIdentifier"
         static let incomeCellIdentifier = "incomeTableCellIdentifier"
         static let loginCollectionCellIdentifier = "loginCollectionCellIdentifier"
+        static let savingsCellIdentifier = "savingsTableCellIdentifier"
     }
     
     struct Images {
@@ -44,6 +47,9 @@ struct Constants {
         static let activityTab = "activity_bottm_color"
         static let savingsTab = "savings_bottom_colored"
         static let loginPager = ["into_image_1", "into_image_2", "into_image_3", "into_image_4"]
+        
+        static let iconArray =  ["education_e", "personal", "wedding",
+                                 "medical_m", "family_expense", "grocery", "house_hold","entertainment_e", "gifts_g", "clothing", "fuel_transport","eatin_outg", "utilities_u", "salary", "investment","commission", "other_income", "bank_icon", "home_icon","car_icon", "edu_icon", "wedding_icon", "clock_icon", "palm_icon","savings"]
     }
     
     struct Text {
