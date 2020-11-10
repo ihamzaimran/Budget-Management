@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import Toast_Swift
 
 class NewGoalViewController: UIViewController {
     
@@ -15,6 +16,8 @@ class NewGoalViewController: UIViewController {
     @IBOutlet weak var targetDateTextfield: UITextField!
     @IBOutlet weak var goalDescriptionTextField: UITextField!
     @IBOutlet weak var iconImageView: UIButton!
+    @IBOutlet var selectIconView: UIView!
+    @IBOutlet weak var selectIconCollectionView: UICollectionView!
     
     internal var iconName: String?
     internal var goalName :String?
@@ -23,6 +26,8 @@ class NewGoalViewController: UIViewController {
     private var userID:String?
     private let userDefault = UserDefaults.standard
     private let realm = try! Realm()
+    private var iconArray = Constants.Images.iconArray
+    private var choosenIcon = "home_icon"
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -35,6 +40,10 @@ class NewGoalViewController: UIViewController {
             print(icon)
             goalNameTextField.text = name
         }
+        
+        selectIconCollectionView.delegate = self
+        selectIconCollectionView.dataSource = self
+        selectIconCollectionView.backgroundColor = .white
         
         goalNameTextField.delegate = self
         amountTXT.delegate = self
@@ -62,6 +71,17 @@ class NewGoalViewController: UIViewController {
     }
     
     @IBAction func saveIconButton(_ sender: UIButton) {
+        
+        if goalNameTextField.text?.isEmpty ?? true || amountTXT.text?.isEmpty ?? true || targetDateTextfield.text?.isEmpty ?? true || goalDescriptionTextField.text?.isEmpty ?? true{
+            self.view.makeToast("one of the field is empty", duration: 1.0, position: .bottom)
+        } else {
+            saveData()
+        }
+        
+    }
+    
+    private func saveData(){
+        
         if let id = userID {
             if let details = self.realm.objects(ProfileModel.self).filter("id = %@", id).first{
                 do {
@@ -70,17 +90,22 @@ class NewGoalViewController: UIViewController {
                         newGoal.goalName = goalNameTextField.text ?? "Home"
                         newGoal.goalDescription = goalDescriptionTextField.text ?? "Savings for goal"
                         newGoal.targetDate = targetDateTextfield.text ?? "22/09/2020"
-                        newGoal.goalAmount = "20000"
+                        newGoal.totalGoalAmount = amountTXT.text ?? "0.0"
+                        newGoal.goalAmount = "0.0"
+                        newGoal.goalIcon = choosenIcon
                         details.goalDetails.append(newGoal)
                         print("Details saved successfully!")
+                        
+                        self.view.makeToast("Goal Saved!", duration: 1.0, position: .bottom)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            self.navigationController?.popViewController(animated: true)
+                        }
                     }
                 } catch {
                     print("Error saving new items, \(error)")
                 }
             }
         }
-        
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -94,9 +119,15 @@ class NewGoalViewController: UIViewController {
     }
     
     @IBAction func selectIconViewTapped(_ sender: UIButton) {
-        print("tap gesture tapped!")
-        iconImageView.setBackgroundImage(UIImage(named: Constants.Images.iconArray[0]), for: .normal)
+        
+        self.selectIconView.frame = self.view.frame
+        self.view.addSubview(selectIconView)
     }
+    
+    @IBAction func cancelViewButton(_ sender: UIButton) {
+        self.selectIconView.removeFromSuperview()
+    }
+    
     
 }
 
@@ -171,3 +202,39 @@ extension NewGoalViewController {
     }
 }
 
+//MARK:- extension collectionview delegate
+
+extension NewGoalViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        iconArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = selectIconCollectionView.dequeueReusableCell(withReuseIdentifier: Constants.TableViewIdentifier.newGoalCollectionCellIdentifier, for: indexPath) as! NewGoalIconCollectionViewCell
+        cell.backgroundColor = .clear
+        
+        cell.iconImage.image = UIImage(named: iconArray[indexPath.row])
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        //setting the collection view cell to have 4 per row
+        let collectionCellSize = collectionView.frame.size.width
+        return CGSize(width: collectionCellSize/5, height: collectionCellSize/5)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let icon = iconArray[indexPath.row]
+        iconImageView.setBackgroundImage(UIImage(named: icon), for: .normal)
+        choosenIcon = icon
+        print(choosenIcon)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.selectIconView.removeFromSuperview()
+        }
+    }
+}

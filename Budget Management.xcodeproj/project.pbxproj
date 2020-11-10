@@ -41,6 +41,9 @@
 		ECC8DB6A2542E37B008F41FA /* BudgetsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8DB692542E37B008F41FA /* BudgetsTabViewController.swift */; };
 		ECC8DB6D2542EB3F008F41FA /* ActivitiesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8DB6C2542EB3F008F41FA /* ActivitiesTabViewController.swift */; };
 		ECC8DB702542EB53008F41FA /* SavingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8DB6F2542EB53008F41FA /* SavingsViewController.swift */; };
+		ECCB0946255A612C0024B827 /* NewGoalIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCB0945255A612C0024B827 /* NewGoalIconCollectionViewCell.swift */; };
+		ECCB0949255A71380024B827 /* AddSavingAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCB0948255A71380024B827 /* AddSavingAmountViewController.swift */; };
+		ECCB094C255A727A0024B827 /* GoaldetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCB094B255A727A0024B827 /* GoaldetailsViewController.swift */; };
 		ECCD9B5C25481C4C009D8B6F /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCD9B5B25481C4C009D8B6F /* ExpenseViewController.swift */; };
 		ECCD9B5F25481C60009D8B6F /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCD9B5E25481C60009D8B6F /* IncomeViewController.swift */; };
 		ECD3C8D525501424002A0CEF /* GuestLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD3C8D425501424002A0CEF /* GuestLoginViewController.swift */; };
@@ -88,6 +91,9 @@
 		ECC8DB692542E37B008F41FA /* BudgetsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetsTabViewController.swift; sourceTree = "<group>"; };
 		ECC8DB6C2542EB3F008F41FA /* ActivitiesTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTabViewController.swift; sourceTree = "<group>"; };
 		ECC8DB6F2542EB53008F41FA /* SavingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsViewController.swift; sourceTree = "<group>"; };
+		ECCB0945255A612C0024B827 /* NewGoalIconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalIconCollectionViewCell.swift; sourceTree = "<group>"; };
+		ECCB0948255A71380024B827 /* AddSavingAmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSavingAmountViewController.swift; sourceTree = "<group>"; };
+		ECCB094B255A727A0024B827 /* GoaldetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoaldetailsViewController.swift; sourceTree = "<group>"; };
 		ECCD9B5B25481C4C009D8B6F /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
 		ECCD9B5E25481C60009D8B6F /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
 		ECD3C8D425501424002A0CEF /* GuestLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestLoginViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +193,8 @@
 				ECD3C8D425501424002A0CEF /* GuestLoginViewController.swift */,
 				ECB896502555190B00092DBB /* AddGoalViewController.swift */,
 				ECB8968D2555607000092DBB /* NewGoalViewController.swift */,
+				ECCB0948255A71380024B827 /* AddSavingAmountViewController.swift */,
+				ECCB094B255A727A0024B827 /* GoaldetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -232,6 +240,7 @@
 				ECC58F282541963500495610 /* SettingsTableViewCell.swift */,
 				EC44DA1925496299009B39E5 /* LoginCollectionViewCell.swift */,
 				ECD844482559624D00698923 /* SavingsTableViewCell.swift */,
+				ECCB0945255A612C0024B827 /* NewGoalIconCollectionViewCell.swift */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -391,13 +400,16 @@
 				ECC8DB6A2542E37B008F41FA /* BudgetsTabViewController.swift in Sources */,
 				ECC8DB6D2542EB3F008F41FA /* ActivitiesTabViewController.swift in Sources */,
 				EC4D809E254298AC00D0EA31 /* BudgetBrain.swift in Sources */,
+				ECCB0946255A612C0024B827 /* NewGoalIconCollectionViewCell.swift in Sources */,
 				ECC58F292541963500495610 /* SettingsTableViewCell.swift in Sources */,
 				EC5108A825401AA200A98A3E /* SideMenuTableViewCell.swift in Sources */,
 				EC510862253FFDA000A98A3E /* SceneDelegate.swift in Sources */,
 				EC07563F254FD980001FBBA3 /* LoginPageView.swift in Sources */,
 				EC5108882540018E00A98A3E /* SWRevealViewController.m in Sources */,
+				ECCB0949255A71380024B827 /* AddSavingAmountViewController.swift in Sources */,
 				ECB8968E2555607000092DBB /* NewGoalViewController.swift in Sources */,
 				EC5108C0254024AF00A98A3E /* HeaderView.swift in Sources */,
+				ECCB094C255A727A0024B827 /* GoaldetailsViewController.swift in Sources */,
 				EC07563C254FD710001FBBA3 /* LoginPageViewController.swift in Sources */,
 				ECD844492559624D00698923 /* SavingsTableViewCell.swift in Sources */,
 				ECD3C8D525501424002A0CEF /* GuestLoginViewController.swift in Sources */,

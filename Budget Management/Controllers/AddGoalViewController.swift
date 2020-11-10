@@ -22,10 +22,14 @@ class AddGoalViewController: UIViewController {
         
         goalNameTxt.delegate = self
         goalNameTxt.textFieldStyle(color: .darkGray)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         goalNameTxt.text = nil
     }
     
     @IBAction func backIconButton(_ sender: UIButton) {
+        
         self.navigationController?.popViewController(animated: true)
     }
     

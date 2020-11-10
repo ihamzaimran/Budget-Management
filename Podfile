@@ -13,5 +13,6 @@ pod 'XLPagerTabStrip', '~> 9.0'
 pod 'RealmSwift'
 pod 'SDWebImage', '~> 5.0'
 pod 'Toast-Swift', '~> 5.0.1'
+pod 'Charts'
 
 end

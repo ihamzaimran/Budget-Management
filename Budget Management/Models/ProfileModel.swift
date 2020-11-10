@@ -31,5 +31,7 @@ class GoalDetails: Object {
     @objc dynamic var targetDate = ""
     @objc dynamic var goalDescription = ""
     @objc dynamic var goalAmount = ""
+    @objc dynamic var goalIcon = ""
+    @objc dynamic var totalGoalAmount = ""
     var parentDetails = LinkingObjects(fromType: ProfileModel.self, property: "goalDetails")
 }

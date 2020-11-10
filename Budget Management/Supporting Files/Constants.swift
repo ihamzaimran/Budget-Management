@@ -27,6 +27,7 @@ struct Constants {
         static let GuestLogin = "GuestLoginStoryboard"
         static let addGoal = "AddGoalStoryboard"
         static let newGoal = "NewGoalStoryboard"
+        static let goalDetails = "GoalDetailsStoryboard"
     }
     
     struct TableViewIdentifier {
@@ -38,6 +39,7 @@ struct Constants {
         static let incomeCellIdentifier = "incomeTableCellIdentifier"
         static let loginCollectionCellIdentifier = "loginCollectionCellIdentifier"
         static let savingsCellIdentifier = "savingsTableCellIdentifier"
+        static let newGoalCollectionCellIdentifier = "newGoalCollectionCellIdentifier"
     }
     
     struct Images {

@@ -8,33 +8,50 @@
 import UIKit
 import SideMenu
 import XLPagerTabStrip
+import RealmSwift
 
 class SavingsViewController: UIViewController, IndicatorInfoProvider {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addGoalBtn: UIButton!
+    @IBOutlet weak var noGoalsLBL: UILabel!
     
     var childNumber: String = ""
+    private var goalDetails = List<GoalDetails>()
+    private let realm = try! Realm()
+    private var userID: String?
+    private let userDefault = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
-        
         tableView.backgroundColor = .clear
         tableView.tableFooterView = UITableViewHeaderFooterView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        userID = userDefault.string(forKey: "UserID")
+        getData()
+    }
+    
     @IBAction func addGoalButton(_ sender: UIButton) {
+        
         let addGoalVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.addGoal) as! AddGoalViewController
         self.navigationController?.pushViewController(addGoalVC, animated: true)
     }
     
-    
     //get data from realm
-    
     private func getData(){
         
+        if let userId = userID {
+            if let details = self.realm.objects(ProfileModel.self).filter("id = %@", userId).first{
+                goalDetails = details.goalDetails
+                tableView.reloadData()
+            }
+        }
     }
     
     // MARK: - IndicatorInfoProvider
@@ -47,20 +64,46 @@ class SavingsViewController: UIViewController, IndicatorInfoProvider {
 extension SavingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        
+        if goalDetails.count == 0 {
+            
+            tableView.isHidden = true
+            noGoalsLBL.isHidden = false
+            noGoalsLBL.text = "You've no goals yet! Add a goal from button below."
+        }
+        
+        return goalDetails.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableViewIdentifier.savingsCellIdentifier, for: indexPath) as! SavingsTableViewCell
         cell.backgroundColor = .clear
         cell.savingsView.layer.cornerRadius = 5
-//        cell.goalName = "Home"
+        
+        let details = goalDetails[indexPath.row]
+        cell.goalName.text = details.goalName
+        cell.goalSaved.text = ("Saved: \(details.goalAmount)")
+        cell.totalGoal.text = ("Total: \(details.totalGoalAmount)")
+        cell.goalIcon.image = UIImage(named: details.goalIcon)
+        
+        if let amount = Float(details.goalAmount), let total = Float(details.totalGoalAmount) {
+            cell.goalProgress.progress = amount/total
+        }
         return cell
     }
-    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80.0
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let index = indexPath.row
+        
+        let goalDetailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.goalDetails) as! GoaldetailsViewController
+        goalDetailVC.selectedGoal = goalDetails[indexPath.row]
+        self.navigationController?.pushViewController(goalDetailVC, animated: true)
+    }
 }
