@@ -31,6 +31,11 @@ class SavingsViewController: UIViewController, IndicatorInfoProvider {
     }
     
     
+    //get data from realm
+    
+    private func getData(){
+        
+    }
     
     // MARK: - IndicatorInfoProvider
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -40,13 +45,14 @@ class SavingsViewController: UIViewController, IndicatorInfoProvider {
 }
 
 extension SavingsViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableViewIdentifier.savingsCellIdentifier, for: indexPath) as! SavingsTableViewCell
-        cell.backgroundColor = .white
+        cell.backgroundColor = .clear
         cell.savingsView.layer.cornerRadius = 5
 //        cell.goalName = "Home"
         return cell
@@ -54,7 +60,6 @@ extension SavingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        print("calling")
         return 80.0
     }
     
