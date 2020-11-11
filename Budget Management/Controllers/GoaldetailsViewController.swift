@@ -16,55 +16,65 @@ class GoaldetailsViewController: UIViewController {
     @IBOutlet weak var targetDateLBL: UILabel!
     @IBOutlet weak var goalTotalAmountLBL: UILabel!
     @IBOutlet weak var pieChartView: PieChartView!
+    @IBOutlet weak var goalAmountPerMonth: UILabel!
+    @IBOutlet weak var lastAddedAmount: UILabel!
+    @IBOutlet weak var savedAmountTxt: UILabel!
     
     private let realm = try! Realm()
     private var goalDetails: Results<GoalDetails>?
-    private let userDefault = UserDefaults.standard
-    private var userID: String?
-    internal var index: Int?
-    let parties = ["Saved", "Goal"]
-    let goals = [20, 80]
-    
-    var selectedGoal : GoalDetails? {
-        didSet{
-            print("callled")
-            getDetails()
-        }
-    }
-    
+    internal var selectedGoal: GoalDetails?
+    private var goals: [Int] = []
+    private let labels = ["Saved", "Left"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
         pieChartView.delegate = self
-        userID = userDefault.string(forKey: "UserID")
+        getDetails()
     }
     
     private func getDetails(){
         
-        goalImageView.image = UIImage(named: selectedGoal?.goalIcon ?? "home+icon")
-        targetDateLBL.text = ("Target Date: \(selectedGoal?.targetDate)")
-        goalNameLBL.text = selectedGoal?.goalName
-        goalTotalAmountLBL.text = selectedGoal?.totalGoalAmount
-        
-        customizeChart(dataPoints: parties, values: goals.map{ Double($0) })
-        setUpChart()
+        if let details = selectedGoal {
+            goalImageView.image = UIImage(named: details.goalIcon)
+            goalNameLBL.text = details.goalName
+            targetDateLBL.text = "Target Date: \(details.targetDate)"
+            goalTotalAmountLBL.text = "Goal: \(details.totalGoalAmount)"
+            
+            if let total = Int(details.totalGoalAmount) {
+                savedAmountTxt.text = "Saved: \(details.savedAmount)/\(total)"
+                let saved = details.savedAmount
+                let savedPercent = (saved * 100) / total
+                let left = 100 - savedPercent
+                print("saved = \((saved * 100) / total) left = \(100 - savedPercent)")
+                goals = [savedPercent, left]
+                customizeChart(dataPoints: labels, values: goals.map{ Double($0) })
+                setUpChart()
+            }
+
+        }
     }
     
     private func setUpChart(){
+       
         let l = pieChartView.legend
+        l.enabled = true
         l.horizontalAlignment = .right
         l.verticalAlignment = .top
-        l.orientation = .vertical
-        l.xEntrySpace = 7
+        l.orientation = .horizontal
+        l.xEntrySpace = 10
         l.yEntrySpace = 0
         l.yOffset = 0
         l.textColor = .darkGray
-        pieChartView.drawHoleEnabled = !pieChartView.drawHoleEnabled
+        pieChartView.drawHoleEnabled = false
         pieChartView.usePercentValuesEnabled = true
-        pieChartView.entryLabelColor = .darkGray
-        pieChartView.entryLabelFont = .systemFont(ofSize: 12, weight: .light)
-        pieChartView.animate(xAxisDuration: 1.4, yAxisDuration: 1.4, easingOption: .easeOutBack)
+        pieChartView.drawEntryLabelsEnabled = false
+        //        pieChartView.entryLabelColor = .black
+        //        pieChartView.entryLabelFont = .systemFont(ofSize: 8, weight: .light)
+        pieChartView.animate(xAxisDuration: 1.4, yAxisDuration: 1.4, easingOption: .easeOutCirc)
     }
     
     @IBAction func backIconBtn(_ sender: UIButton) {
@@ -79,6 +89,17 @@ class GoaldetailsViewController: UIViewController {
         
     }
     
+    @IBAction func addSavingAmountBtn(_ sender: UIButton) {
+        let newDepositVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.addSavingAmount) as! AddSavingAmountViewController
+        newDepositVC.selectedGoalDetails = selectedGoal
+        self.navigationController?.pushViewController(newDepositVC, animated: true)
+    }
+    
+    @IBAction func goalAchievedBtn(_ sender: UIButton) {
+    }
+    
+    @IBAction func viewSavingsBtn(_ sender: UIButton) {
+    }
 }
 
 
@@ -96,13 +117,12 @@ extension GoaldetailsViewController: ChartViewDelegate {
             dataEntries.append(entry)
         }
         // 2. Set ChartDataSet
-        let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: "Saving Details")
+        let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
         
         pieChartDataSet.drawIconsEnabled = false
-        pieChartDataSet.sliceSpace = 2
-        pieChartDataSet.colors = colorsOfCharts(numbersOfColor: dataPoints.count)
+        pieChartDataSet.sliceSpace = 5
         
-        
+        pieChartDataSet.setColors(UIColor(named: "HeaderColor")!, UIColor(named: "PrimaryColor")!)
         // 3. Set ChartData
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
         
@@ -112,63 +132,10 @@ extension GoaldetailsViewController: ChartViewDelegate {
         pFormatter.multiplier = 1
         pFormatter.percentSymbol = "%"
         pieChartData.setValueFormatter(DefaultValueFormatter(formatter: pFormatter))
-        pieChartData.setValueFont(.systemFont(ofSize: 12, weight: .light))
-        pieChartData.setValueTextColor(.darkGray) //dfdsfgs
+        pieChartData.setValueFont(.systemFont(ofSize: 10, weight: .semibold))
+        pieChartData.setValueTextColor(.darkGray)
         
         pieChartView.data = pieChartData
-        pieChartView.highlightValues(nil)
-    }
-    
-    private func colorsOfCharts(numbersOfColor: Int) -> [UIColor] {
-        var colors: [UIColor] = []
-        for _ in 0..<numbersOfColor {
-            let red = Double(arc4random_uniform(256))
-            let green = Double(arc4random_uniform(256))
-            let blue = Double(arc4random_uniform(256))
-            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-            colors.append(color)
-        }
-        return colors
-    }
-    
-    
-    
-    
-    
-    private func setDataCount(_ count: Int, range: UInt32) {
-        let entries = (0..<count).map { (i) -> PieChartDataEntry in
-            // IMPORTANT: In a PieChart, no values (Entry) should have the same xIndex (even if from different DataSets), since no values can be drawn above each other.
-            return PieChartDataEntry(value: Double(arc4random_uniform(range) + range / 5),
-                                     label: parties[i % parties.count],
-                                     icon: #imageLiteral(resourceName: "icon"))
-        }
-        
-        //        let set = PieChartDataSet(entries: entries, label: "Goal Details")
-        let set = PieChartDataSet(entries: entries)
-        set.drawIconsEnabled = false
-        set.sliceSpace = 2
-        
-        
-        set.colors = ChartColorTemplates.vordiplom()
-            + ChartColorTemplates.joyful()
-            + ChartColorTemplates.colorful()
-            + ChartColorTemplates.liberty()
-            + ChartColorTemplates.pastel()
-            + [UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)]
-        
-        let data = PieChartData(dataSet: set)
-        
-        let pFormatter = NumberFormatter()
-        pFormatter.numberStyle = .percent
-        pFormatter.maximumFractionDigits = 1
-        pFormatter.multiplier = 1
-        pFormatter.percentSymbol = " %"
-        data.setValueFormatter(DefaultValueFormatter(formatter: pFormatter))
-        
-        data.setValueFont(.systemFont(ofSize: 11, weight: .light))
-        data.setValueTextColor(.black)
-        
-        pieChartView.data = data
         pieChartView.highlightValues(nil)
     }
 }

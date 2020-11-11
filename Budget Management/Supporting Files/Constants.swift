@@ -28,6 +28,7 @@ struct Constants {
         static let addGoal = "AddGoalStoryboard"
         static let newGoal = "NewGoalStoryboard"
         static let goalDetails = "GoalDetailsStoryboard"
+        static let addSavingAmount = "AddSavingAmountStoryboard"
     }
     
     struct TableViewIdentifier {

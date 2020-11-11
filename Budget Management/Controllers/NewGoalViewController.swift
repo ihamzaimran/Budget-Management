@@ -90,8 +90,8 @@ class NewGoalViewController: UIViewController {
                         newGoal.goalName = goalNameTextField.text ?? "Home"
                         newGoal.goalDescription = goalDescriptionTextField.text ?? "Savings for goal"
                         newGoal.targetDate = targetDateTextfield.text ?? "22/09/2020"
-                        newGoal.totalGoalAmount = amountTXT.text ?? "0.0"
-                        newGoal.goalAmount = "0.0"
+                        newGoal.totalGoalAmount = amountTXT.text ?? "0"
+                        newGoal.savedAmount = 0
                         newGoal.goalIcon = choosenIcon
                         details.goalDetails.append(newGoal)
                         print("Details saved successfully!")

@@ -32,7 +32,7 @@ class SavingsViewController: UIViewController, IndicatorInfoProvider {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+    
         userID = userDefault.string(forKey: "UserID")
         getData()
     }
@@ -45,7 +45,6 @@ class SavingsViewController: UIViewController, IndicatorInfoProvider {
     
     //get data from realm
     private func getData(){
-        
         if let userId = userID {
             if let details = self.realm.objects(ProfileModel.self).filter("id = %@", userId).first{
                 goalDetails = details.goalDetails
@@ -64,14 +63,6 @@ class SavingsViewController: UIViewController, IndicatorInfoProvider {
 extension SavingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if goalDetails.count == 0 {
-            
-            tableView.isHidden = true
-            noGoalsLBL.isHidden = false
-            noGoalsLBL.text = "You've no goals yet! Add a goal from button below."
-        }
-        
         return goalDetails.count
     }
     
@@ -83,27 +74,37 @@ extension SavingsViewController: UITableViewDelegate, UITableViewDataSource {
         
         let details = goalDetails[indexPath.row]
         cell.goalName.text = details.goalName
-        cell.goalSaved.text = ("Saved: \(details.goalAmount)")
+        cell.goalSaved.text = ("Saved: \(details.savedAmount)")
         cell.totalGoal.text = ("Total: \(details.totalGoalAmount)")
         cell.goalIcon.image = UIImage(named: details.goalIcon)
         
-        if let amount = Float(details.goalAmount), let total = Float(details.totalGoalAmount) {
-            cell.goalProgress.progress = amount/total
+        if let total = Float(details.totalGoalAmount) {
+            cell.goalProgress.progress = Float(details.savedAmount)/total
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
+        return 85.0
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let index = indexPath.row
+        tableView.deselectRow(at: indexPath, animated: true)
         
         let goalDetailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.goalDetails) as! GoaldetailsViewController
         goalDetailVC.selectedGoal = goalDetails[indexPath.row]
+        
         self.navigationController?.pushViewController(goalDetailVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if goalDetails.isEmpty{
+
+            tableView.isHidden = true
+            noGoalsLBL.isHidden = false
+            noGoalsLBL.text = "You've no goals yet! Add a goal from button below."
+        }
     }
 }

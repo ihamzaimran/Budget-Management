@@ -11,6 +11,7 @@ import SideMenu
 
 //MARK:- uitextfield extension
 extension UITextField {
+    
     func setTextFieldStyle(with color: UIColor = .lightGray, for width: CGFloat = 1.0) {
         
         self.layer.borderWidth = width
@@ -41,6 +42,17 @@ extension UIImageView {
         
         self.layer.borderWidth = 2
         self.layer.borderColor = UIColor.white.cgColor
+        self.layer.cornerRadius = self.frame.height/2
+        self.clipsToBounds = true
+    }
+}
+
+extension UIView {
+    
+    func makeRoundedView(){
+        
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor(named: "BackgroundGrayColor")?.cgColor
         self.layer.cornerRadius = self.frame.height/2
         self.clipsToBounds = true
     }
