@@ -34,6 +34,9 @@
 		EC5108D9254057D800A98A3E /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5108D8254057D800A98A3E /* UpdateProfileViewController.swift */; };
 		EC8868932546B5640056A8A3 /* GoalAchievedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8868922546B5640056A8A3 /* GoalAchievedViewController.swift */; };
 		EC8868982546B9E30056A8A3 /* PagerViewForsavingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8868972546B9E30056A8A3 /* PagerViewForsavingsViewController.swift */; };
+		EC8B2489255D163E0086837A /* GoalTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8B2488255D163E0086837A /* GoalTransactionsViewController.swift */; };
+		EC8B248C255D1B890086837A /* GoalTransactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8B248B255D1B890086837A /* GoalTransactionsTableViewCell.swift */; };
+		EC8B248F255D38530086837A /* AchievedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8B248E255D38530086837A /* AchievedTableViewCell.swift */; };
 		ECB896512555190B00092DBB /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB896502555190B00092DBB /* AddGoalViewController.swift */; };
 		ECB8968E2555607000092DBB /* NewGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB8968D2555607000092DBB /* NewGoalViewController.swift */; };
 		ECC58F252541744C00495610 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC58F242541744C00495610 /* Extensions.swift */; };
@@ -84,6 +87,9 @@
 		EC5108D8254057D800A98A3E /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
 		EC8868922546B5640056A8A3 /* GoalAchievedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalAchievedViewController.swift; sourceTree = "<group>"; };
 		EC8868972546B9E30056A8A3 /* PagerViewForsavingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewForsavingsViewController.swift; sourceTree = "<group>"; };
+		EC8B2488255D163E0086837A /* GoalTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTransactionsViewController.swift; sourceTree = "<group>"; };
+		EC8B248B255D1B890086837A /* GoalTransactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTransactionsTableViewCell.swift; sourceTree = "<group>"; };
+		EC8B248E255D38530086837A /* AchievedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievedTableViewCell.swift; sourceTree = "<group>"; };
 		ECB896502555190B00092DBB /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		ECB8968D2555607000092DBB /* NewGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewController.swift; sourceTree = "<group>"; };
 		ECC58F242541744C00495610 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -195,6 +201,7 @@
 				ECB8968D2555607000092DBB /* NewGoalViewController.swift */,
 				ECCB0948255A71380024B827 /* AddSavingAmountViewController.swift */,
 				ECCB094B255A727A0024B827 /* GoaldetailsViewController.swift */,
+				EC8B2488255D163E0086837A /* GoalTransactionsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -241,6 +248,8 @@
 				EC44DA1925496299009B39E5 /* LoginCollectionViewCell.swift */,
 				ECD844482559624D00698923 /* SavingsTableViewCell.swift */,
 				ECCB0945255A612C0024B827 /* NewGoalIconCollectionViewCell.swift */,
+				EC8B248B255D1B890086837A /* GoalTransactionsTableViewCell.swift */,
+				EC8B248E255D38530086837A /* AchievedTableViewCell.swift */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -385,14 +394,17 @@
 				EC5108D9254057D800A98A3E /* UpdateProfileViewController.swift in Sources */,
 				ECB896512555190B00092DBB /* AddGoalViewController.swift in Sources */,
 				EC5108922540038300A98A3E /* Constants.swift in Sources */,
+				EC8B2489255D163E0086837A /* GoalTransactionsViewController.swift in Sources */,
 				ECC8DB702542EB53008F41FA /* SavingsViewController.swift in Sources */,
 				EC44DA1A25496299009B39E5 /* LoginCollectionViewCell.swift in Sources */,
 				EC5108962540078000A98A3E /* SideMenuTableViewController.swift in Sources */,
+				EC8B248F255D38530086837A /* AchievedTableViewCell.swift in Sources */,
 				EC44D9FB25493665009B39E5 /* ProfileModel.swift in Sources */,
 				EC8868982546B9E30056A8A3 /* PagerViewForsavingsViewController.swift in Sources */,
 				EC510864253FFDA000A98A3E /* DashBoard.swift in Sources */,
 				EC510860253FFDA000A98A3E /* AppDelegate.swift in Sources */,
 				EC5108C925403DF500A98A3E /* AccountsViewController.swift in Sources */,
+				EC8B248C255D1B890086837A /* GoalTransactionsTableViewCell.swift in Sources */,
 				EC5108C625403DDD00A98A3E /* CategoriesViewController.swift in Sources */,
 				ECCD9B5F25481C60009D8B6F /* IncomeViewController.swift in Sources */,
 				EC5108C325403DCF00A98A3E /* BudgetViewController.swift in Sources */,

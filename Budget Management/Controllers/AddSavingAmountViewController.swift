@@ -33,6 +33,8 @@ class AddSavingAmountViewController: UIViewController {
     private let relam = try! Realm()
     private let greenColor = UIColor(named: "PrimaryColor")!
     private let redColor = UIColor.systemRed
+    private let datePicker = UIDatePicker()
+    private typealias todaysDate = (month: String, day: String, year: String)
     
     override var prefersStatusBarHidden: Bool {
         true
@@ -48,7 +50,7 @@ class AddSavingAmountViewController: UIViewController {
         
         addAmountTextField.text = nil
         addAmountTextField.textAlignment = .right
-        addAmountTextField.textColor = .darkGray
+        addAmountTextField.textColor = UIColor(named: "PrimaryColor")
         changeBorderColor(name: greenColor)
         
         dateTextField.textFieldStyle(color: .darkGray)
@@ -83,12 +85,12 @@ class AddSavingAmountViewController: UIViewController {
             } else {
                 remainingAmountLBL.text = "Remaining: N/A"
             }
-            
-            if cashBtn.tag == 1 {
+            let type = details.accountType
+            if type == "Cash" {
                 cashViewImage.backgroundColor = .lightGray
-            } else if bankViewImage.tag == 1 {
+            } else if type == "Bank" {
                 bankViewImage.backgroundColor = .lightGray
-            } else if otherViewImage.tag == 1 {
+            } else if type == "Other" {
                 otherViewImage.backgroundColor = .lightGray
             }
         }
@@ -110,9 +112,19 @@ class AddSavingAmountViewController: UIViewController {
         if let details = selectedGoalDetails {
             do {
                 try self.relam.write {
+                    let transactions = GoalTransactions()
                     details.accountType = accountType
                     let amount = Int(addAmountTextField.text!)!
-                    details.savedAmount = amount
+                    details.lastAddedSavingAmount = amount
+                    details.savedAmount = details.savedAmount + amount
+                    details.targetDate = dateTextField.text!
+                    details.goalDescription = descripitonTextField.text!
+                    transactions.amount = amount
+                    transactions.goalName = details.goalName
+                    transactions.goalDescription = details.goalDescription
+                    let date = getCurrentDate()
+                    transactions.date = "\(date.month)\n\(date.day)\n\(date.year)"
+                    details.goalTransactions.append(transactions)
                     print("Details updated successfully.")
                     self.view.makeToast("details updated!", duration: 1.0, position: .bottom)
                     dismissController()
@@ -121,6 +133,22 @@ class AddSavingAmountViewController: UIViewController {
                 print("Error Savings Details.\n\(error)")
             }
         }
+    }
+    private func getCurrentDate()-> todaysDate{
+        
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "E-dd-yyyy"
+        
+        formatter.dateFormat = "yyyy"
+        let year = formatter.string(from: date)
+        formatter.dateFormat = "MMM"
+        let month = formatter.string(from: date)
+        formatter.dateFormat = "dd"
+        let day = formatter.string(from: date)
+        
+        let curDate: todaysDate = (month: month, day: day, year: year)
+        return curDate
     }
     
     private func changeBorderColor(name: UIColor) {
@@ -141,11 +169,22 @@ class AddSavingAmountViewController: UIViewController {
     
     @IBAction func saveDepositBtn(_ sender: UIButton) {
         
-        if addAmountTextField.text?.isEmpty ?? true {
-            changeBorderColor(name: redColor)
-            self.view.makeToast("amount field cannot be empty", duration: 1.5, position: .bottom)
-        } else {
-            saveData()
+        if addAmountTextField.text?.isEmpty ?? true || dateTextField.text?.isEmpty ?? true || depositTypeTextField.text?.isEmpty ?? true || descripitonTextField.text?.isEmpty ?? true{
+            self.view.makeToast("one of the field is empty", duration: 1.5, position: .bottom)
+        }else {
+             if let details = selectedGoalDetails{
+                if let total = Int(details.totalGoalAmount) {
+                    let amount = Int(addAmountTextField.text!)!
+                    let remaining = total-details.savedAmount
+                    if amount > remaining {
+                        self.view.makeToast("entered amount should be less than the remaining amount!\nremaining goal amount is \(remaining)")
+                    } else {
+                        saveData()
+                    }
+                } else {
+                    self.view.makeToast("error occured!")
+                }
+            }
         }
     }
     
@@ -212,6 +251,8 @@ extension AddSavingAmountViewController: UITextFieldDelegate {
         } else if textField == depositTypeTextField {
             textField.resignFirstResponder()
             self.showPicker(forView: selectAccountTypeView)
+        } else if textField == dateTextField {
+            showDatePicker()
         }
     }
     
@@ -226,5 +267,42 @@ extension AddSavingAmountViewController: UITextFieldDelegate {
             descripitonTextField.resignFirstResponder()
         }
         return false
+    }
+}
+
+//MARK: - extension datepciker
+
+extension AddSavingAmountViewController {
+    func showDatePicker(){
+        //Formate Date
+        datePicker.datePickerMode = .date
+        if #available(iOS 14.0, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        }
+        
+        //ToolBar
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: UIScreen.main.bounds.height-200, width: UIScreen.main.bounds.width, height: 44))
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+        
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        
+        dateTextField.inputAccessoryView = toolbar
+        dateTextField.inputView = datePicker
+    }
+    
+    @objc func donedatePicker(){
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        dateTextField.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelDatePicker(){
+        self.view.endEditing(true)
     }
 }

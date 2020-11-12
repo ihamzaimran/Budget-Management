@@ -32,7 +32,7 @@ class SavingsViewController: UIViewController, IndicatorInfoProvider {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-    
+        
         userID = userDefault.string(forKey: "UserID")
         getData()
     }
@@ -63,7 +63,16 @@ class SavingsViewController: UIViewController, IndicatorInfoProvider {
 extension SavingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if goalDetails.isEmpty {
+            tableView.isHidden = true
+            noGoalsLBL.isHidden = false
+        }else{
+            tableView.isHidden = false
+            noGoalsLBL.isHidden = true
+        }
         return goalDetails.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -99,12 +108,4 @@ extension SavingsViewController: UITableViewDelegate, UITableViewDataSource {
         self.navigationController?.pushViewController(goalDetailVC, animated: true)
     }
     
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if goalDetails.isEmpty{
-
-            tableView.isHidden = true
-            noGoalsLBL.isHidden = false
-            noGoalsLBL.text = "You've no goals yet! Add a goal from button below."
-        }
-    }
 }

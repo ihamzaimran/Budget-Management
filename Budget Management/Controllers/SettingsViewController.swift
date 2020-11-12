@@ -79,8 +79,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             budgetBrain.openExternalLink(with: Constants.Links.appStore)
         case 5:
             showShareSheet()
-        case 6:
-            disconnectGoogleAccount()
+//        case 6:
+//            disconnectGoogleAccount()
         default:
             break
         }

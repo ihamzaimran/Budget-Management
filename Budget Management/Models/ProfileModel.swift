@@ -34,5 +34,16 @@ class GoalDetails: Object {
     @objc dynamic var goalIcon = ""
     @objc dynamic var totalGoalAmount = ""
     @objc dynamic var accountType = ""
+    @objc dynamic var lastAddedSavingAmount = 0
+    let goalTransactions = List<GoalTransactions>()
     var parentDetails = LinkingObjects(fromType: ProfileModel.self, property: "goalDetails")
+}
+
+class GoalTransactions: Object {
+    
+    @objc dynamic var amount = 0
+    @objc dynamic var goalName = ""
+    @objc dynamic var goalDescription = ""
+    @objc dynamic var date = ""
+    var parentTransactions = LinkingObjects(fromType: GoalDetails.self, property: "goalTransactions")
 }

@@ -18,6 +18,7 @@ class NewGoalViewController: UIViewController {
     @IBOutlet weak var iconImageView: UIButton!
     @IBOutlet var selectIconView: UIView!
     @IBOutlet weak var selectIconCollectionView: UICollectionView!
+    @IBOutlet weak var iconImage: UIButton!
     
     internal var iconName: String?
     internal var goalName :String?
@@ -36,9 +37,9 @@ class NewGoalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let icon = iconName, let name = goalName {
-            print(icon)
+        if let name = goalName {
             goalNameTextField.text = name
+            setIcon(with: name)
         }
         
         selectIconCollectionView.delegate = self
@@ -56,7 +57,7 @@ class NewGoalViewController: UIViewController {
         amountTXT.textFieldStyle(color: .clear)
         amountTXT.text = nil 
         amountTXT.textAlignment = .right
-        amountTXT.textColor = .darkGray
+        amountTXT.textColor = UIColor(named: "PrimaryColor")
         goalNameTextField.textColor = .darkGray
         targetDateTextfield.textColor = .darkGray
         goalDescriptionTextField.textColor = .darkGray
@@ -64,6 +65,27 @@ class NewGoalViewController: UIViewController {
         if let userId = userDefault.string(forKey: "UserID"){
             userID = userId
         }
+    }
+    
+    private func setIcon(with name: String){
+        
+        switch name {
+        case "Home":
+            choosenIcon = "home_icon"
+        case "Vehicle":
+            choosenIcon = "car_icon"
+        case "Education":
+            choosenIcon = "edu_icon"
+        case "Wedding":
+            choosenIcon = "wedding"
+        case "Emergency Fund":
+            choosenIcon = "medical_m"
+        case "Holiday Trip":
+            choosenIcon = "palm_icon"
+        default:
+            choosenIcon = "home_icon"
+        }
+        iconImageView.setBackgroundImage(UIImage(named: choosenIcon), for: .normal)
     }
     
     @IBAction func backIconButton(_ sender: UIButton) {

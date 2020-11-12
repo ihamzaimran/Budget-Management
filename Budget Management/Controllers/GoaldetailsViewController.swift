@@ -19,6 +19,10 @@ class GoaldetailsViewController: UIViewController {
     @IBOutlet weak var goalAmountPerMonth: UILabel!
     @IBOutlet weak var lastAddedAmount: UILabel!
     @IBOutlet weak var savedAmountTxt: UILabel!
+    @IBOutlet weak var perMonthTXT: UILabel!
+    @IBOutlet weak var addSavingAmountStackView: UIView!
+    @IBOutlet weak var minimumAmounTxt: UILabel!
+    @IBOutlet weak var lastAddedTxt: UILabel!
     
     private let realm = try! Realm()
     private var goalDetails: Results<GoalDetails>?
@@ -43,9 +47,34 @@ class GoaldetailsViewController: UIViewController {
             goalNameLBL.text = details.goalName
             targetDateLBL.text = "Target Date: \(details.targetDate)"
             goalTotalAmountLBL.text = "Goal: \(details.totalGoalAmount)"
+            lastAddedAmount.text = "Amount: \(details.lastAddedSavingAmount)"
+            let diff = getDifferencOfDate(for: details.targetDate)
+            print("diff = \(diff)")
             
             if let total = Int(details.totalGoalAmount) {
-                savedAmountTxt.text = "Saved: \(details.savedAmount)/\(total)"
+                if details.savedAmount >= total {
+                    perMonthTXT.isHidden = true
+                    lastAddedTxt.isHidden = true
+                    perMonthTXT.isHidden = true
+                    lastAddedAmount.isHidden = true
+                    minimumAmounTxt.isHidden = true
+                    addSavingAmountStackView.isHidden = true
+                    
+                    goalAmountPerMonth.textColor = UIColor(named: "PrimaryColor")
+                    goalAmountPerMonth.font = .systemFont(ofSize: 22, weight: .bold)
+                    goalAmountPerMonth.text = "Target Achieved!"
+                    
+                    animateLabel()
+                } else {
+                    if diff == 0 {
+                        goalAmountPerMonth.text = "PKR: \(total-details.savedAmount)"
+                    } else {
+                        let amountPerMonth = (total-details.savedAmount)/diff
+                        goalAmountPerMonth.text = "PKR: \(amountPerMonth)"
+                    }
+                }
+                
+                savedAmountTxt.text = "Saved: \(details.savedAmount) / \(total)"
                 let saved = details.savedAmount
                 let savedPercent = (saved * 100) / total
                 let left = 100 - savedPercent
@@ -54,27 +83,46 @@ class GoaldetailsViewController: UIViewController {
                 customizeChart(dataPoints: labels, values: goals.map{ Double($0) })
                 setUpChart()
             }
-
         }
     }
     
-    private func setUpChart(){
-       
-        let l = pieChartView.legend
-        l.enabled = true
-        l.horizontalAlignment = .right
-        l.verticalAlignment = .top
-        l.orientation = .horizontal
-        l.xEntrySpace = 10
-        l.yEntrySpace = 0
-        l.yOffset = 0
-        l.textColor = .darkGray
-        pieChartView.drawHoleEnabled = false
-        pieChartView.usePercentValuesEnabled = true
-        pieChartView.drawEntryLabelsEnabled = false
-        //        pieChartView.entryLabelColor = .black
-        //        pieChartView.entryLabelFont = .systemFont(ofSize: 8, weight: .light)
-        pieChartView.animate(xAxisDuration: 1.4, yAxisDuration: 1.4, easingOption: .easeOutCirc)
+    private func animateLabel() {
+        
+        UIView.animate(withDuration: 1.0, delay: 0.33, options: .transitionCurlUp) {
+            self.goalAmountPerMonth.alpha = 0.0
+        } completion: { (_) in
+            self.goalAmountPerMonth.alpha = 1.0
+            
+            UIView.animate(withDuration: 1.0, delay: 0.33, options: .transitionCurlDown) {
+                self.goalAmountPerMonth.alpha = 0.0
+            } completion: { (_) in
+                self.goalAmountPerMonth.alpha = 1.0
+            }
+        }
+    }
+    
+    private func getDifferencOfDate(for date: String) -> Int{
+        
+        let curDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        
+        let currentDate = dateFormatter.string(from: curDate)
+        let cDate = dateFormatter.date(from: currentDate)
+        let targetDate = dateFormatter.date(from: date)
+        
+        if let targetDate = targetDate, let currentDate = cDate {
+            
+            let diff = Calendar.current.dateComponents([.month, .year], from: currentDate, to: targetDate)
+            let month = diff.month
+            let year = diff.year
+            
+            if let mon = month, let year = year {
+                return mon + year
+            }
+        }
+        
+        return 0
     }
     
     @IBAction func backIconBtn(_ sender: UIButton) {
@@ -87,6 +135,20 @@ class GoaldetailsViewController: UIViewController {
     
     @IBAction func deleteIconBtn(_ sender: UIButton) {
         
+        if let goalDetail = selectedGoal {
+            do {
+                try realm.write {
+                    realm.delete(goalDetail)
+                    self.view.makeToast("goal deleted successfully.")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+            } catch {
+                self.view.makeToast("error occured!")
+                print("Error deleting goal. \(error.localizedDescription)")
+            }
+        }
     }
     
     @IBAction func addSavingAmountBtn(_ sender: UIButton) {
@@ -96,9 +158,36 @@ class GoaldetailsViewController: UIViewController {
     }
     
     @IBAction func goalAchievedBtn(_ sender: UIButton) {
+        
+        
+        
+        let TitleString = NSAttributedString(string: "Important", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18, weight: .bold), NSAttributedString.Key.foregroundColor : UIColor(named: "PrimaryColor")!])
+        
+        let MessageString = NSAttributedString(string: "Are you sure you want to set goal as achieved?", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15), NSAttributedString.Key.foregroundColor : UIColor(named: "PrimaryColor")!])
+        
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        
+        alert.setValue(TitleString, forKey: "attributedTitle")
+        alert.setValue(MessageString, forKey: "attributedMessage")
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
+            print("Goal set as achieved!")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (_) in
+            print("Goal not set as achieved!")
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = .white
+        alert.view.tintColor = UIColor(named: "PrimaryColor")
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func viewSavingsBtn(_ sender: UIButton) {
+        let transactionsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.goalTransactions) as! GoalTransactionsViewController
+        transactionsVC.selectedGoalTransactions = selectedGoal
+        self.navigationController?.pushViewController(transactionsVC, animated: true)
     }
 }
 
@@ -106,6 +195,26 @@ class GoaldetailsViewController: UIViewController {
 //MARK:- extension chartViewDelegate
 
 extension GoaldetailsViewController: ChartViewDelegate {
+    
+    private func setUpChart(){
+        
+        let l = pieChartView.legend
+        l.enabled = true
+        l.horizontalAlignment = .right
+        l.verticalAlignment = .top
+        l.orientation = .horizontal
+        l.xEntrySpace = 10
+        l.yEntrySpace = 0
+        l.yOffset = 0
+        l.textColor = .darkGray
+        pieChartView.drawHoleEnabled = false
+        pieChartView.usePercentValuesEnabled = true
+        pieChartView.drawEntryLabelsEnabled = false
+        pieChartView.rotationEnabled = false
+        //        pieChartView.entryLabelColor = .black
+        //        pieChartView.entryLabelFont = .systemFont(ofSize: 8, weight: .light)
+        pieChartView.animate(xAxisDuration: 1.4, yAxisDuration: 1.4, easingOption: .easeOutCirc)
+    }
     
     
     func customizeChart(dataPoints: [String], values: [Double]) {
@@ -120,7 +229,7 @@ extension GoaldetailsViewController: ChartViewDelegate {
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
         
         pieChartDataSet.drawIconsEnabled = false
-        pieChartDataSet.sliceSpace = 5
+        pieChartDataSet.sliceSpace = 2
         
         pieChartDataSet.setColors(UIColor(named: "HeaderColor")!, UIColor(named: "PrimaryColor")!)
         // 3. Set ChartData
@@ -132,7 +241,7 @@ extension GoaldetailsViewController: ChartViewDelegate {
         pFormatter.multiplier = 1
         pFormatter.percentSymbol = "%"
         pieChartData.setValueFormatter(DefaultValueFormatter(formatter: pFormatter))
-        pieChartData.setValueFont(.systemFont(ofSize: 10, weight: .semibold))
+        pieChartData.setValueFont(.systemFont(ofSize: 10, weight: .bold))
         pieChartData.setValueTextColor(.darkGray)
         
         pieChartView.data = pieChartData
