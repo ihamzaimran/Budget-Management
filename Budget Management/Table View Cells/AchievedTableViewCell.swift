@@ -12,8 +12,9 @@ class AchievedTableViewCell: UITableViewCell {
     @IBOutlet weak var goalIcon: UIImageView!
     @IBOutlet weak var goalName: UILabel!
     @IBOutlet weak var progress: UIProgressView!
-    @IBOutlet weak var goalSaved: UILabel!
+    @IBOutlet weak var targetDate: UILabel!
     @IBOutlet weak var goalTotal: UILabel!
+    @IBOutlet weak var achievedDate: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

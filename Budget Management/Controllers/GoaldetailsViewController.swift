@@ -29,6 +29,8 @@ class GoaldetailsViewController: UIViewController {
     internal var selectedGoal: GoalDetails?
     private var goals: [Int] = []
     private let labels = ["Saved", "Left"]
+    private let userDefault = UserDefaults.standard
+    private var userID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,7 @@ class GoaldetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         pieChartView.delegate = self
+        userID = userDefault.string(forKey: "UserID")
         getDetails()
     }
     
@@ -49,41 +52,58 @@ class GoaldetailsViewController: UIViewController {
             goalTotalAmountLBL.text = "Goal: \(details.totalGoalAmount)"
             lastAddedAmount.text = "Amount: \(details.lastAddedSavingAmount)"
             let diff = getDifferencOfDate(for: details.targetDate)
-            print("diff = \(diff)")
+            print("difference = \(diff)")
             
-            if let total = Int(details.totalGoalAmount) {
-                if details.savedAmount >= total {
-                    perMonthTXT.isHidden = true
-                    lastAddedTxt.isHidden = true
-                    perMonthTXT.isHidden = true
-                    lastAddedAmount.isHidden = true
-                    minimumAmounTxt.isHidden = true
-                    addSavingAmountStackView.isHidden = true
-                    
-                    goalAmountPerMonth.textColor = UIColor(named: "PrimaryColor")
-                    goalAmountPerMonth.font = .systemFont(ofSize: 22, weight: .bold)
-                    goalAmountPerMonth.text = "Target Achieved!"
-                    
-                    animateLabel()
-                } else {
-                    if diff == 0 {
-                        goalAmountPerMonth.text = "PKR: \(total-details.savedAmount)"
-                    } else {
-                        let amountPerMonth = (total-details.savedAmount)/diff
-                        goalAmountPerMonth.text = "PKR: \(amountPerMonth)"
+            let total = details.totalGoalAmount
+            if details.savedAmount >= details.totalGoalAmount {
+                perMonthTXT.isHidden = true
+                lastAddedTxt.isHidden = true
+                perMonthTXT.isHidden = true
+                lastAddedAmount.isHidden = true
+                minimumAmounTxt.isHidden = true
+                addSavingAmountStackView.isHidden = true
+                
+                goalAmountPerMonth.textColor = UIColor(named: "PrimaryColor")
+                goalAmountPerMonth.font = .systemFont(ofSize: 22, weight: .bold)
+                goalAmountPerMonth.text = "Target Achieved!"
+                
+                do {
+                    try self.realm.write {
+                        details.isGoalAchieved = true
                     }
+                } catch {
+                    print(error.localizedDescription)
                 }
                 
-                savedAmountTxt.text = "Saved: \(details.savedAmount) / \(total)"
-                let saved = details.savedAmount
-                let savedPercent = (saved * 100) / total
-                let left = 100 - savedPercent
-                print("saved = \((saved * 100) / total) left = \(100 - savedPercent)")
-                goals = [savedPercent, left]
-                customizeChart(dataPoints: labels, values: goals.map{ Double($0) })
-                setUpChart()
+                animateLabel()
+            } else {
+                if diff == 0 {
+                    goalAmountPerMonth.text = "PKR: \(total-details.savedAmount)"
+                } else {
+                    let amountPerMonth = (total-details.savedAmount)/diff
+                    goalAmountPerMonth.text = "PKR: \(amountPerMonth)"
+                }
             }
+            
+            savedAmountTxt.text = "Saved: \(details.savedAmount) / \(total)"
+            let saved = details.savedAmount
+            let savedPercent = (saved * 100) / total
+            let left = 100 - savedPercent
+            print("saved = \((saved * 100) / total) left = \(100 - savedPercent)")
+            goals = [savedPercent, left]
+            customizeChart(dataPoints: labels, values: goals.map{ Double($0) })
+            setUpChart()
         }
+    }
+    
+    private func getCurrentDate()->String{
+        
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        
+        let currentDate = formatter.string(from: date)
+        return currentDate
     }
     
     private func animateLabel() {
@@ -125,6 +145,49 @@ class GoaldetailsViewController: UIViewController {
         return 0
     }
     
+    private func checkGoalAchieved(){
+        
+        if let details = selectedGoal {
+            if details.isGoalAchieved {
+                
+                if let userid = userID {
+                    if let goalDetails = self.realm.objects(ProfileModel.self).filter("id = %@", userid).first{
+                        do {
+                            try self.realm.write {
+                                
+                                let achievedGoal = GoalAchieved()
+                                achievedGoal.goalName = details.goalName
+                                achievedGoal.goalDescription = details.goalDescription
+                                achievedGoal.targetDate = details.targetDate
+                                achievedGoal.totalGoalAmount = details.totalGoalAmount
+                                achievedGoal.accountType = details.accountType
+                                achievedGoal.goalIcon = details.goalIcon
+                                achievedGoal.lastAddedSavingAmount = details.lastAddedSavingAmount
+                                achievedGoal.achievedDate = getCurrentDate()
+                                achievedGoal.transactions = details.goalTransactions
+                                goalDetails.goalAchievedDetails.append(achievedGoal)
+                                self.view.makeToast("Goal set as achieved!")
+                                print("Goal set as achieved!")
+                                
+                                realm.delete(details)
+                                
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                                    self.navigationController?.popViewController(animated: true)
+                                }
+                            }
+                        } catch {
+                            self.view.makeToast("couldn't set goal as achieved!")
+                            print("Error saving new items, \(error.localizedDescription)")
+                        }
+                    }
+                }
+            } else {
+                self.view.makeToast("You haven't reached your goal yet!")
+                print("You haven't reached your goal yet!")
+            }
+        }
+    }
+    
     @IBAction func backIconBtn(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -159,8 +222,6 @@ class GoaldetailsViewController: UIViewController {
     
     @IBAction func goalAchievedBtn(_ sender: UIButton) {
         
-        
-        
         let TitleString = NSAttributedString(string: "Important", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18, weight: .bold), NSAttributedString.Key.foregroundColor : UIColor(named: "PrimaryColor")!])
         
         let MessageString = NSAttributedString(string: "Are you sure you want to set goal as achieved?", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15), NSAttributedString.Key.foregroundColor : UIColor(named: "PrimaryColor")!])
@@ -171,11 +232,10 @@ class GoaldetailsViewController: UIViewController {
         alert.setValue(MessageString, forKey: "attributedMessage")
         
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
-            print("Goal set as achieved!")
+            self.checkGoalAchieved()
         }))
         
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (_) in
-            print("Goal not set as achieved!")
             alert.dismiss(animated: true, completion: nil)
         }))
         

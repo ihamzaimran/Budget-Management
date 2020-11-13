@@ -14,7 +14,10 @@ class GoalAchievedViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noGoalsLBL: UILabel!
     
-    private var goalDetails = List <GoalDetails>()
+    private var achievedGoalDetails = List<GoalAchieved>()
+    private let realm = try! Realm()
+    private var userID: String?
+    private let userDefault = UserDefaults.standard
     
     var childNumber: String = ""
     
@@ -24,7 +27,23 @@ class GoalAchievedViewController: UIViewController, IndicatorInfoProvider {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
         tableView.tableFooterView = UITableViewHeaderFooterView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        userID = userDefault.string(forKey: "UserID")
+        getData()
+    }
+    
+    private func getData(){
+        if let userId = userID {
+            if let details = self.realm.objects(ProfileModel.self).filter("id = %@", userId).first{
+                achievedGoalDetails = details.goalAchievedDetails
+                tableView.reloadData()
+            }
+        }
+
     }
     
     
@@ -40,7 +59,7 @@ extension GoalAchievedViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if goalDetails.isEmpty {
+        if achievedGoalDetails.isEmpty {
             tableView.isHidden = true
             noGoalsLBL.isHidden = false
             noGoalsLBL.text = "You have not achieved any goals yet! Try completing one."
@@ -48,7 +67,7 @@ extension GoalAchievedViewController: UITableViewDelegate, UITableViewDataSource
             tableView.isHidden = false
             noGoalsLBL.isHidden = true
         }
-        return goalDetails.count
+        return achievedGoalDetails.count
         
     }
     
@@ -57,30 +76,28 @@ extension GoalAchievedViewController: UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableViewIdentifier.achievedTableCellIdentifier, for: indexPath) as! AchievedTableViewCell
         cell.backgroundColor = .clear
         
-        let details = goalDetails[indexPath.row]
+        let details = achievedGoalDetails[indexPath.row]
         cell.goalName.text = details.goalName
-        cell.goalSaved.text = ("Saved: \(details.savedAmount)")
-        cell.goalTotal.text = ("Total: \(details.totalGoalAmount)")
+        cell.targetDate.text = ("Target Date: \(details.targetDate)")
+        cell.achievedDate.text = ("Achieved Date: \(details.achievedDate)")
+        cell.goalTotal.text = ("Goal: \(details.totalGoalAmount)")
         cell.goalIcon.image = UIImage(named: details.goalIcon)
-        
-        if let total = Float(details.totalGoalAmount) {
-            cell.progress.progress = Float(details.savedAmount)/total
-        }
+        cell.progress.progress = Float(details.totalGoalAmount)/Float(details.totalGoalAmount)
+    
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85.0
+        return 120.0
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        let goalDetailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.goalDetails) as! GoaldetailsViewController
-        goalDetailVC.selectedGoal = goalDetails[indexPath.row]
-        
+ 
+        let goalDetailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.AchievedGoalDetailStoryboard) as! AchievedGoalDetailsViewController
+        goalDetailVC.goalDetail = achievedGoalDetails[indexPath.row]
         self.navigationController?.pushViewController(goalDetailVC, animated: true)
     }
     

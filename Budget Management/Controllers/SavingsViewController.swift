@@ -38,7 +38,7 @@ class SavingsViewController: UIViewController, IndicatorInfoProvider {
     }
     
     @IBAction func addGoalButton(_ sender: UIButton) {
-        
+        print("function called!")
         let addGoalVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.addGoal) as! AddGoalViewController
         self.navigationController?.pushViewController(addGoalVC, animated: true)
     }
@@ -87,9 +87,9 @@ extension SavingsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.totalGoal.text = ("Total: \(details.totalGoalAmount)")
         cell.goalIcon.image = UIImage(named: details.goalIcon)
         
-        if let total = Float(details.totalGoalAmount) {
-            cell.goalProgress.progress = Float(details.savedAmount)/total
-        }
+         let total = Float(details.totalGoalAmount)
+         cell.goalProgress.progress = Float(details.savedAmount)/total
+        
         return cell
     }
     

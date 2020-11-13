@@ -9,6 +9,7 @@ import UIKit
 import SideMenu
 import XLPagerTabStrip
 import GoogleSignIn
+import RealmSwift
 
 class DashBoard: UIViewController, UIGestureRecognizerDelegate {
     
@@ -27,7 +28,9 @@ class DashBoard: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
         navigationItem.hidesBackButton = true
         setupSideMenu()
         updateMenus()

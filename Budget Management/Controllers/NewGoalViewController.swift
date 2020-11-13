@@ -97,9 +97,17 @@ class NewGoalViewController: UIViewController {
         if goalNameTextField.text?.isEmpty ?? true || amountTXT.text?.isEmpty ?? true || targetDateTextfield.text?.isEmpty ?? true || goalDescriptionTextField.text?.isEmpty ?? true{
             self.view.makeToast("one of the field is empty", duration: 1.0, position: .bottom)
         } else {
-            saveData()
+            if let amount = Int(amountTXT.text!) {
+                if amount < 1 {
+                    self.view.makeToast("goal amount should be greater than 0")
+                }else {
+                    saveData()
+                }
+            }else {
+                print("floating point number.")
+                self.view.makeToast("please enter an integer")
+            }
         }
-        
     }
     
     private func saveData(){
@@ -112,7 +120,7 @@ class NewGoalViewController: UIViewController {
                         newGoal.goalName = goalNameTextField.text ?? "Home"
                         newGoal.goalDescription = goalDescriptionTextField.text ?? "Savings for goal"
                         newGoal.targetDate = targetDateTextfield.text ?? "22/09/2020"
-                        newGoal.totalGoalAmount = amountTXT.text ?? "0"
+                        newGoal.totalGoalAmount = Int(amountTXT.text!)!
                         newGoal.savedAmount = 0
                         newGoal.goalIcon = choosenIcon
                         details.goalDetails.append(newGoal)

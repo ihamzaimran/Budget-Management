@@ -14,6 +14,7 @@ class GoalTransactionsViewController: UIViewController {
     @IBOutlet weak var noListLBL: UILabel!
     
     internal var selectedGoalTransactions: GoalDetails?
+    internal var achievedGoalTransactions: GoalAchieved?
     private var transactionsList = List<GoalTransactions>()
     private let realm = try! Realm()
     
@@ -29,8 +30,11 @@ class GoalTransactionsViewController: UIViewController {
     }
     
     private func getData(){
+        
         if let selectedTransaction = selectedGoalTransactions {
             transactionsList = selectedTransaction.goalTransactions
+        } else if let achievedGoal = achievedGoalTransactions {
+            transactionsList = achievedGoal.transactions
         }
     }
     

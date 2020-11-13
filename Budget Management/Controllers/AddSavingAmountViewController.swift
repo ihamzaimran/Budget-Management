@@ -50,8 +50,8 @@ class AddSavingAmountViewController: UIViewController {
         
         addAmountTextField.text = nil
         addAmountTextField.textAlignment = .right
-        addAmountTextField.textColor = UIColor(named: "PrimaryColor")
-        changeBorderColor(name: greenColor)
+        addAmountTextField.textColor = greenColor
+        addAmountTextField.textFieldStyle(color: .clear)
         
         dateTextField.textFieldStyle(color: .darkGray)
         dateTextField.textColor = .darkGray
@@ -80,11 +80,8 @@ class AddSavingAmountViewController: UIViewController {
             descripitonTextField.text = details.goalDescription
             dateTextField.text = details.targetDate
             depositTypeTextField.text = details.accountType
-            if let total = Int(details.totalGoalAmount) {
-                remainingAmountLBL.text = "Remaining: \(total-details.savedAmount)"
-            } else {
-                remainingAmountLBL.text = "Remaining: N/A"
-            }
+            remainingAmountLBL.text = "Remaining: \(details.totalGoalAmount-details.savedAmount)"
+            
             let type = details.accountType
             if type == "Cash" {
                 cashViewImage.backgroundColor = .lightGray
@@ -134,6 +131,7 @@ class AddSavingAmountViewController: UIViewController {
             }
         }
     }
+    
     private func getCurrentDate()-> todaysDate{
         
         let date = Date()
@@ -172,17 +170,23 @@ class AddSavingAmountViewController: UIViewController {
         if addAmountTextField.text?.isEmpty ?? true || dateTextField.text?.isEmpty ?? true || depositTypeTextField.text?.isEmpty ?? true || descripitonTextField.text?.isEmpty ?? true{
             self.view.makeToast("one of the field is empty", duration: 1.5, position: .bottom)
         }else {
-             if let details = selectedGoalDetails{
-                if let total = Int(details.totalGoalAmount) {
-                    let amount = Int(addAmountTextField.text!)!
-                    let remaining = total-details.savedAmount
-                    if amount > remaining {
-                        self.view.makeToast("entered amount should be less than the remaining amount!\nremaining goal amount is \(remaining)")
+            
+            if let details = selectedGoalDetails{
+                
+                if let amount = Int(addAmountTextField.text!){
+                    let remaining = details.totalGoalAmount-details.savedAmount
+                    if amount < 1 {
+                        self.view.makeToast("amount should be greater than 0")
                     } else {
-                        saveData()
+                        if amount > remaining {
+                            self.view.makeToast("entered amount should be less than the remaining amount!\nremaining goal amount is \(remaining)")
+                        } else {
+                            saveData()
+                        }
                     }
                 } else {
-                    self.view.makeToast("error occured!")
+                    self.view.makeToast("please enter an integer")
+                    print("floating point number.")
                 }
             }
         }
