@@ -27,8 +27,12 @@ class AddSavingAmountViewController: UIViewController {
     @IBOutlet weak var cashBtn: UIButton!
     @IBOutlet weak var bankBtn: UIButton!
     @IBOutlet weak var otherBtn: UIButton!
+    @IBOutlet weak var saveDeleteButton: UIButton!
     
     internal var selectedGoalDetails: GoalDetails?
+    internal var selectedAchievedGoalDetails: GoalAchieved?
+    internal var selectGoalTransaction: GoalDetails?
+    internal var edit: Bool?
     private var accountType = "Cash"
     private let relam = try! Realm()
     private let greenColor = UIColor(named: "PrimaryColor")!
@@ -42,6 +46,7 @@ class AddSavingAmountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         addAmountTextField.delegate = self
         dateTextField.delegate = self
@@ -71,7 +76,10 @@ class AddSavingAmountViewController: UIViewController {
     
     private func getDetails(){
         
-        if let details = selectedGoalDetails {
+        if let details = selectedGoalDetails, let edit = edit {
+            saveDeleteButton.isHidden = false
+            saveDeleteButton.tag = 0
+            saveDeleteButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
             goalImageView.image = UIImage(named: details.goalIcon)
             goalNameLBL.text = details.goalName
             targetDateLBL.text = "Target Date: \(details.targetDate)"
@@ -81,6 +89,63 @@ class AddSavingAmountViewController: UIViewController {
             dateTextField.text = details.targetDate
             depositTypeTextField.text = details.accountType
             remainingAmountLBL.text = "Remaining: \(details.totalGoalAmount-details.savedAmount)"
+            
+            let type = details.accountType
+            if type == "Cash" {
+                cashViewImage.backgroundColor = .lightGray
+            } else if type == "Bank" {
+                bankViewImage.backgroundColor = .lightGray
+            } else if type == "Other" {
+                otherViewImage.backgroundColor = .lightGray
+            }
+        } else if let details = selectedAchievedGoalDetails {
+            
+            saveDeleteButton.tag = 1
+            saveDeleteButton.isHidden = true
+            
+            addAmountTextField.isUserInteractionEnabled = false
+            dateTextField.isUserInteractionEnabled = false
+            descripitonTextField.isUserInteractionEnabled = false
+            depositTypeTextField.isUserInteractionEnabled = false
+            
+            goalImageView.image = UIImage(named: details.goalIcon)
+            goalNameLBL.text = details.goalName
+            targetDateLBL.text = "Target Date: \(details.targetDate)"
+            goalAmounLBL.text = "Goal: \(details.totalGoalAmount)"
+            savedAmountLBL.text = "Saved: \(details.totalGoalAmount)"
+            addAmountTextField.text = ("\(details.totalGoalAmount)")
+            descripitonTextField.text = details.goalDescription
+            dateTextField.text = details.targetDate
+            depositTypeTextField.text = details.accountType
+            remainingAmountLBL.text = "Remaining: \(details.totalGoalAmount-details.totalGoalAmount)"
+            
+            let type = details.accountType
+            if type == "Cash" {
+                cashViewImage.backgroundColor = .lightGray
+            } else if type == "Bank" {
+                bankViewImage.backgroundColor = .lightGray
+            } else if type == "Other" {
+                otherViewImage.backgroundColor = .lightGray
+            }
+        } else if let details = selectGoalTransaction, let _ = edit {
+            saveDeleteButton.tag = 1
+            saveDeleteButton.isHidden = true
+            
+            addAmountTextField.isUserInteractionEnabled = false
+            dateTextField.isUserInteractionEnabled = false
+            descripitonTextField.isUserInteractionEnabled = false
+            depositTypeTextField.isUserInteractionEnabled = false
+            
+            goalImageView.image = UIImage(named: details.goalIcon)
+            goalNameLBL.text = details.goalName
+            targetDateLBL.text = "Target Date: \(details.targetDate)"
+            goalAmounLBL.text = "Goal: \(details.totalGoalAmount)"
+            savedAmountLBL.text = "Saved: \(details.totalGoalAmount)"
+            addAmountTextField.text = ("\(details.totalGoalAmount)")
+            descripitonTextField.text = details.goalDescription
+            dateTextField.text = details.targetDate
+            depositTypeTextField.text = details.accountType
+            remainingAmountLBL.text = "Remaining: \(details.totalGoalAmount-details.totalGoalAmount)"
             
             let type = details.accountType
             if type == "Cash" {
@@ -167,6 +232,16 @@ class AddSavingAmountViewController: UIViewController {
     
     @IBAction func saveDepositBtn(_ sender: UIButton) {
         
+        if saveDeleteButton.tag == 0 {
+            checkTextFieldErrors()
+            print("saving...")
+        } else if saveDeleteButton.tag == 1 {
+            //            deleteSavings
+            print("deleting....")
+        }
+    }
+    
+    private func checkTextFieldErrors(){
         if addAmountTextField.text?.isEmpty ?? true || dateTextField.text?.isEmpty ?? true || depositTypeTextField.text?.isEmpty ?? true || descripitonTextField.text?.isEmpty ?? true{
             self.view.makeToast("one of the field is empty", duration: 1.5, position: .bottom)
         }else {

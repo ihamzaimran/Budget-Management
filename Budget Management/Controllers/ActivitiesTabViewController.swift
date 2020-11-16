@@ -10,7 +10,6 @@ import SideMenu
 
 class ActivitiesTabViewController: UIViewController {
     
-    
     override var prefersStatusBarHidden: Bool {
         true
     }

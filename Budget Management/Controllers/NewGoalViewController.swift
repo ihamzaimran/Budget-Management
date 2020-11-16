@@ -29,6 +29,8 @@ class NewGoalViewController: UIViewController {
     private let realm = try! Realm()
     private var iconArray = Constants.Images.iconArray
     private var choosenIcon = "home_icon"
+    internal var selectedGoal: GoalDetails?
+    private var isEdit = false
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -65,6 +67,22 @@ class NewGoalViewController: UIViewController {
         if let userId = userDefault.string(forKey: "UserID"){
             userID = userId
         }
+        
+        if let detail = selectedGoal{
+            isEdit = true
+            getGoalDetails(with: detail)
+        }
+        
+    }
+    
+    private func getGoalDetails(with details: GoalDetails){
+        amountTXT.text = "\(details.totalGoalAmount)"
+        goalNameTextField.text = details.goalName
+        targetDateTextfield.text = details.targetDate
+        iconImageView.setBackgroundImage(UIImage(named: details.goalIcon), for: .normal)
+        iconImage.setBackgroundImage(UIImage(named: details.goalIcon), for: .normal)
+        choosenIcon = details.goalIcon
+        goalDescriptionTextField.text = details.goalDescription
     }
     
     private func setIcon(with name: String){
@@ -113,26 +131,49 @@ class NewGoalViewController: UIViewController {
     private func saveData(){
         
         if let id = userID {
-            if let details = self.realm.objects(ProfileModel.self).filter("id = %@", id).first{
+            if isEdit == false {
+                if let details = self.realm.objects(ProfileModel.self).filter("id = %@", id).first{
+                    do {
+                        try self.realm.write {
+                            let newGoal = GoalDetails()
+                            newGoal.goalName = goalNameTextField.text ?? "Home"
+                            newGoal.goalDescription = goalDescriptionTextField.text ?? "Savings for goal"
+                            newGoal.targetDate = targetDateTextfield.text ?? "22/09/2020"
+                            newGoal.totalGoalAmount = Int(amountTXT.text!)!
+                            newGoal.savedAmount = 0
+                            newGoal.goalIcon = choosenIcon
+                            details.goalDetails.append(newGoal)
+                            print("Details saved successfully!")
+                            
+                            self.view.makeToast("Goal Saved!", duration: 1.0, position: .bottom)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                                self.navigationController?.popViewController(animated: true)
+                            }
+                        }
+                    } catch {
+                        print("Error saving new items, \(error.localizedDescription)")
+                    }
+                }
+            } else {
                 do {
                     try self.realm.write {
-                        let newGoal = GoalDetails()
-                        newGoal.goalName = goalNameTextField.text ?? "Home"
-                        newGoal.goalDescription = goalDescriptionTextField.text ?? "Savings for goal"
-                        newGoal.targetDate = targetDateTextfield.text ?? "22/09/2020"
-                        newGoal.totalGoalAmount = Int(amountTXT.text!)!
-                        newGoal.savedAmount = 0
-                        newGoal.goalIcon = choosenIcon
-                        details.goalDetails.append(newGoal)
-                        print("Details saved successfully!")
-                        
-                        self.view.makeToast("Goal Saved!", duration: 1.0, position: .bottom)
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                            self.navigationController?.popViewController(animated: true)
+                        if let detail = selectedGoal {
+                            detail.goalName = goalNameTextField.text ?? "Home"
+                            detail.goalDescription = goalDescriptionTextField.text ?? "Savings for goal"
+                            detail.targetDate = targetDateTextfield.text ?? "22/09/2020"
+                            detail.totalGoalAmount = Int(amountTXT.text!)!
+                            detail.goalIcon = choosenIcon
+                            print("Details saved successfully!")
+                            
+                            self.view.makeToast("Changes saved successfully!", duration: 1.0, position: .bottom)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                                self.navigationController?.popViewController(animated: true)
+                            }
+
                         }
                     }
                 } catch {
-                    print("Error saving new items, \(error)")
+                    print("Error saving new items, \(error.localizedDescription)")
                 }
             }
         }

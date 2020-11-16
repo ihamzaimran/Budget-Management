@@ -14,7 +14,7 @@ class PagerViewForsavingsViewController: ButtonBarPagerTabStripViewController {
     override var prefersStatusBarHidden: Bool {
         true
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -24,12 +24,16 @@ class PagerViewForsavingsViewController: ButtonBarPagerTabStripViewController {
     
     override func viewDidLoad() {
         
-        setUpPagaingView()
+        setupXLPagerStrip()
+        
         super.viewDidLoad()
         
         setupSideMenu()
         updateMenus()
+        
+        self.view.layoutIfNeeded()
     }
+    
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         
@@ -39,6 +43,7 @@ class PagerViewForsavingsViewController: ButtonBarPagerTabStripViewController {
         let child2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIDs.goalAchieved) as! GoalAchievedViewController
         child2.childNumber = "ACHIEVED"
         
+        
         return [child1, child2]
     }
 }
@@ -46,7 +51,7 @@ class PagerViewForsavingsViewController: ButtonBarPagerTabStripViewController {
 // MARK:- Side Menu Setup
 
 extension PagerViewForsavingsViewController {
-
+    
     private func updateMenus() {
         let settings = makeSettings()
         SideMenuManager.default.leftMenuNavigationController?.settings = settings
@@ -92,8 +97,3 @@ extension PagerViewForsavingsViewController {
     }
 }
 
-//MARK:- XLPagerStripTab extension
-
-extension PagerViewForsavingsViewController {
-    
-}

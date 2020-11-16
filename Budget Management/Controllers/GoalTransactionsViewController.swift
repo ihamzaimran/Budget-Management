@@ -81,4 +81,21 @@ extension GoalTransactionsViewController: UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let detailsDepositVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.addSavingAmount) as! AddSavingAmountViewController
+        
+        
+        if let selectedTransaction = selectedGoalTransactions {
+            detailsDepositVC.selectGoalTransaction = selectedTransaction
+            detailsDepositVC.edit = false
+        } else if let achievedGoal = achievedGoalTransactions {
+            detailsDepositVC.selectedAchievedGoalDetails = achievedGoal
+        }
+        self.navigationController?.pushViewController(detailsDepositVC, animated: true)
+        
+    }
 }

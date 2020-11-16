@@ -382,6 +382,8 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
         collectionViewContentWidth += cellSpacingTotal
 
         let collectionViewAvailableVisibleWidth = buttonBarView.frame.size.width - flowLayout.sectionInset.left - flowLayout.sectionInset.right
+        
+        print("width = \(collectionViewAvailableVisibleWidth)")
 
         if !settings.style.buttonBarItemsShouldFillAvailableWidth || collectionViewAvailableVisibleWidth < collectionViewContentWidth {
             return minimumCellWidths

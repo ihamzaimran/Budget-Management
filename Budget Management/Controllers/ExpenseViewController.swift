@@ -16,6 +16,8 @@ class ExpenseViewController: UIViewController, IndicatorInfoProvider {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        tableView.backgroundColor = .white
     }
     
     // MARK: - IndicatorInfoProvider

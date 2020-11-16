@@ -193,7 +193,9 @@ class GoaldetailsViewController: UIViewController {
     }
     
     @IBAction func editIconBtn(_ sender: UIButton) {
-        
+        let editGoalVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.newGoal) as! NewGoalViewController
+        editGoalVC.selectedGoal = selectedGoal
+        self.navigationController?.pushViewController(editGoalVC, animated: true)
     }
     
     @IBAction func deleteIconBtn(_ sender: UIButton) {
@@ -217,6 +219,7 @@ class GoaldetailsViewController: UIViewController {
     @IBAction func addSavingAmountBtn(_ sender: UIButton) {
         let newDepositVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.addSavingAmount) as! AddSavingAmountViewController
         newDepositVC.selectedGoalDetails = selectedGoal
+        newDepositVC.edit = true
         self.navigationController?.pushViewController(newDepositVC, animated: true)
     }
     

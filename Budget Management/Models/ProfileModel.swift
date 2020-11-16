@@ -25,7 +25,6 @@ class ProfileModel: Object {
     }
 }
 
-
 class GoalDetails: Object {
     
     @objc dynamic var goalName = ""
@@ -63,15 +62,4 @@ class GoalAchieved: Object {
     var transactions = List<GoalTransactions>()
     
     let achievedDetails = LinkingObjects(fromType: ProfileModel.self, property: "goalAchievedDetails")
-//    let goalTransactions = LinkingObjects(fromType: GoalDetails.self, property: "transactions")
-//    let goalAchievedTransactions = List<GoalAchievedTransactions>()
 }
-
-//class GoalAchievedTransactions: Object {
-//
-//    @objc dynamic var amount = 0
-//    @objc dynamic var goalName = ""
-//    @objc dynamic var goalDescription = ""
-//    @objc dynamic var date = ""
-//    var achievedGoalTransactions = LinkingObjects(fromType: GoalAchieved.self, property: "goalAchievedTransactions")
-//}

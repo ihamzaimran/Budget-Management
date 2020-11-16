@@ -16,8 +16,9 @@ class CategoriesViewController: ButtonBarPagerTabStripViewController {
     
     override func viewDidLoad() {
         
-        setUpPagaingView()
+        setupXLPagerStrip()
         super.viewDidLoad()
+        self.view.layoutIfNeeded()
     }
     
     @IBAction func backIconButton(_ sender: UIButton) {
@@ -31,6 +32,18 @@ class CategoriesViewController: ButtonBarPagerTabStripViewController {
         
         let child2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIDs.income) as! IncomeViewController
         child2.childNumber = "INCOME"
+        
+//        let child3 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIDs.expense) as! ExpenseViewController
+//        child3.childNumber = "EXPENSE"
+//        
+//        let child4 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIDs.income) as! IncomeViewController
+//        child4.childNumber = "INCOME"
+//        
+//        let child5 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIDs.expense) as! ExpenseViewController
+//        child5.childNumber = "EXPENSE"
+//        
+//        let child6 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIDs.income) as! IncomeViewController
+//        child6.childNumber = "INCOME"
         
         return [child1, child2]
     }

@@ -29,6 +29,7 @@ class SavingsViewController: UIViewController, IndicatorInfoProvider {
         tableView.dataSource = self
         tableView.backgroundColor = .clear
         tableView.tableFooterView = UITableViewHeaderFooterView()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

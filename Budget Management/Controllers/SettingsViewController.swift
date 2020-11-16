@@ -8,6 +8,7 @@
 import UIKit
 import SKCountryPicker
 import GoogleSignIn
+import RealmSwift
 
 class SettingsViewController: UIViewController {
     
@@ -18,6 +19,7 @@ class SettingsViewController: UIViewController {
     private let subTitle = Constants.Text.settingssubText
     private let budgetBrain = BudgetBrain()
     private let userDefault = UserDefaults.standard
+    private let realm = try! Realm()
     
     override var prefersStatusBarHidden: Bool {
         true
@@ -74,16 +76,54 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         case 2:
             selectCountry()
         case 3:
-            break
+            print("wiping data...")
+            confirmAction()
         case 4:
             budgetBrain.openExternalLink(with: Constants.Links.appStore)
         case 5:
             showShareSheet()
-//        case 6:
-//            disconnectGoogleAccount()
+        //        case 6:
+        //            disconnectGoogleAccount()
         default:
             break
         }
+    }
+    
+    private func confirmAction(){
+        let TitleString = NSAttributedString(string: "Important", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18, weight: .bold), NSAttributedString.Key.foregroundColor : UIColor(named: "PrimaryColor")!])
+        
+        let MessageString = NSAttributedString(string: "Are you sure you want to delete everything?", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15), NSAttributedString.Key.foregroundColor : UIColor(named: "PrimaryColor")!])
+        
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        
+        alert.setValue(TitleString, forKey: "attributedTitle")
+        alert.setValue(MessageString, forKey: "attributedMessage")
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
+            do {
+                try self.realm.write{
+                    let goalDetail = self.realm.objects(GoalDetails.self)
+                    let goalAchieved = self.realm.objects(GoalAchieved.self)
+                    let goalTransactions = self.realm.objects(GoalTransactions.self)
+                    self.realm.delete(goalDetail)
+                    self.realm.delete(goalAchieved)
+                    self.realm.delete(goalTransactions)
+                    print("data deleted!")
+                    self.view.makeToast("Data deleted successfully!")
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: .destructive, handler: { (_) in
+            print("user canceled the action.")
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = .white
+        alert.view.tintColor = UIColor(named: "PrimaryColor")
+        self.present(alert, animated: true, completion: nil)
     }
     
     private func disconnectGoogleAccount() {

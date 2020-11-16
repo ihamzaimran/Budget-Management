@@ -111,6 +111,7 @@ class UpdateProfileViewController: UIViewController {
                     nameTxt.text = details.name
                     mobileTxt.text = details.mobile
                     selectGenderTxt.text = details.gender
+                    professionTxt.text = details.profession
                     print(details.email)
                     
                     if let image = details.profileImageData {
@@ -184,7 +185,6 @@ class UpdateProfileViewController: UIViewController {
         } else if retiredView.tag == 1 {
             professionTxt.text = "Retired"
         }
-        
         self.professionView.removeFromSuperview()
         
     }
@@ -258,6 +258,7 @@ class UpdateProfileViewController: UIViewController {
     }
     
     @IBAction func studentTapRecogniserView(_ sender: UITapGestureRecognizer) {
+        
         studentImageView.image = UIImage(named: "student_selected")
         professionalImageView.image = UIImage(named: "icon_professional")
         housewifeImageView.image = UIImage(named: "icon_housewife")
@@ -275,6 +276,7 @@ class UpdateProfileViewController: UIViewController {
     }
     
     @IBAction func professionalTapRecogniserView(_ sender: UITapGestureRecognizer) {
+        
         studentImageView.image = UIImage(named: "icon_student")
         professionalImageView.image = UIImage(named: "prof_selected")
         housewifeImageView.image = UIImage(named: "icon_housewife")
@@ -292,6 +294,7 @@ class UpdateProfileViewController: UIViewController {
     }
     
     @IBAction func housewifeTapRecogniserView(_ sender: UITapGestureRecognizer) {
+        
         studentImageView.image = UIImage(named: "icon_student")
         professionalImageView.image = UIImage(named: "icon_professional")
         housewifeImageView.image = UIImage(named: "house_selected")
@@ -309,6 +312,7 @@ class UpdateProfileViewController: UIViewController {
     }
     
     @IBAction func reiredTapRecogniserView(_ sender: UITapGestureRecognizer) {
+        
         studentImageView.image = UIImage(named: "icon_student")
         professionalImageView.image = UIImage(named: "icon_professional")
         housewifeImageView.image = UIImage(named: "icon_housewife")
@@ -354,7 +358,7 @@ extension UpdateProfileViewController: UIImagePickerControllerDelegate, UINaviga
                         details.mobile = mobileTxt.text ?? ""
                         details.profileImageData = imageData
                         details.gender = selectGenderTxt.text ?? ""
-                        details.profession = professionaltxt.text ?? ""
+                        details.profession = professionTxt.text ?? ""
                         print("Data saved successfully!")
                         self.view.makeToast("changes saved successfully", duration: 1.0, position: .bottom)
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
