@@ -45,6 +45,7 @@ struct Constants {
         static let newGoalCollectionCellIdentifier = "newGoalCollectionCellIdentifier"
         static let goalTransactionsCellIdentifer = "goalTransactionsCellIdentifer"
         static let achievedTableCellIdentifier = "achievedTableCellIdentifier"
+        static let accountBalanceIdentifierCell = "accountBalanceIdentifierCell"
     }
     
     struct Images {

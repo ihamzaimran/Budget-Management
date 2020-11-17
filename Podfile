@@ -14,5 +14,7 @@ pod 'RealmSwift'
 pod 'SDWebImage', '~> 5.0'
 pod 'Toast-Swift', '~> 5.0.1'
 pod 'Charts'
+pod 'DeviceKit', '~> 4.0'
+pod 'iOSDropDown'
 
 end

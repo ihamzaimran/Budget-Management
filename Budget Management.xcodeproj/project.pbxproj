@@ -11,6 +11,12 @@
 		EC07563C254FD710001FBBA3 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC07563B254FD710001FBBA3 /* LoginPageViewController.swift */; };
 		EC07563F254FD980001FBBA3 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC07563E254FD980001FBBA3 /* LoginPageView.swift */; };
 		EC075642254FD9A3001FBBA3 /* LoginPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC075641254FD9A3001FBBA3 /* LoginPageView.xib */; };
+		EC2F0F0C25639066007EA0B3 /* NavBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC2F0F0B25639066007EA0B3 /* NavBar.xib */; };
+		EC2F0F0F25639075007EA0B3 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F0F0E25639075007EA0B3 /* NavBar.swift */; };
+		EC2F0F1B25639D11007EA0B3 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F0F1A25639D11007EA0B3 /* TabBar.swift */; };
+		EC2F0F532563DAA9007EA0B3 /* NavBarX.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC2F0F522563DAA9007EA0B3 /* NavBarX.xib */; };
+		EC2F0F562563DAE7007EA0B3 /* NavBarX.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F0F552563DAE7007EA0B3 /* NavBarX.swift */; };
+		EC2F0F6B2563E92D007EA0B3 /* AccountBalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F0F6A2563E92D007EA0B3 /* AccountBalanceTableViewCell.swift */; };
 		EC44D9FB25493665009B39E5 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44D9FA25493665009B39E5 /* ProfileModel.swift */; };
 		EC44DA1A25496299009B39E5 /* LoginCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44DA1925496299009B39E5 /* LoginCollectionViewCell.swift */; };
 		EC4D809E254298AC00D0EA31 /* BudgetBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D809D254298AC00D0EA31 /* BudgetBrain.swift */; };
@@ -61,6 +67,12 @@
 		EC07563B254FD710001FBBA3 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		EC07563E254FD980001FBBA3 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
 		EC075641254FD9A3001FBBA3 /* LoginPageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginPageView.xib; sourceTree = "<group>"; };
+		EC2F0F0B25639066007EA0B3 /* NavBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavBar.xib; sourceTree = "<group>"; };
+		EC2F0F0E25639075007EA0B3 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		EC2F0F1A25639D11007EA0B3 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		EC2F0F522563DAA9007EA0B3 /* NavBarX.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavBarX.xib; sourceTree = "<group>"; };
+		EC2F0F552563DAE7007EA0B3 /* NavBarX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarX.swift; sourceTree = "<group>"; };
+		EC2F0F6A2563E92D007EA0B3 /* AccountBalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBalanceTableViewCell.swift; sourceTree = "<group>"; };
 		EC44D9FA25493665009B39E5 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		EC44DA1925496299009B39E5 /* LoginCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC4D809D254298AC00D0EA31 /* BudgetBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetBrain.swift; sourceTree = "<group>"; };
@@ -205,6 +217,7 @@
 				ECCB094B255A727A0024B827 /* GoaldetailsViewController.swift */,
 				EC8B2488255D163E0086837A /* GoalTransactionsViewController.swift */,
 				ECA40130255E8FE600719D52 /* AchievedGoalDetailsViewController.swift */,
+				EC2F0F1A25639D11007EA0B3 /* TabBar.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -217,6 +230,10 @@
 				EC5108BF254024AF00A98A3E /* HeaderView.swift */,
 				EC07563E254FD980001FBBA3 /* LoginPageView.swift */,
 				EC075641254FD9A3001FBBA3 /* LoginPageView.xib */,
+				EC2F0F0B25639066007EA0B3 /* NavBar.xib */,
+				EC2F0F0E25639075007EA0B3 /* NavBar.swift */,
+				EC2F0F522563DAA9007EA0B3 /* NavBarX.xib */,
+				EC2F0F552563DAE7007EA0B3 /* NavBarX.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -253,6 +270,7 @@
 				ECCB0945255A612C0024B827 /* NewGoalIconCollectionViewCell.swift */,
 				EC8B248B255D1B890086837A /* GoalTransactionsTableViewCell.swift */,
 				EC8B248E255D38530086837A /* AchievedTableViewCell.swift */,
+				EC2F0F6A2563E92D007EA0B3 /* AccountBalanceTableViewCell.swift */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -324,6 +342,8 @@
 				EC075642254FD9A3001FBBA3 /* LoginPageView.xib in Resources */,
 				EC510867253FFDA000A98A3E /* Main.storyboard in Resources */,
 				EC510881253FFE9500A98A3E /* open_san.ttf in Resources */,
+				EC2F0F532563DAA9007EA0B3 /* NavBarX.xib in Resources */,
+				EC2F0F0C25639066007EA0B3 /* NavBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +421,8 @@
 				EC8B2489255D163E0086837A /* GoalTransactionsViewController.swift in Sources */,
 				ECC8DB702542EB53008F41FA /* SavingsViewController.swift in Sources */,
 				EC44DA1A25496299009B39E5 /* LoginCollectionViewCell.swift in Sources */,
+				EC2F0F6B2563E92D007EA0B3 /* AccountBalanceTableViewCell.swift in Sources */,
+				EC2F0F0F25639075007EA0B3 /* NavBar.swift in Sources */,
 				EC5108962540078000A98A3E /* SideMenuTableViewController.swift in Sources */,
 				EC8B248F255D38530086837A /* AchievedTableViewCell.swift in Sources */,
 				EC44D9FB25493665009B39E5 /* ProfileModel.swift in Sources */,
@@ -411,8 +433,10 @@
 				EC8B248C255D1B890086837A /* GoalTransactionsTableViewCell.swift in Sources */,
 				EC5108C625403DDD00A98A3E /* CategoriesViewController.swift in Sources */,
 				ECCD9B5F25481C60009D8B6F /* IncomeViewController.swift in Sources */,
+				EC2F0F1B25639D11007EA0B3 /* TabBar.swift in Sources */,
 				EC5108C325403DCF00A98A3E /* BudgetViewController.swift in Sources */,
 				ECCD9B5C25481C4C009D8B6F /* ExpenseViewController.swift in Sources */,
+				EC2F0F562563DAE7007EA0B3 /* NavBarX.swift in Sources */,
 				ECC8DB6A2542E37B008F41FA /* BudgetsTabViewController.swift in Sources */,
 				ECC8DB6D2542EB3F008F41FA /* ActivitiesTabViewController.swift in Sources */,
 				EC4D809E254298AC00D0EA31 /* BudgetBrain.swift in Sources */,

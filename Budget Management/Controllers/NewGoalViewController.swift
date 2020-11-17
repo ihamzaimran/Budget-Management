@@ -158,10 +158,21 @@ class NewGoalViewController: UIViewController {
                 do {
                     try self.realm.write {
                         if let detail = selectedGoal {
+                            let savedAmount = detail.savedAmount
+                            let amount = detail.totalGoalAmount
+                            let enteredAmount = Int(amountTXT.text!)!
+                            
+                            if enteredAmount <= savedAmount {
+                                detail.totalGoalAmount = enteredAmount
+                                detail.savedAmount = enteredAmount
+                            } else {
+                                detail.totalGoalAmount = Int(amountTXT.text!)!
+                            }
+                            
                             detail.goalName = goalNameTextField.text ?? "Home"
                             detail.goalDescription = goalDescriptionTextField.text ?? "Savings for goal"
                             detail.targetDate = targetDateTextfield.text ?? "22/09/2020"
-                            detail.totalGoalAmount = Int(amountTXT.text!)!
+                            
                             detail.goalIcon = choosenIcon
                             print("Details saved successfully!")
                             

@@ -53,14 +53,14 @@ func NSUIGraphicsEndImageContext()
     UIGraphicsEndImageContext()
 }
 
-func NSUIImagePNGRepresentation(_ image: NSUIImage) -> Data?
+func NSUIImagePNGRepresentation(_ accountImage: NSUIImage) -> Data?
 {
-    return image.pngData()
+    return accountImage.pngData()
 }
 
-func NSUIImageJPEGRepresentation(_ image: NSUIImage, _ quality: CGFloat = 0.8) -> Data?
+func NSUIImageJPEGRepresentation(_ accountImage: NSUIImage, _ quality: CGFloat = 0.8) -> Data?
 {
-    return image.jpegData(compressionQuality: quality)
+    return accountImage.jpegData(compressionQuality: quality)
 }
 
 func NSUIGraphicsBeginImageContextWithOptions(_ size: CGSize, _ opaque: Bool, _ scale: CGFloat)
@@ -90,19 +90,19 @@ func NSUIGraphicsPopContext()
     NSGraphicsContext.restoreGraphicsState()
 }
 
-func NSUIImagePNGRepresentation(_ image: NSUIImage) -> Data?
+func NSUIImagePNGRepresentation(_ accountImage: NSUIImage) -> Data?
 {
-    image.lockFocus()
-    let rep = NSBitmapImageRep(focusedViewRect: NSMakeRect(0, 0, image.size.width, image.size.height))
-    image.unlockFocus()
+    accountImage.lockFocus()
+    let rep = NSBitmapImageRep(focusedViewRect: NSMakeRect(0, 0, accountImage.size.width, accountImage.size.height))
+    accountImage.unlockFocus()
     return rep?.representation(using: .png, properties: [:])
 }
 
-func NSUIImageJPEGRepresentation(_ image: NSUIImage, _ quality: CGFloat = 0.9) -> Data?
+func NSUIImageJPEGRepresentation(_ accountImage: NSUIImage, _ quality: CGFloat = 0.9) -> Data?
 {
-    image.lockFocus()
-    let rep = NSBitmapImageRep(focusedViewRect: NSMakeRect(0, 0, image.size.width, image.size.height))
-    image.unlockFocus()
+    accountImage.lockFocus()
+    let rep = NSBitmapImageRep(focusedViewRect: NSMakeRect(0, 0, accountImage.size.width, accountImage.size.height))
+    accountImage.unlockFocus()
     return rep?.representation(using: .jpeg, properties: [NSBitmapImageRep.PropertyKey.compressionFactor: quality])
 }
 
@@ -145,8 +145,8 @@ func NSUIGraphicsGetImageFromCurrentImageContext() -> NSUIImage?
         if let theCGImage = ctx.makeImage()
         {
             let size = CGSize(width: CGFloat(ctx.width) / scale, height: CGFloat(ctx.height) / scale)
-            let image = NSImage(cgImage: theCGImage, size: size)
-            return image
+            let accountImage = NSImage(cgImage: theCGImage, size: size)
+            return accountImage
         }
     }
     return nil

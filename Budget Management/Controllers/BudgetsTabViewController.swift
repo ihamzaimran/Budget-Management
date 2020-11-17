@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SideMenu
 import XLPagerTabStrip
 
 class BudgetsTabViewController: ButtonBarPagerTabStripViewController {
@@ -26,13 +25,7 @@ class BudgetsTabViewController: ButtonBarPagerTabStripViewController {
     
         setupXLPagerStrip()
         super.viewDidLoad()
-        
-        setupSideMenu()
-        updateMenus()
     }
-    
- 
-    
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         
@@ -42,68 +35,7 @@ class BudgetsTabViewController: ButtonBarPagerTabStripViewController {
         let child2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIDs.income) as! IncomeViewController
         child2.childNumber = "INCOME"
         
-        //        let child3 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIDs.expense) as! ExpenseViewController
-        //        child3.childNumber = "EXPENSE"
-        //
-        //        let child4 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIDs.income) as! IncomeViewController
-        //        child4.childNumber = "INCOME"
-        //
-        //        let child5 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIDs.expense) as! ExpenseViewController
-        //        child5.childNumber = "EXPENSE"
-        //
-        //        let child6 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIDs.income) as! IncomeViewController
-        //        child6.childNumber = "INCOME"
-        
         return [child1, child2]
-    }
-}
-
-
-// MARK:- Side Menu Setup
-
-extension BudgetsTabViewController {
-    private func updateMenus() {
-        let settings = makeSettings()
-        SideMenuManager.default.leftMenuNavigationController?.settings = settings
-        //        SideMenuManager.default.rightMenuNavigationController?.settings = settings
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let sideMenuNavigationController = segue.destination as? SideMenuNavigationController else { return }
-        sideMenuNavigationController.settings = makeSettings()
-    }
-    
-    private func setupSideMenu() {
-        SideMenuManager.default.leftMenuNavigationController = storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardIDs.sideMenuNavigationController) as? SideMenuNavigationController
-        
-        // Enable gestures. The left and/or right menus must be set up above for these to work.
-        // Note that these continue to work on the Navigation Controller independent of the View Controller it displays!
-        SideMenuManager.default.addPanGestureToPresent(toView: navigationController!.navigationBar)
-        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: view, forMenu: SideMenuManager.PresentDirection.left)
-    }
-    
-    private func selectedPresentationStyle() -> SideMenuPresentationStyle {
-        let modes: [SideMenuPresentationStyle] = [.menuSlideIn, .viewSlideOut, .viewSlideOutMenuIn, .menuDissolveIn]
-        //          return modes[presentationStyleSegmentedControl.selectedSegmentIndex]
-        return .menuSlideIn
-    }
-    
-    private func makeSettings() -> SideMenuSettings {
-        let presentationStyle = selectedPresentationStyle()
-        presentationStyle.menuStartAlpha = CGFloat(0.5)
-        presentationStyle.menuScaleFactor = CGFloat(1.0)
-        presentationStyle.presentingEndAlpha = CGFloat(0.5)
-        presentationStyle.presentingScaleFactor = CGFloat(1.0)
-        
-        var settings = SideMenuSettings()
-        settings.presentationStyle = presentationStyle
-        settings.menuWidth = min(view.frame.width, view.frame.height) * CGFloat(0.75)
-        
-        let styles:[UIBlurEffect.Style?] = [nil, .dark, .light, .extraLight]
-        settings.blurEffectStyle = styles[0]
-        settings.statusBarEndAlpha = 0
-        
-        return settings
     }
 }
 

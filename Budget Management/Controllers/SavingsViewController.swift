@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SideMenu
 import XLPagerTabStrip
 import RealmSwift
 

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NavBarX" customModule="Budget_Management" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PEJ-8Z-PvC">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <color key="backgroundColor" name="HeaderColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="woL-1o-K3x"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P0y-PD-4Wj">
+                    <rect key="frame" x="0.0" y="44" width="375" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPM-yu-YXJ">
+                            <rect key="frame" x="10" y="7.5" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="1hq-90-wFR"/>
+                                <constraint firstAttribute="height" constant="35" id="ODE-qG-Yrd"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                            <state key="normal" image="drawer"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Wv-ty-dgZ">
+                            <rect key="frame" x="55" y="13" width="310" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" name="HeaderColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="7bm-PZ-g69"/>
+                        <constraint firstAttribute="height" constant="50" id="Cz1-x2-Oss"/>
+                        <constraint firstItem="ZPM-yu-YXJ" firstAttribute="leading" secondItem="P0y-PD-4Wj" secondAttribute="leading" constant="10" id="OIX-R7-7tT"/>
+                        <constraint firstItem="2Wv-ty-dgZ" firstAttribute="leading" secondItem="ZPM-yu-YXJ" secondAttribute="trailing" constant="10" id="Wnd-VI-qoC"/>
+                        <constraint firstItem="ZPM-yu-YXJ" firstAttribute="centerY" secondItem="P0y-PD-4Wj" secondAttribute="centerY" id="eeo-Mp-gAa"/>
+                        <constraint firstAttribute="trailing" secondItem="2Wv-ty-dgZ" secondAttribute="trailing" constant="10" id="hG9-kL-Vil"/>
+                        <constraint firstItem="2Wv-ty-dgZ" firstAttribute="centerY" secondItem="P0y-PD-4Wj" secondAttribute="centerY" id="img-WJ-WO5"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="PEJ-8Z-PvC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="9hE-38-Y7U"/>
+                <constraint firstItem="P0y-PD-4Wj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="RWL-kb-JRA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="PEJ-8Z-PvC" secondAttribute="trailing" id="VlP-hu-8hm"/>
+                <constraint firstItem="PEJ-8Z-PvC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="aaR-hi-ddX"/>
+                <constraint firstItem="P0y-PD-4Wj" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="eX8-u7-66l"/>
+                <constraint firstItem="P0y-PD-4Wj" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="vBs-W8-aby"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="menuIconBtn" destination="ZPM-yu-YXJ" id="2DO-tx-eWt"/>
+                <outlet property="titleLBL" destination="2Wv-ty-dgZ" id="aWK-67-z1x"/>
+            </connections>
+            <point key="canvasLocation" x="-436" y="-131"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="drawer" width="100" height="100"/>
+        <namedColor name="HeaderColor">
+            <color red="0.125" green="0.69800001382827759" blue="0.66699999570846558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

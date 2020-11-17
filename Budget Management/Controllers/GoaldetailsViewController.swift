@@ -87,7 +87,7 @@ class GoaldetailsViewController: UIViewController {
             
             savedAmountTxt.text = "Saved: \(details.savedAmount) / \(total)"
             let saved = details.savedAmount
-            let savedPercent = (saved * 100) / total
+            let savedPercent = saved * 100 / total
             let left = 100 - savedPercent
             print("saved = \((saved * 100) / total) left = \(100 - savedPercent)")
             goals = [savedPercent, left]
