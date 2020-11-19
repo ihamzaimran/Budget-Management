@@ -17,12 +17,26 @@ class ProfileModel: Object {
     @objc dynamic var gender = ""
     @objc dynamic var profession = ""
     @objc dynamic var profileImageData: Data? = nil
+    @objc dynamic var totalBalance = 0
+    
     let goalDetails = List<GoalDetails>()
     let goalAchievedDetails = List<GoalAchieved>()
+    let accountDetails = List<AccountDetails>()
     
     override static func primaryKey() -> String? {
         return "id"
     }
+}
+
+class  AccountDetails: Object {
+    @objc dynamic var name = ""
+    @objc dynamic var balance = 0
+    @objc dynamic var type = ""
+    @objc dynamic var isNegtaiveBalance = false
+    @objc dynamic var isPinToDashboard = false
+    @objc dynamic var colorHexString = ""
+    @objc dynamic var icon = ""
+    var accountLink = LinkingObjects(fromType: ProfileModel.self, property: "accountDetails")
 }
 
 class GoalDetails: Object {

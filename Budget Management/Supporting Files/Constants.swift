@@ -9,6 +9,10 @@ import Foundation
 
 struct Constants {
     
+    struct StoryboardName {
+        static let secondStoryboard = "SecondStoryboard"
+    }
+    
     struct StoryboardIDs {
         static let sideMenu = "SideMenuTableStoryboard"
         static let sideMenuNavigationController = "SideMenuNavigationController"
@@ -31,6 +35,7 @@ struct Constants {
         static let addSavingAmount = "AddSavingAmountStoryboard"
         static let goalTransactions = "GoalTransactionsStoryboard"
         static let AchievedGoalDetailStoryboard = "AchievedGoalDetailStoryboard"
+        static let addAccount = "AddAccountStoryboard"
     }
     
     struct TableViewIdentifier {
@@ -46,6 +51,7 @@ struct Constants {
         static let goalTransactionsCellIdentifer = "goalTransactionsCellIdentifer"
         static let achievedTableCellIdentifier = "achievedTableCellIdentifier"
         static let accountBalanceIdentifierCell = "accountBalanceIdentifierCell"
+        static let addAccountTableCellIdentifier = "addAccountTableCellIdentifier"
     }
     
     struct Images {
@@ -64,7 +70,15 @@ struct Constants {
         static let settingsText = ["Profile", "Currency", "Country", "Wipe All Data" , "Rate Our App", "Share Our App", "Sign Out"]
         static let settingssubText = ["name, email, gender, profile picture", "Set your native currency", "Set your Country of Origin", "This Action will clear records" , "Like our app on App Store", "Share our app with others"]
     }
+    
     struct Links {
         static let appStore = "https://itunes.apple.com/pk/developer/suave-solutions/id415880778"
+    }
+    
+    struct Colors{
+        
+        static let colorString = ["#38C5B2", "#008577", "#006400", "#ff0000", "#3232FF", "#3232FF", "#008577", "#3CB371",
+                                  "#FFD12A", "#006400", "#5A6351", "#006B54", "#32CD32", "#3E766D", "#B4EEB4", "#596C56",
+                                  "#B4EEB4", "#40664D", "#34925E", "#006B54"]
     }
 }

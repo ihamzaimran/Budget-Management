@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SelectColorCell" customModule="Budget_Management" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="75" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBa-8q-NXB">
+                    <rect key="frame" x="15" y="7.5" width="45" height="35"/>
+                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="optionLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fk5-K1-S7Z">
+                    <rect key="frame" x="-5.5" y="15.5" width="86" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="BackgroundGrayColor"/>
+            <constraints>
+                <constraint firstItem="aBa-8q-NXB" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2Et-WY-1cK"/>
+                <constraint firstItem="aBa-8q-NXB" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.7" id="SZm-if-Meu"/>
+                <constraint firstItem="aBa-8q-NXB" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="W7J-c8-La4"/>
+                <constraint firstItem="fk5-K1-S7Z" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="kx1-jg-K5M"/>
+                <constraint firstItem="fk5-K1-S7Z" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="nik-A6-24M"/>
+                <constraint firstItem="aBa-8q-NXB" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="sgb-FU-qKw"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="colorView" destination="aBa-8q-NXB" id="PIv-Vs-KMm"/>
+                <outlet property="optionLabel" destination="fk5-K1-S7Z" id="8Jd-jO-3iI"/>
+            </connections>
+            <point key="canvasLocation" x="234.78260869565219" y="128.57142857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="BackgroundGrayColor">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

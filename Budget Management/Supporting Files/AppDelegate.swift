@@ -7,6 +7,7 @@
 
 import UIKit
 import GoogleSignIn
+import DropDown
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // Initialize Google sign-in
         
-        
+        DropDown.startListeningToKeyboard()
         GIDSignIn.sharedInstance().clientID = "117501428831-i2g7aivm9tj0dmlve0pb6i6i85tkafhv.apps.googleusercontent.com"
         createDirectory()
         

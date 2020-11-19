@@ -8,6 +8,7 @@ PODS:
     - Charts/Core (= 3.6.0)
   - Charts/Core (3.6.0)
   - DeviceKit (4.2.1)
+  - DropDown (2.3.13)
   - GoogleSignIn (5.0.2):
     - AppAuth (~> 1.2)
     - GTMAppAuth (~> 1.0)
@@ -20,7 +21,6 @@ PODS:
   - GTMSessionFetcher/Core (1.5.0)
   - GTMSessionFetcher/Full (1.5.0):
     - GTMSessionFetcher/Core (= 1.5.0)
-  - iOSDropDown (0.3.4)
   - Realm (10.1.3):
     - Realm/Headers (= 10.1.3)
   - Realm/Headers (10.1.3)
@@ -37,8 +37,8 @@ PODS:
 DEPENDENCIES:
   - Charts
   - DeviceKit (~> 4.0)
+  - DropDown
   - GoogleSignIn
-  - iOSDropDown
   - RealmSwift
   - SDWebImage (~> 5.0)
   - SideMenu
@@ -51,10 +51,10 @@ SPEC REPOS:
     - AppAuth
     - Charts
     - DeviceKit
+    - DropDown
     - GoogleSignIn
     - GTMAppAuth
     - GTMSessionFetcher
-    - iOSDropDown
     - Realm
     - RealmSwift
     - SDWebImage
@@ -67,10 +67,10 @@ SPEC CHECKSUMS:
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   DeviceKit: cadb5ff25d45fe186778bf2d0fd2ea4750542189
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GTMAppAuth: 197a8dabfea5d665224aa00d17f164fc2248dab9
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
-  iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
   Realm: 072f4060c99150cb1d35e35ce1dd4dda7d9ddfed
   RealmSwift: 96f96feafee63186789419235d14857dae9004ae
   SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
@@ -79,6 +79,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: 00795db9324e1fa54cd82e61dcb4c28762992704
+PODFILE CHECKSUM: 423f65ed812a167c31e46be6293b8bd1b398e7f6
 
 COCOAPODS: 1.10.0

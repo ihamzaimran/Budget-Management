@@ -21,13 +21,8 @@ class AddSavingAmountViewController: UIViewController {
     @IBOutlet weak var depositTypeTextField: UITextField!
     @IBOutlet weak var descripitonTextField: UITextField!
     @IBOutlet var selectAccountTypeView: UIView!
-    @IBOutlet weak var cashViewImage: UIView!
-    @IBOutlet weak var bankViewImage: UIView!
-    @IBOutlet weak var otherViewImage: UIView!
-    @IBOutlet weak var cashBtn: UIButton!
-    @IBOutlet weak var bankBtn: UIButton!
-    @IBOutlet weak var otherBtn: UIButton!
     @IBOutlet weak var saveDeleteButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     
     internal var selectedGoalDetails: GoalDetails?
     internal var selectedAchievedGoalDetails: GoalAchieved?
@@ -39,6 +34,9 @@ class AddSavingAmountViewController: UIViewController {
     private let redColor = UIColor.systemRed
     private let datePicker = UIDatePicker()
     private typealias todaysDate = (month: String, day: String, year: String)
+    private var accounts = List<AccountDetails>()
+    private var userID: String?
+    private let userDefault = UserDefaults.standard
     
     override var prefersStatusBarHidden: Bool {
         true
@@ -46,7 +44,6 @@ class AddSavingAmountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         addAmountTextField.delegate = self
         dateTextField.delegate = self
@@ -67,16 +64,14 @@ class AddSavingAmountViewController: UIViewController {
         descripitonTextField.textFieldStyle(color: .darkGray)
         descripitonTextField.textColor = .darkGray
         
-        cashViewImage.makeRoundedView()
-        bankViewImage.makeRoundedView()
-        otherViewImage.makeRoundedView()
-        
+        userID = userDefault.string(forKey: "UserID")
         getDetails()
+        
     }
     
     private func getDetails(){
         
-        if let details = selectedGoalDetails, let edit = edit {
+        if let details = selectedGoalDetails, let _ = edit {
             saveDeleteButton.isHidden = false
             saveDeleteButton.tag = 0
             saveDeleteButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
@@ -90,14 +85,6 @@ class AddSavingAmountViewController: UIViewController {
             depositTypeTextField.text = details.accountType
             remainingAmountLBL.text = "Remaining: \(details.totalGoalAmount-details.savedAmount)"
             
-            let type = details.accountType
-            if type == "Cash" {
-                cashViewImage.backgroundColor = .lightGray
-            } else if type == "Bank" {
-                bankViewImage.backgroundColor = .lightGray
-            } else if type == "Other" {
-                otherViewImage.backgroundColor = .lightGray
-            }
         } else if let details = selectedAchievedGoalDetails {
             
             saveDeleteButton.tag = 1
@@ -118,15 +105,7 @@ class AddSavingAmountViewController: UIViewController {
             dateTextField.text = details.targetDate
             depositTypeTextField.text = details.accountType
             remainingAmountLBL.text = "Remaining: \(details.totalGoalAmount-details.totalGoalAmount)"
-            
-            let type = details.accountType
-            if type == "Cash" {
-                cashViewImage.backgroundColor = .lightGray
-            } else if type == "Bank" {
-                bankViewImage.backgroundColor = .lightGray
-            } else if type == "Other" {
-                otherViewImage.backgroundColor = .lightGray
-            }
+          
         } else if let details = selectGoalTransaction, let _ = edit {
             saveDeleteButton.tag = 1
             saveDeleteButton.isHidden = true
@@ -147,14 +126,6 @@ class AddSavingAmountViewController: UIViewController {
             depositTypeTextField.text = details.accountType
             remainingAmountLBL.text = "Remaining: \(details.totalGoalAmount-details.totalGoalAmount)"
             
-            let type = details.accountType
-            if type == "Cash" {
-                cashViewImage.backgroundColor = .lightGray
-            } else if type == "Bank" {
-                bankViewImage.backgroundColor = .lightGray
-            } else if type == "Other" {
-                otherViewImage.backgroundColor = .lightGray
-            }
         }
     }
     
@@ -271,49 +242,32 @@ class AddSavingAmountViewController: UIViewController {
         self.selectAccountTypeView.removeFromSuperview()
     }
     
-    @IBAction func chosenAccountBtn(_ sender: UIButton) {
-        
-        if sender == cashBtn {
-            
-            cashBtn.tag = 1
-            bankBtn.tag = 0
-            otherBtn.tag = 0
-            accountType = "Cash"
-            cashViewImage.backgroundColor = .lightGray
-            bankViewImage.backgroundColor = nil
-            otherViewImage.backgroundColor = nil
-            dismissSelectAccountView()
-        } else if sender == bankBtn {
-            
-            cashBtn.tag = 0
-            bankBtn.tag = 1
-            otherBtn.tag = 0
-            accountType = "Bank"
-            cashViewImage.backgroundColor = nil
-            bankViewImage.backgroundColor = .lightGray
-            otherViewImage.backgroundColor = nil
-            dismissSelectAccountView()
-        } else if sender == otherBtn {
-            
-            cashBtn.tag = 0
-            bankBtn.tag = 0
-            otherBtn.tag = 1
-            accountType = "Other"
-            cashViewImage.backgroundColor = nil
-            bankViewImage.backgroundColor = nil
-            otherViewImage.backgroundColor = .lightGray
-            dismissSelectAccountView()
-        }
+    
+    @IBAction func addAccountBtn(_ sender: UIButton) {
+        let addAccount = UIStoryboard(name: Constants.StoryboardName.secondStoryboard, bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.addAccount) as! AddAccountViewController
+        self.navigationController?.pushViewController(addAccount, animated: true)
     }
     
+    
     private func dismissSelectAccountView(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-            self.depositTypeTextField.text = self.accountType
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
             self.selectAccountTypeView.removeFromSuperview()
         }
     }
     
     private func showPicker(forView: UIView){
+        
+        if let userid = userID {
+            if let details = relam.objects(ProfileModel.self).filter("id = %@", userid).first {
+                accounts = details.accountDetails
+            }
+        }
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.tableFooterView = UITableViewHeaderFooterView()
+        tableView.backgroundColor = .clear
+        
         forView.frame = self.view.frame
         self.view.addSubview(forView)
     }
@@ -384,4 +338,49 @@ extension AddSavingAmountViewController {
     @objc func cancelDatePicker(){
         self.view.endEditing(true)
     }
+}
+
+
+//MARK:- extension tableview delegate
+
+extension AddSavingAmountViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        accounts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableViewIdentifier.addAccountTableCellIdentifier, for: indexPath) as! AddAccountTableViewCell
+        cell.backgroundColor = .clear
+        
+        cell.imageIcon.makeRoundedImage()
+        cell.imageIcon.backgroundColor = UIColor(named: "BackgroundGrayColor")
+        let details = accounts[indexPath.row]
+        
+        if details.balance > 0 {
+            cell.balanceLBL.text = ("\(details.balance)")
+            cell.balanceLBL.textColor = UIColor(named: "PrimaryColor")
+        } else {
+            cell.balanceLBL.text = ("\(details.balance)")
+            cell.balanceLBL.textColor = .systemRed
+        }
+        cell.imageIcon.image = UIImage(named: details.icon)
+        cell.titleLBL.text = details.name
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let details = accounts[indexPath.row]
+        depositTypeTextField.text = details.name
+        tableView.deselectRow(at: indexPath, animated: true)
+        dismissSelectAccountView()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        60
+    }
+    
 }
