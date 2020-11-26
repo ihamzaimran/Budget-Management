@@ -37,6 +37,7 @@ class AddSavingAmountViewController: UIViewController {
     private var accounts = List<AccountDetails>()
     private var userID: String?
     private let userDefault = UserDefaults.standard
+    private var accountDetail: AccountDetails?
     
     override var prefersStatusBarHidden: Bool {
         true
@@ -158,6 +159,16 @@ class AddSavingAmountViewController: UIViewController {
                     let date = getCurrentDate()
                     transactions.date = "\(date.month)\n\(date.day)\n\(date.year)"
                     details.goalTransactions.append(transactions)
+                    
+                    if let id = userID {
+                        if let profile = self.relam.objects(ProfileModel.self).filter("id = %@", id).first {
+                            profile.totalBalance -= Int(addAmountTextField.text!)!
+                        }
+                    }
+                    
+                    if let account = accountDetail {
+                        account.balance -= Int(addAmountTextField.text!)!
+                    } 
                     print("Details updated successfully.")
                     self.view.makeToast("details updated!", duration: 1.0, position: .bottom)
                     dismissController()
@@ -376,6 +387,7 @@ extension AddSavingAmountViewController: UITableViewDelegate, UITableViewDataSou
         let details = accounts[indexPath.row]
         depositTypeTextField.text = details.name
         tableView.deselectRow(at: indexPath, animated: true)
+        accountDetail = details
         dismissSelectAccountView()
     }
     

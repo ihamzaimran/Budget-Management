@@ -14,8 +14,8 @@ class SideMenuTableViewController: UIViewController{
     
     let realm = try! Realm()
     
-    private let nameArr = ["Dashboard", "Budgets", "Categories", "Accounts", "Share", "Settings"]
-    private let imagesArr = ["dashboard", "budget", "categories", "accounts", "share", "settings"]
+    private let nameArr = Constants.Text.tableViewListNames
+    private let imagesArr = Constants.Images.tableViewImages
     private let deviceIdiom = UIScreen.main.traitCollection.userInterfaceIdiom
     var shareDelegate: ShareSheetProtocol?
     

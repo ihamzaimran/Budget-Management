@@ -20,6 +20,7 @@ class SettingsViewController: UIViewController {
     private let budgetBrain = BudgetBrain()
     private let userDefault = UserDefaults.standard
     private let realm = try! Realm()
+    private var userID: String?
     
     override var prefersStatusBarHidden: Bool {
         true
@@ -32,6 +33,7 @@ class SettingsViewController: UIViewController {
         tableView.dataSource = self
         tableView.tableFooterView = UITableViewHeaderFooterView()
         tableView.backgroundColor = .white
+        userID = userDefault.string(forKey: "UserID")
     }
     
     @IBAction func backIconButton(_ sender: UIButton) {
@@ -105,9 +107,18 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                     let goalDetail = self.realm.objects(GoalDetails.self)
                     let goalAchieved = self.realm.objects(GoalAchieved.self)
                     let goalTransactions = self.realm.objects(GoalTransactions.self)
+                    let accounts = self.realm.objects(AccountDetails.self)
                     self.realm.delete(goalDetail)
                     self.realm.delete(goalAchieved)
                     self.realm.delete(goalTransactions)
+                    self.realm.delete(accounts)
+                    
+                    if let id = self.userID {
+                        if let profile = self.realm.objects(ProfileModel.self).filter("id = %@", id).first {
+                            profile.totalBalance = 0
+                        }
+                    }
+                    
                     print("data deleted!")
                     self.view.makeToast("Data deleted successfully!")
                 }

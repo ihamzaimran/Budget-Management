@@ -42,6 +42,14 @@ class DashBoard: UIViewController, UIGestureRecognizerDelegate {
         let navBar: NavBar = Bundle.main.loadNibNamed("NavBar", owner: self, options: nil)?.first as! NavBar
         navBar.titleLBL.text = "Dashboard"
     }
+    
+    
+    @IBAction func manageDashboardTapped(_ sender: UITapGestureRecognizer) {
+        
+        print("Manage dashboard vc Tapped")
+        let manageDashboardVC = UIStoryboard(name: Constants.StoryboardName.secondStoryboard, bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.manageDashboard) as! ManageDashboardViewController
+        self.navigationController?.pushViewController(manageDashboardVC, animated: true)
+    }
 }
 
 //MARK:- ShareSheet Delegate

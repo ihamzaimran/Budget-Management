@@ -18,6 +18,10 @@ class CategoriesViewController: ButtonBarPagerTabStripViewController {
         
         setupXLPagerStrip()
         super.viewDidLoad()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
     }

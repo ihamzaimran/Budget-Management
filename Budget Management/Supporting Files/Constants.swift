@@ -36,6 +36,7 @@ struct Constants {
         static let goalTransactions = "GoalTransactionsStoryboard"
         static let AchievedGoalDetailStoryboard = "AchievedGoalDetailStoryboard"
         static let addAccount = "AddAccountStoryboard"
+        static let manageDashboard = "ManageDashboardStoryboard"
     }
     
     struct TableViewIdentifier {
@@ -61,14 +62,18 @@ struct Constants {
         static let activityTab = "activity_bottm_color"
         static let savingsTab = "savings_bottom_colored"
         static let loginPager = ["into_image_1", "into_image_2", "into_image_3", "into_image_4"]
-        
+        static let tableViewImages = ["dashboard", "budget", "categories", "accounts", "share", "settings"]
         static let iconArray =  ["education_e", "personal", "wedding",
                                  "medical_m", "family_expense", "grocery", "house_hold","entertainment_e", "gifts_g", "clothing", "fuel_transport","eatin_outg", "utilities_u", "salary", "investment","commission", "other_income", "bank_icon", "home_icon","car_icon", "edu_icon", "wedding_icon", "clock_icon", "palm_icon","savings"]
+        static let expenseIcon = ["education_e", "personal", "wedding",
+                                 "medical_m", "family_expense", "grocery", "house_hold","entertainment_e", "gifts_g", "clothing", "fuel_transport","eatin_outg", "utilities_u", "salary", "investment"]
     }
     
     struct Text {
         static let settingsText = ["Profile", "Currency", "Country", "Wipe All Data" , "Rate Our App", "Share Our App", "Sign Out"]
         static let settingssubText = ["name, email, gender, profile picture", "Set your native currency", "Set your Country of Origin", "This Action will clear records" , "Like our app on App Store", "Share our app with others"]
+        static let tableViewListNames = ["Dashboard", "Budgets", "Categories", "Accounts", "Share", "Settings"]
+        static let expenseIconText = ["Education", "Personal", "Wedding", "Medical", "Family Expense", "Grocery", "HouseHold", "Entertainment", "Gifts", "Clothing", "Fuel & Transport", "Eating-Out", "Utilities", "Salary", "Investment"]
     }
     
     struct Links {

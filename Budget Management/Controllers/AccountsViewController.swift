@@ -22,6 +22,10 @@ class AccountsViewController: UIViewController {
     private var userID: String?
     private let userDefault = UserDefaults.standard
     
+    override var prefersStatusBarHidden: Bool {
+        true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -95,7 +99,7 @@ extension AccountsViewController: UITableViewDelegate, UITableViewDataSource, Ge
         cell.accountImage.image = UIImage(named: details.icon)
         cell.accountType.text = details.type
     
-        if details.isNegtaiveBalance == true {
+        if details.balance < 0 {
             cell.balanceLBL.textColor = .systemRed
             cell.balanceLBL.text = ("\(details.balance)")
         } else {

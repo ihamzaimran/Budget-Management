@@ -241,6 +241,14 @@ class AddAccountViewController: UIViewController {
         if let account = isSelectedAccount {
             do {
                 try self.realm.write {
+                    
+                    if let id = userID {
+                        
+                        if let profile = self.realm.objects(ProfileModel.self).filter("id = %@", id).first{
+                            profile.totalBalance -= account.balance
+                        }
+                    }
+                    
                     realm.delete(account)
                     self.view.makeToast("account deleted!", duration: 1.0, position: .bottom)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
@@ -269,13 +277,22 @@ class AddAccountViewController: UIViewController {
                     account.name = bankNameTXT.text!
                     account.type = accountTypeTXT.text!
                     
-                    if negativeBalanceState == true {
-                        account.balance = -Int(openingBalanceTXT.text!)!
-//                        details.totalBalance += (-Int(openingBalanceTXT.text!)!)
-                    } else {
-                        account.balance = Int(openingBalanceTXT.text!)!
-//                        details.totalBalance += (Int(openingBalanceTXT.text!)!)
+                    
+                    if let id = userID {
+                        if let profile = self.realm.objects(ProfileModel.self).filter("id = %@", id).first{
+                            if negativeBalanceState == true {
+                                profile.totalBalance -= account.balance
+                                account.balance = -Int(openingBalanceTXT.text!)!
+                                profile.totalBalance += (-Int(openingBalanceTXT.text!)!)
+                            } else {
+                                print("+")
+                                profile.totalBalance -= account.balance
+                                account.balance = Int(openingBalanceTXT.text!)!
+                                profile.totalBalance += (Int(openingBalanceTXT.text!)!)
+                            }
+                        }
                     }
+                    
                     
                     print("Account edited successfully!")
                     

@@ -32,6 +32,10 @@ class GoaldetailsViewController: UIViewController {
     private let userDefault = UserDefaults.standard
     private var userID: String?
     
+    override var prefersStatusBarHidden: Bool {
+        true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
