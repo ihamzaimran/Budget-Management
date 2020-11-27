@@ -36,6 +36,10 @@ class AddAccountViewController: UIViewController {
     internal var edit = false
     internal var isSelectedAccount: AccountDetails?
     
+    override var prefersStatusBarHidden: Bool {
+        true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

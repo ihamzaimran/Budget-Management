@@ -43,12 +43,25 @@ class DashBoard: UIViewController, UIGestureRecognizerDelegate {
         navBar.titleLBL.text = "Dashboard"
     }
     
+    @IBAction func addAccountBtn(_ sender: UIButton) {
+        let addAccountVC = UIStoryboard(name: Constants.StoryboardName.secondStoryboard, bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.addAccount) as! AddAccountViewController
+        self.navigationController?.pushViewController(addAccountVC, animated: true)
+    }
     
     @IBAction func manageDashboardTapped(_ sender: UITapGestureRecognizer) {
         
         print("Manage dashboard vc Tapped")
         let manageDashboardVC = UIStoryboard(name: Constants.StoryboardName.secondStoryboard, bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.manageDashboard) as! ManageDashboardViewController
         self.navigationController?.pushViewController(manageDashboardVC, animated: true)
+    }
+    
+    @IBAction func showMoreAccountsBtn(_ sender: UIButton) {
+        let addAccountVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.account) as! AccountsViewController
+        self.navigationController?.pushViewController(addAccountVC, animated: true)
+    }
+    
+    @IBAction func showMoreRecords(_ sender: UIButton) {
+        print("Show More Records")
     }
 }
 

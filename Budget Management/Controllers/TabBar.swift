@@ -128,7 +128,7 @@ extension TabBar {
     }
     
     private func selectedPresentationStyle() -> SideMenuPresentationStyle {
-        let modes: [SideMenuPresentationStyle] = [.menuSlideIn, .viewSlideOut, .viewSlideOutMenuIn, .menuDissolveIn]
+        let _: [SideMenuPresentationStyle] = [.menuSlideIn, .viewSlideOut, .viewSlideOutMenuIn, .menuDissolveIn]
         //          return modes[presentationStyleSegmentedControl.selectedSegmentIndex]
         return .menuSlideIn
     }

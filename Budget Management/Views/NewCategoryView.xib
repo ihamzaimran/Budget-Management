@@ -35,16 +35,6 @@
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWV-Kv-dCy">
-                            <rect key="frame" x="10" y="143" width="60" height="34"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="60" id="Ze0-t4-SQP"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <state key="normal" title="Cancel">
-                                <color key="titleColor" name="PrimaryColor"/>
-                            </state>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPM-Yu-VG1">
                             <rect key="frame" x="230" y="143" width="60" height="34"/>
                             <constraints>
@@ -96,24 +86,46 @@
                                 <constraint firstAttribute="trailing" secondItem="mMG-bY-Bsw" secondAttribute="trailing" id="wB2-yb-BL3"/>
                             </constraints>
                         </view>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLe-tk-dfS">
+                            <rect key="frame" x="20" y="144" width="60" height="33"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="WRJ-9N-f71"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="18"/>
+                            <state key="normal" title="Delete">
+                                <color key="titleColor" name="PrimaryColor"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWV-Kv-dCy">
+                            <rect key="frame" x="140" y="143" width="60" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="Ze0-t4-SQP"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="Cancel">
+                                <color key="titleColor" name="PrimaryColor"/>
+                            </state>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="XaP-PB-ifR" firstAttribute="leading" secondItem="bgU-6h-asf" secondAttribute="leading" id="1Zl-IH-aPU"/>
+                        <constraint firstItem="TLe-tk-dfS" firstAttribute="leading" secondItem="cur-1Q-FvX" secondAttribute="leading" constant="20" id="4pC-f9-7wy"/>
                         <constraint firstAttribute="trailing" secondItem="bgU-6h-asf" secondAttribute="trailing" constant="10" id="4pS-LM-0R7"/>
+                        <constraint firstItem="bPM-Yu-VG1" firstAttribute="leading" secondItem="WWV-Kv-dCy" secondAttribute="trailing" constant="30" id="9B2-32-f8c"/>
                         <constraint firstItem="Zxf-ip-AYZ" firstAttribute="top" secondItem="5oI-KK-aqW" secondAttribute="bottom" constant="5" id="BCg-md-ZeZ"/>
-                        <constraint firstAttribute="bottom" secondItem="WWV-Kv-dCy" secondAttribute="bottom" constant="10" id="GiF-e0-Qnm"/>
                         <constraint firstItem="bgU-6h-asf" firstAttribute="top" secondItem="cur-1Q-FvX" secondAttribute="top" constant="10" id="H7D-oO-iOX"/>
                         <constraint firstItem="Zxf-ip-AYZ" firstAttribute="height" secondItem="cur-1Q-FvX" secondAttribute="height" multiplier="0.25" id="Hd1-P1-JHI"/>
                         <constraint firstAttribute="bottom" secondItem="bPM-Yu-VG1" secondAttribute="bottom" constant="10" id="SBq-0z-wcB"/>
                         <constraint firstItem="5oI-KK-aqW" firstAttribute="leading" secondItem="cur-1Q-FvX" secondAttribute="leading" constant="15" id="Uok-Qi-lPm"/>
                         <constraint firstItem="bgU-6h-asf" firstAttribute="leading" secondItem="cur-1Q-FvX" secondAttribute="leading" constant="15" id="ayf-Ie-oMi"/>
-                        <constraint firstItem="WWV-Kv-dCy" firstAttribute="leading" secondItem="cur-1Q-FvX" secondAttribute="leading" constant="10" id="dXN-9K-iH0"/>
                         <constraint firstAttribute="trailing" secondItem="5oI-KK-aqW" secondAttribute="trailing" constant="15" id="eL1-Ch-DtF"/>
                         <constraint firstAttribute="trailing" secondItem="Zxf-ip-AYZ" secondAttribute="trailing" constant="10" id="fVz-yo-FxQ"/>
+                        <constraint firstItem="WWV-Kv-dCy" firstAttribute="bottom" secondItem="bPM-Yu-VG1" secondAttribute="bottom" id="gyc-zd-GB0"/>
                         <constraint firstItem="Zxf-ip-AYZ" firstAttribute="width" secondItem="cur-1Q-FvX" secondAttribute="width" multiplier="0.3" id="jRP-Po-5rT"/>
                         <constraint firstAttribute="trailing" secondItem="bPM-Yu-VG1" secondAttribute="trailing" constant="10" id="td8-eH-0fx"/>
                         <constraint firstItem="5oI-KK-aqW" firstAttribute="top" secondItem="bgU-6h-asf" secondAttribute="bottom" constant="10" id="vIk-zl-sT5"/>
+                        <constraint firstItem="TLe-tk-dfS" firstAttribute="bottom" secondItem="bPM-Yu-VG1" secondAttribute="bottom" id="vsh-g2-tO9"/>
                         <constraint firstItem="XaP-PB-ifR" firstAttribute="top" secondItem="5oI-KK-aqW" secondAttribute="bottom" constant="10" id="wjV-We-dpG"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
@@ -137,6 +149,7 @@
                 <outlet property="categoryImage" destination="GZN-bG-5X9" id="IvL-Fm-wBm"/>
                 <outlet property="categoryTitleLBL" destination="bgU-6h-asf" id="p08-e7-vUO"/>
                 <outlet property="categoryView" destination="cur-1Q-FvX" id="85y-SN-3bM"/>
+                <outlet property="deleteBtn" destination="TLe-tk-dfS" id="GzB-C9-tUc"/>
                 <outlet property="saveBTN" destination="bPM-Yu-VG1" id="h1I-hz-Fux"/>
                 <outlet property="selectIconBtn" destination="mMG-bY-Bsw" id="aOJ-QB-Qxq"/>
                 <outlet property="selectIconView" destination="Zxf-ip-AYZ" id="ZIm-cK-S0h"/>

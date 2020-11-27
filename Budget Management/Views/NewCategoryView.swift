@@ -16,6 +16,7 @@ class NewCategoryView: UIView, UITextFieldDelegate {
     @IBOutlet weak var titleTxtField: UITextField!
     @IBOutlet weak var selectIconView: UIView!
     @IBOutlet weak var categoryView: UIView!
+    @IBOutlet weak var deleteBtn: UIButton!
     
     //MARK:- new category alert textfield delegate extension
     
