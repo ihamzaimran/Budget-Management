@@ -64,10 +64,11 @@ class AddSavingAmountViewController: UIViewController {
         
         descripitonTextField.textFieldStyle(color: .darkGray)
         descripitonTextField.textColor = .darkGray
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         userID = userDefault.string(forKey: "UserID")
         getDetails()
-        
     }
     
     private func getDetails(){

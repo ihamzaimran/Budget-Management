@@ -43,6 +43,7 @@
 		EC5108C925403DF500A98A3E /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5108C825403DF500A98A3E /* AccountsViewController.swift */; };
 		EC5108CC25403E0B00A98A3E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5108CB25403E0B00A98A3E /* SettingsViewController.swift */; };
 		EC5108D9254057D800A98A3E /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5108D8254057D800A98A3E /* UpdateProfileViewController.swift */; };
+		EC80B8AE2574C2A700424BFF /* DashboardAccountsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC80B8AD2574C2A700424BFF /* DashboardAccountsCollectionViewCell.swift */; };
 		EC8868932546B5640056A8A3 /* GoalAchievedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8868922546B5640056A8A3 /* GoalAchievedViewController.swift */; };
 		EC8868982546B9E30056A8A3 /* PagerViewForsavingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8868972546B9E30056A8A3 /* PagerViewForsavingsViewController.swift */; };
 		EC8B2489255D163E0086837A /* GoalTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8B2488255D163E0086837A /* GoalTransactionsViewController.swift */; };
@@ -115,6 +116,7 @@
 		EC5108C825403DF500A98A3E /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
 		EC5108CB25403E0B00A98A3E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		EC5108D8254057D800A98A3E /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
+		EC80B8AD2574C2A700424BFF /* DashboardAccountsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAccountsCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC8868922546B5640056A8A3 /* GoalAchievedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalAchievedViewController.swift; sourceTree = "<group>"; };
 		EC8868972546B9E30056A8A3 /* PagerViewForsavingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewForsavingsViewController.swift; sourceTree = "<group>"; };
 		EC8B2488255D163E0086837A /* GoalTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTransactionsViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				ECC83192256536ED0027B349 /* SelectIconCell.swift */,
 				EC3001C2256F97490053313A /* NewCategoryView.xib */,
 				EC3001C5256F975E0053313A /* NewCategoryView.swift */,
+				EC80B8AD2574C2A700424BFF /* DashboardAccountsCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				EC510862253FFDA000A98A3E /* SceneDelegate.swift in Sources */,
 				EC07563F254FD980001FBBA3 /* LoginPageView.swift in Sources */,
 				EC5108882540018E00A98A3E /* SWRevealViewController.m in Sources */,
+				EC80B8AE2574C2A700424BFF /* DashboardAccountsCollectionViewCell.swift in Sources */,
 				ECC8315A2564EFC30027B349 /* AddAccountViewController.swift in Sources */,
 				ECCB0949255A71380024B827 /* AddSavingAmountViewController.swift in Sources */,
 				ECB8968E2555607000092DBB /* NewGoalViewController.swift in Sources */,

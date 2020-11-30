@@ -97,7 +97,7 @@ extension AccountsViewController: UITableViewDelegate, UITableViewDataSource, Ge
         
         let details = accountDetails[indexPath.row]
         cell.accountImage.image = UIImage(named: details.icon)
-        cell.accountType.text = details.type
+        cell.accountType.text = details.name
     
         if details.balance < 0 {
             cell.balanceLBL.textColor = .systemRed
@@ -123,6 +123,7 @@ extension AccountsViewController: UITableViewDelegate, UITableViewDataSource, Ge
             dropDown.anchorView = cell
             dropDown.bottomOffset = CGPoint(x: cell.frame.width, y: cell.frame.size.height)
             dropDown.width = 125
+            dropDown.direction = .bottom
             dropDown.selectionAction = { [weak self] (index: Int, item: String) in
                 guard let _ = self else { return }
                 

@@ -53,6 +53,8 @@ struct Constants {
         static let achievedTableCellIdentifier = "achievedTableCellIdentifier"
         static let accountBalanceIdentifierCell = "accountBalanceIdentifierCell"
         static let addAccountTableCellIdentifier = "addAccountTableCellIdentifier"
+        static let dasboardAccountsCell = "dashboardAccountsCellIdentifier"
+        static let dashboardRecordCell = "dashboardLastRecordsCell"
     }
     
     struct Images {
