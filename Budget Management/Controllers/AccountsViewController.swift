@@ -114,6 +114,8 @@ extension AccountsViewController: UITableViewDelegate, UITableViewDataSource, Ge
         return 60
     }
     
+    
+    //delegate function to get row number of table cell
     func didTapDropdownIcon(cell: AccountBalanceTableViewCell) {
         
         guard let indexPath = self.tableView.indexPath(for: cell) else{fatalError("error getting index path")}

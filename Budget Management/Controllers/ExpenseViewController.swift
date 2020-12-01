@@ -231,6 +231,7 @@ extension ExpenseViewController: UITableViewDelegate, UITableViewDataSource{
         setLabel()
         newCategoryAlert.saveBTN.tag = 1
         newCategoryAlert.categoryTitleLBL.text = "Update Expense Category"
+        newCategoryAlert.saveBTN.setTitle("Update", for: .normal)
         newCategoryAlert.titleTxtField.text = expenseCategories[indexPath.row].title
         newCategoryAlert.categoryImage.image = UIImage(named: expenseCategories[indexPath.row].icon)
         newCategoryAlert.deleteBtn.isHidden = false

@@ -49,6 +49,13 @@
 		EC8B2489255D163E0086837A /* GoalTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8B2488255D163E0086837A /* GoalTransactionsViewController.swift */; };
 		EC8B248C255D1B890086837A /* GoalTransactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8B248B255D1B890086837A /* GoalTransactionsTableViewCell.swift */; };
 		EC8B248F255D38530086837A /* AchievedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8B248E255D38530086837A /* AchievedTableViewCell.swift */; };
+		EC9C828725760D2D005F89B5 /* DashboardRecordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C828625760D2D005F89B5 /* DashboardRecordsTableViewCell.swift */; };
+		EC9C829225762B63005F89B5 /* AllActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C829125762B63005F89B5 /* AllActivityViewController.swift */; };
+		EC9C829525764D77005F89B5 /* ActivitiesHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC9C829425764D77005F89B5 /* ActivitiesHeaderView.xib */; };
+		EC9C829825764D8D005F89B5 /* ActivitiesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C829725764D8D005F89B5 /* ActivitiesHeaderView.swift */; };
+		EC9C829B257654B7005F89B5 /* ActivitiesFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC9C829A257654B7005F89B5 /* ActivitiesFooterView.xib */; };
+		EC9C829E257654E3005F89B5 /* ActivitiesFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C829D257654E3005F89B5 /* ActivitiesFooterView.swift */; };
+		EC9C82A125766304005F89B5 /* ActivitiesTransactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C82A025766304005F89B5 /* ActivitiesTransactionsTableViewCell.swift */; };
 		ECA40131255E8FE600719D52 /* AchievedGoalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA40130255E8FE600719D52 /* AchievedGoalDetailsViewController.swift */; };
 		ECB896512555190B00092DBB /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB896502555190B00092DBB /* AddGoalViewController.swift */; };
 		ECB8968E2555607000092DBB /* NewGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB8968D2555607000092DBB /* NewGoalViewController.swift */; };
@@ -122,6 +129,13 @@
 		EC8B2488255D163E0086837A /* GoalTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTransactionsViewController.swift; sourceTree = "<group>"; };
 		EC8B248B255D1B890086837A /* GoalTransactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTransactionsTableViewCell.swift; sourceTree = "<group>"; };
 		EC8B248E255D38530086837A /* AchievedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievedTableViewCell.swift; sourceTree = "<group>"; };
+		EC9C828625760D2D005F89B5 /* DashboardRecordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRecordsTableViewCell.swift; sourceTree = "<group>"; };
+		EC9C829125762B63005F89B5 /* AllActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllActivityViewController.swift; sourceTree = "<group>"; };
+		EC9C829425764D77005F89B5 /* ActivitiesHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivitiesHeaderView.xib; sourceTree = "<group>"; };
+		EC9C829725764D8D005F89B5 /* ActivitiesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesHeaderView.swift; sourceTree = "<group>"; };
+		EC9C829A257654B7005F89B5 /* ActivitiesFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivitiesFooterView.xib; sourceTree = "<group>"; };
+		EC9C829D257654E3005F89B5 /* ActivitiesFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesFooterView.swift; sourceTree = "<group>"; };
+		EC9C82A025766304005F89B5 /* ActivitiesTransactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTransactionsTableViewCell.swift; sourceTree = "<group>"; };
 		ECA40130255E8FE600719D52 /* AchievedGoalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievedGoalDetailsViewController.swift; sourceTree = "<group>"; };
 		ECB896502555190B00092DBB /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		ECB8968D2555607000092DBB /* NewGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +260,7 @@
 				EC2F0F1A25639D11007EA0B3 /* TabBar.swift */,
 				ECC831592564EFC30027B349 /* AddAccountViewController.swift */,
 				EC3001CF256FC7320053313A /* ManageDashboardViewController.swift */,
+				EC9C829125762B63005F89B5 /* AllActivityViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -270,6 +285,11 @@
 				EC3001C2256F97490053313A /* NewCategoryView.xib */,
 				EC3001C5256F975E0053313A /* NewCategoryView.swift */,
 				EC80B8AD2574C2A700424BFF /* DashboardAccountsCollectionViewCell.swift */,
+				EC9C828625760D2D005F89B5 /* DashboardRecordsTableViewCell.swift */,
+				EC9C829425764D77005F89B5 /* ActivitiesHeaderView.xib */,
+				EC9C829725764D8D005F89B5 /* ActivitiesHeaderView.swift */,
+				EC9C829A257654B7005F89B5 /* ActivitiesFooterView.xib */,
+				EC9C829D257654E3005F89B5 /* ActivitiesFooterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,6 +330,7 @@
 				ECE0B44C256658AF005816FC /* AddAccountTableViewCell.swift */,
 				EC3001B5256F8BC70053313A /* ExpenseTableViewCell.swift */,
 				EC3001B8256F90890053313A /* IncomeTableViewCell.swift */,
+				EC9C82A025766304005F89B5 /* ActivitiesTransactionsTableViewCell.swift */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -383,8 +404,10 @@
 				EC075642254FD9A3001FBBA3 /* LoginPageView.xib in Resources */,
 				EC510867253FFDA000A98A3E /* Main.storyboard in Resources */,
 				EC510881253FFE9500A98A3E /* open_san.ttf in Resources */,
+				EC9C829B257654B7005F89B5 /* ActivitiesFooterView.xib in Resources */,
 				EC2F0F532563DAA9007EA0B3 /* NavBarX.xib in Resources */,
 				ECC8318025651FDE0027B349 /* SelectColorCell.xib in Resources */,
+				EC9C829525764D77005F89B5 /* ActivitiesHeaderView.xib in Resources */,
 				ECC831572564EF4D0027B349 /* SecondStoryboard.storyboard in Resources */,
 				EC2F0F0C25639066007EA0B3 /* NavBar.xib in Resources */,
 			);
@@ -456,10 +479,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC9C829225762B63005F89B5 /* AllActivityViewController.swift in Sources */,
 				EC8868932546B5640056A8A3 /* GoalAchievedViewController.swift in Sources */,
 				ECA40131255E8FE600719D52 /* AchievedGoalDetailsViewController.swift in Sources */,
 				EC3001D0256FC7320053313A /* ManageDashboardViewController.swift in Sources */,
 				EC3001B9256F90890053313A /* IncomeTableViewCell.swift in Sources */,
+				EC9C82A125766304005F89B5 /* ActivitiesTransactionsTableViewCell.swift in Sources */,
 				EC5108D9254057D800A98A3E /* UpdateProfileViewController.swift in Sources */,
 				ECB896512555190B00092DBB /* AddGoalViewController.swift in Sources */,
 				EC5108922540038300A98A3E /* Constants.swift in Sources */,
@@ -475,6 +500,7 @@
 				EC8868982546B9E30056A8A3 /* PagerViewForsavingsViewController.swift in Sources */,
 				EC510864253FFDA000A98A3E /* DashBoard.swift in Sources */,
 				EC510860253FFDA000A98A3E /* AppDelegate.swift in Sources */,
+				EC9C829E257654E3005F89B5 /* ActivitiesFooterView.swift in Sources */,
 				EC5108C925403DF500A98A3E /* AccountsViewController.swift in Sources */,
 				EC8B248C255D1B890086837A /* GoalTransactionsTableViewCell.swift in Sources */,
 				EC5108C625403DDD00A98A3E /* CategoriesViewController.swift in Sources */,
@@ -487,6 +513,7 @@
 				ECCD9B5C25481C4C009D8B6F /* ExpenseViewController.swift in Sources */,
 				ECC83183256520150027B349 /* SelectColorCell.swift in Sources */,
 				EC2F0F562563DAE7007EA0B3 /* NavBarX.swift in Sources */,
+				EC9C828725760D2D005F89B5 /* DashboardRecordsTableViewCell.swift in Sources */,
 				ECC8DB6A2542E37B008F41FA /* BudgetsTabViewController.swift in Sources */,
 				ECC8DB6D2542EB3F008F41FA /* ActivitiesTabViewController.swift in Sources */,
 				EC4D809E254298AC00D0EA31 /* BudgetBrain.swift in Sources */,
@@ -500,6 +527,7 @@
 				ECC8315A2564EFC30027B349 /* AddAccountViewController.swift in Sources */,
 				ECCB0949255A71380024B827 /* AddSavingAmountViewController.swift in Sources */,
 				ECB8968E2555607000092DBB /* NewGoalViewController.swift in Sources */,
+				EC9C829825764D8D005F89B5 /* ActivitiesHeaderView.swift in Sources */,
 				EC5108C0254024AF00A98A3E /* HeaderView.swift in Sources */,
 				ECCB094C255A727A0024B827 /* GoaldetailsViewController.swift in Sources */,
 				EC07563C254FD710001FBBA3 /* LoginPageViewController.swift in Sources */,

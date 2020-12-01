@@ -27,6 +27,10 @@ class DashBoard: UIViewController, UIGestureRecognizerDelegate {
     private var transactions: Results<GoalTransactions>?
     private var count = 0
     private var date = [String]()
+    private var titleName = [String]()
+    private var desc = [String]()
+    private var balance = [String]()
+    private var accountName = [String]()
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -67,10 +71,23 @@ class DashBoard: UIViewController, UIGestureRecognizerDelegate {
         
         count = 0
         arr.removeAll()
+        date.removeAll()
+        titleName.removeAll()
+        desc.removeAll()
+        balance.removeAll()
+        accountName.removeAll()
         totalBalance = 0
         userID = userDefault.string(forKey: "UserID")
         getDetails()
-        amountTxt.text = "\(totalBalance)"
+        
+        if totalBalance < 0 {
+            amountTxt.textColor = .systemRed
+            amountTxt.text = "\(totalBalance)"
+        } else {
+            amountTxt.textColor = UIColor(named: "PrimaryColor")
+            amountTxt.text = "\(totalBalance)"
+        }
+        
     }
     
     private func getDetails() {
@@ -86,26 +103,28 @@ class DashBoard: UIViewController, UIGestureRecognizerDelegate {
                     }
                 }
                 collectionView.reloadData()
-            }
-            
-            transactions = self.realm.objects(GoalTransactions.self)
-            
-            if let transaction = transactions {
-                let records = transaction.enumerated()
-                for (index,detailTransaction) in records.reversed() {
-                    count += 1
-                    print(detailTransaction.date)
-                    date.append(detailTransaction.date)
-                    print("index = \(index), detail = \(detailTransaction.amount)")
-                    if count == 3 {
-                        break
-                    } else {
-                        print("continue...")
+                
+                transactions = self.realm.objects(GoalTransactions.self)
+                
+                if let transaction = transactions {
+                    let records = transaction.enumerated()
+                    for (_,detailTransaction) in records.reversed() {
+                        count += 1
+                        titleName.append(detailTransaction.goalName)
+                        //                    accountName.append(detailTransaction.)
+                        balance.append(String(detailTransaction.amount))
+                        desc.append(detailTransaction.goalDescription)
+                        date.append(detailTransaction.date)
+                        if count == 3 {
+                            break
+                        } else {
+                            print("continue...")
+                        }
                     }
-                    
+                    tableView.reloadData()
+                } else {
+                    print("list is empty")
                 }
-            } else {
-                print("empty")
             }
         }
     }
@@ -189,12 +208,17 @@ extension DashBoard: UICollectionViewDelegate, UICollectionViewDataSource, UICol
 
 extension DashBoard: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        date.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableViewIdentifier.dashboardRecordCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableViewIdentifier.dashboardRecordCell, for: indexPath) as! DashboardRecordsTableViewCell
         cell.backgroundColor = .clear
+        cell.dateLBL.text = date[indexPath.row]
+        cell.titleLBL.text = titleName[indexPath.row]
+        cell.amountLBL.text = balance[indexPath.row]
+        cell.descLBL.text = desc[indexPath.row]
+        cell.accountNameLBL.text = "Meezan Bank"
         return cell
     }
     

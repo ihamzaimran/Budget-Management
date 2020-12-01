@@ -233,6 +233,7 @@ extension IncomeViewController: UITableViewDelegate, UITableViewDataSource {
         setLabel()
         newCategoryAlert.saveBTN.tag = 1
         newCategoryAlert.categoryTitleLBL.text = "Update Income Category"
+        newCategoryAlert.saveBTN.setTitle("Update", for: .normal)
         newCategoryAlert.titleTxtField.text = incomeCategories[indexPath.row].title
         newCategoryAlert.categoryImage.image = UIImage(named: incomeCategories[indexPath.row].icon)
         newCategoryAlert.deleteBtn.isHidden = false

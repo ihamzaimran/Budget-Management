@@ -37,6 +37,7 @@ struct Constants {
         static let AchievedGoalDetailStoryboard = "AchievedGoalDetailStoryboard"
         static let addAccount = "AddAccountStoryboard"
         static let manageDashboard = "ManageDashboardStoryboard"
+        static let allActivityStoryboard = "allActivityStoryboard"
     }
     
     struct TableViewIdentifier {
@@ -55,6 +56,7 @@ struct Constants {
         static let addAccountTableCellIdentifier = "addAccountTableCellIdentifier"
         static let dasboardAccountsCell = "dashboardAccountsCellIdentifier"
         static let dashboardRecordCell = "dashboardLastRecordsCell"
+        static let activitiesTableCell = "activitiesTableCell"
     }
     
     struct Images {
