@@ -20,6 +20,7 @@ class ProfileModel: Object {
     @objc dynamic var totalBalance = 0
     var expenseCategory = List<Category>()
     var incomeCategory = List<Category>()
+    var budgetsList = List<Budget>()
     
     let goalDetails = List<GoalDetails>()
     let goalAchievedDetails = List<GoalAchieved>()
@@ -29,6 +30,13 @@ class ProfileModel: Object {
     override static func primaryKey() -> String? {
         return "id"
     }
+}
+
+class Budget: Object {
+    @objc dynamic var totalAmount = 0
+//    @objc dynamic var title = ""
+    @objc dynamic var spentAmount = 0
+    @objc dynamic var leftAmount = 0
 }
 
 class  AccountDetails: Object {

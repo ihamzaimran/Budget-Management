@@ -72,7 +72,7 @@ class AddAccountViewController: UIViewController {
         
     }
     
-    
+    //getting details from  realm
     private func getDetails() {
         if let details = isSelectedAccount{
             if edit == true {
@@ -103,6 +103,8 @@ class AddAccountViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    //mehtods to show dropDown
     private func showAccountTypeDropDownMenu() {
         
         dropDown.dataSource = ["Person/Other", "Cash", "Bank"]
@@ -268,6 +270,8 @@ class AddAccountViewController: UIViewController {
         }
     }
     
+    
+    //function to save edited data in realm
     private func saveEditedData() {
         
         if let account = isSelectedAccount {
@@ -311,6 +315,8 @@ class AddAccountViewController: UIViewController {
         }
     }
     
+    
+    //function to save data creating for the first time
     private func saveData(){
         if let id = userID {
             if let details = self.realm.objects(ProfileModel.self).filter("id = %@", id).first{
@@ -383,6 +389,8 @@ extension AddAccountViewController: UITextFieldDelegate {
 
 //MARK:- extension hexString to uicolor
 
+
+//function to convert hex string into uicolor
 extension UIViewController{
     func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()

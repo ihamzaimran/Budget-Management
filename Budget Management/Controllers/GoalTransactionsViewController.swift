@@ -29,6 +29,7 @@ class GoalTransactionsViewController: UIViewController {
         getData()
     }
     
+    //getting data from realm
     private func getData(){
         
         if let selectedTransaction = selectedGoalTransactions {

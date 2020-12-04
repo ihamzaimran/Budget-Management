@@ -45,8 +45,7 @@ class LoginPageViewController: UIViewController, GIDSignInDelegate {
         view.bringSubviewToFront(loginPageControl)
     }
     
-    
-    
+   //saving data to realm
     private func saveData(){
         
         print("save data function called.")
@@ -75,6 +74,8 @@ class LoginPageViewController: UIViewController, GIDSignInDelegate {
         }
     }
     
+    
+    //google sign in delegate method
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
         if let e = error {
@@ -128,6 +129,8 @@ class LoginPageViewController: UIViewController, GIDSignInDelegate {
 
 
 //MARK:- extension scrollView
+
+//scrollview and paging mehtod
 
 extension LoginPageViewController: UIScrollViewDelegate {
     
@@ -200,11 +203,3 @@ extension LoginPageViewController: UIScrollViewDelegate {
     
 }
 
-
-//MARK:- Google signin extension
-
-extension LoginPageViewController {
-    
-    
-    
-}

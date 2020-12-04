@@ -38,8 +38,9 @@ class IncomeViewController: UIViewController, IndicatorInfoProvider {
         getDetails()
     }
     
+    
+    //getting data from realm
     private func getDetails(){
-        
         if let id = userID{
             if let profile = self.realm.objects(ProfileModel.self).filter("id = %@", id).first{
                 
@@ -64,6 +65,7 @@ class IncomeViewController: UIViewController, IndicatorInfoProvider {
         view.addSubview(newCategoryAlert)
     }
     
+    //setting labels, etc...
     private func setLabel(){
         newCategoryAlert = (Bundle.main.loadNibNamed("NewCategoryView", owner: self, options: nil)?.first as? NewCategoryView)!
         newCategoryAlert.categoryTitleLBL.text = "New Income Category"
@@ -134,6 +136,8 @@ class IncomeViewController: UIViewController, IndicatorInfoProvider {
         }
     }
     
+    
+    //saving data to realm
     private func saveData(){
         
         if let userid = userID {

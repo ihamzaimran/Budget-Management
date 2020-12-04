@@ -39,6 +39,7 @@ class SideMenuTableViewController: UIViewController{
 
 extension SideMenuTableViewController: UITableViewDataSource, UITableViewDelegate, didTapProfileImage {
     
+    //side table menu delegate button
     func profileImageBtnPressed() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let newVC = storyboard.instantiateViewController(identifier: Constants.StoryboardIDs.updateProfile) as! UpdateProfileViewController
@@ -90,10 +91,6 @@ extension SideMenuTableViewController: UITableViewDataSource, UITableViewDelegat
             revealViewController()?.revealToggle(animated: true)
             break
         case 4:
-            //            self.dismiss(animated: true) {
-            //                print("Dismiss Completion working.")
-            //                self.shareDelegate?.MenuDismissed()
-            //            }
             let description = "Budget Management is a free to download app.\n Download it now from the App Store."
             let shareAll = [description]
             let activityViewController = UIActivityViewController(activityItems: shareAll, applicationActivities: nil)
@@ -141,22 +138,28 @@ extension SideMenuTableViewController: UITableViewDataSource, UITableViewDelegat
         let data = realm.objects(ProfileModel.self)
         header.delegate = self
         
-        for data in data
-        {
-            if let details = self.realm.objects(ProfileModel.self).filter("id = %@", data.id).first {
-                
-                header.HeaderLabel.text = details.name
-                header.headerImage.contentMode = .scaleAspectFill
-                
-                if let imageData = details.profileImageData {
-                    header.headerImage.image = UIImage(data: imageData)
-                } else {
-                    header.headerImage.image = UIImage(named: "user_dummy")
+        if data.isEmpty {
+            header.headerImage.image = UIImage(named: "user_dummy")
+            header.HeaderLabel.text = "John Wick"
+            header.headerImage.contentMode = .scaleAspectFill
+        } else {
+            for data in data
+            {
+                if let details = self.realm.objects(ProfileModel.self).filter("id = %@", data.id).first {
+                    
+                    header.HeaderLabel.text = details.name
+                    header.headerImage.contentMode = .scaleAspectFill
+                    
+                    if let imageData = details.profileImageData {
+                        header.headerImage.image = UIImage(data: imageData)
+                    } else {
+                        header.headerImage.image = UIImage(named: "user_dummy")
+                    }
+                    header.headerImage.makeRoundedImage()
                 }
-                
-                header.headerImage.makeRoundedImage()
             }
         }
+        
     }
 }
 

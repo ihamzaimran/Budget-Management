@@ -38,6 +38,10 @@ struct Constants {
         static let addAccount = "AddAccountStoryboard"
         static let manageDashboard = "ManageDashboardStoryboard"
         static let allActivityStoryboard = "allActivityStoryboard"
+        static let ActivitiesTabVC = "ActivitiesTabVC"
+        static let editBudgetStoryboard = "EditMonthlyBudgetStoryboard"
+        static let setBudgetStoryboard = "setMonthlyBudgetStoryboard"
+        static let overAllBudgetStoryboard = "overAllBudgetStoryboard"
     }
     
     struct TableViewIdentifier {
@@ -57,6 +61,8 @@ struct Constants {
         static let dasboardAccountsCell = "dashboardAccountsCellIdentifier"
         static let dashboardRecordCell = "dashboardLastRecordsCell"
         static let activitiesTableCell = "activitiesTableCell"
+        static let setBudget = "setBudgetCell"
+        static let overallBudgetCellIndentifier = "overallBudgetCellIndentifier"
     }
     
     struct Images {
@@ -78,6 +84,9 @@ struct Constants {
         static let settingssubText = ["name, email, gender, profile picture", "Set your native currency", "Set your Country of Origin", "This Action will clear records" , "Like our app on App Store", "Share our app with others"]
         static let tableViewListNames = ["Dashboard", "Budgets", "Categories", "Accounts", "Share", "Settings"]
         static let expenseIconText = ["Education", "Personal", "Wedding", "Medical", "Family Expense", "Grocery", "HouseHold", "Entertainment", "Gifts", "Clothing", "Fuel & Transport", "Eating-Out", "Utilities", "Salary", "Investment"]
+        static let overViewSwitch = "overViewSwitch"
+        static let accountsSwitch = "accountsSwitch"
+        static let lastRecordsSwitch = "lastRecordsSwitch"
     }
     
     struct Links {

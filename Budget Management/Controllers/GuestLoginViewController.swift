@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class GuestLoginViewController: UIViewController {
     
@@ -40,9 +41,10 @@ class GuestLoginViewController: UIViewController {
         let checkSelected = checkUserTypeSelected()
         if checkSelected == true {
             print("User selected")
-            let dashbaordVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.dashboard) as! DashBoard
-            self.navigationController?.pushViewController(dashbaordVC, animated: true)
+            let tabBarVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.tabBar) as! TabBar
+            self.navigationController?.pushViewController(tabBarVC, animated: true)
         } else {
+            self.view.makeToast("please select a user type. ")
             print("User type not selected")
         }
     }

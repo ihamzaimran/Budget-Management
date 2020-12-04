@@ -27,15 +27,34 @@ class BudgetsTabViewController: ButtonBarPagerTabStripViewController {
         super.viewDidLoad()
     }
     
+    
+    //XLPagerTabStrip mehtod
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         
-        let child1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIDs.expense) as! ExpenseViewController
-        child1.childNumber = "EXPENSE"
+        let dateFormatter = DateFormatter()
+        let today = Date()
+        let currentCalendar = Calendar.current
+        let yearComponents: DateComponents? = currentCalendar.dateComponents([.year], from: today)
+        let currentYear = Int(yearComponents!.year!)
         
-        let child2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIDs.income) as! IncomeViewController
-        child2.childNumber = "INCOME"
+        var childs = [UIViewController]()
+        for months in 0..<12 {
+            let d = "\(dateFormatter.shortMonthSymbols[months]) \(currentYear)"
+            let child1 = UIStoryboard(name: Constants.StoryboardName.secondStoryboard, bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIDs.overAllBudgetStoryboard) as! OverAllBudgetsTabViewController
+            child1.childNumber = d
+            childs.append(child1)
+        }
         
-        return [child1, child2]
+        return childs
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let curMonth = "May 2020"
+        if curMonth == "Apr 2020" {
+            moveToViewController(at: 3, animated: true)
+        } else {
+            moveToViewController(at: 11, animated: true)
+        }
     }
 }
 

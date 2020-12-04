@@ -30,6 +30,8 @@ class CategoriesViewController: ButtonBarPagerTabStripViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    //XLPagerTabStripMethod
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         
         let child1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryboardIDs.expense) as! ExpenseViewController

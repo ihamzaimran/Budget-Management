@@ -91,6 +91,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    
+    //modified alert to get user confirmation
     private func confirmAction(){
         let TitleString = NSAttributedString(string: "Important", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18, weight: .bold), NSAttributedString.Key.foregroundColor : UIColor(named: "PrimaryColor")!])
         
@@ -137,6 +139,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         self.present(alert, animated: true, completion: nil)
     }
     
+    
+    //signout from google account/ de authorize google account
     private func disconnectGoogleAccount() {
         
         if userDefault.string(forKey: "UserID") != nil {
@@ -161,6 +165,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
 //MARK:- extension to show share sheet
 
 extension SettingsViewController {
+    
+    
     fileprivate func showShareSheet(){
         let description = "Budget Management is a free to download app.\n Download it now from the App Store."
         let shareAll = [description]

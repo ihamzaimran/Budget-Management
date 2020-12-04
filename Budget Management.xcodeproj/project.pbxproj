@@ -49,6 +49,7 @@
 		EC8B2489255D163E0086837A /* GoalTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8B2488255D163E0086837A /* GoalTransactionsViewController.swift */; };
 		EC8B248C255D1B890086837A /* GoalTransactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8B248B255D1B890086837A /* GoalTransactionsTableViewCell.swift */; };
 		EC8B248F255D38530086837A /* AchievedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8B248E255D38530086837A /* AchievedTableViewCell.swift */; };
+		EC8E5E7B2578F1B20047E42D /* OverAllBudgetsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E5E7A2578F1B20047E42D /* OverAllBudgetsTabViewController.swift */; };
 		EC9C828725760D2D005F89B5 /* DashboardRecordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C828625760D2D005F89B5 /* DashboardRecordsTableViewCell.swift */; };
 		EC9C829225762B63005F89B5 /* AllActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C829125762B63005F89B5 /* AllActivityViewController.swift */; };
 		EC9C829525764D77005F89B5 /* ActivitiesHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC9C829425764D77005F89B5 /* ActivitiesHeaderView.xib */; };
@@ -57,8 +58,11 @@
 		EC9C829E257654E3005F89B5 /* ActivitiesFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C829D257654E3005F89B5 /* ActivitiesFooterView.swift */; };
 		EC9C82A125766304005F89B5 /* ActivitiesTransactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C82A025766304005F89B5 /* ActivitiesTransactionsTableViewCell.swift */; };
 		ECA40131255E8FE600719D52 /* AchievedGoalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA40130255E8FE600719D52 /* AchievedGoalDetailsViewController.swift */; };
+		ECB7AAFC2577AD46004E7FFD /* SetMonthlyBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AAFB2577AD46004E7FFD /* SetMonthlyBudgetViewController.swift */; };
+		ECB7AAFF2577AEB6004E7FFD /* SetBudgetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AAFE2577AEB6004E7FFD /* SetBudgetCollectionViewCell.swift */; };
 		ECB896512555190B00092DBB /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB896502555190B00092DBB /* AddGoalViewController.swift */; };
 		ECB8968E2555607000092DBB /* NewGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB8968D2555607000092DBB /* NewGoalViewController.swift */; };
+		ECBD054B257778CE00779083 /* EditMonthlyBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBD054A257778CE00779083 /* EditMonthlyBudgetViewController.swift */; };
 		ECC58F252541744C00495610 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC58F242541744C00495610 /* Extensions.swift */; };
 		ECC58F292541963500495610 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC58F282541963500495610 /* SettingsTableViewCell.swift */; };
 		ECC831572564EF4D0027B349 /* SecondStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC831562564EF4D0027B349 /* SecondStoryboard.storyboard */; };
@@ -129,6 +133,7 @@
 		EC8B2488255D163E0086837A /* GoalTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTransactionsViewController.swift; sourceTree = "<group>"; };
 		EC8B248B255D1B890086837A /* GoalTransactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTransactionsTableViewCell.swift; sourceTree = "<group>"; };
 		EC8B248E255D38530086837A /* AchievedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievedTableViewCell.swift; sourceTree = "<group>"; };
+		EC8E5E7A2578F1B20047E42D /* OverAllBudgetsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverAllBudgetsTabViewController.swift; sourceTree = "<group>"; };
 		EC9C828625760D2D005F89B5 /* DashboardRecordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRecordsTableViewCell.swift; sourceTree = "<group>"; };
 		EC9C829125762B63005F89B5 /* AllActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllActivityViewController.swift; sourceTree = "<group>"; };
 		EC9C829425764D77005F89B5 /* ActivitiesHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivitiesHeaderView.xib; sourceTree = "<group>"; };
@@ -137,8 +142,11 @@
 		EC9C829D257654E3005F89B5 /* ActivitiesFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesFooterView.swift; sourceTree = "<group>"; };
 		EC9C82A025766304005F89B5 /* ActivitiesTransactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTransactionsTableViewCell.swift; sourceTree = "<group>"; };
 		ECA40130255E8FE600719D52 /* AchievedGoalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievedGoalDetailsViewController.swift; sourceTree = "<group>"; };
+		ECB7AAFB2577AD46004E7FFD /* SetMonthlyBudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMonthlyBudgetViewController.swift; sourceTree = "<group>"; };
+		ECB7AAFE2577AEB6004E7FFD /* SetBudgetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBudgetCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECB896502555190B00092DBB /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		ECB8968D2555607000092DBB /* NewGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewController.swift; sourceTree = "<group>"; };
+		ECBD054A257778CE00779083 /* EditMonthlyBudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMonthlyBudgetViewController.swift; sourceTree = "<group>"; };
 		ECC58F242541744C00495610 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ECC58F282541963500495610 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		ECC831562564EF4D0027B349 /* SecondStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondStoryboard.storyboard; sourceTree = "<group>"; };
@@ -261,6 +269,9 @@
 				ECC831592564EFC30027B349 /* AddAccountViewController.swift */,
 				EC3001CF256FC7320053313A /* ManageDashboardViewController.swift */,
 				EC9C829125762B63005F89B5 /* AllActivityViewController.swift */,
+				ECBD054A257778CE00779083 /* EditMonthlyBudgetViewController.swift */,
+				ECB7AAFB2577AD46004E7FFD /* SetMonthlyBudgetViewController.swift */,
+				EC8E5E7A2578F1B20047E42D /* OverAllBudgetsTabViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -331,6 +342,7 @@
 				EC3001B5256F8BC70053313A /* ExpenseTableViewCell.swift */,
 				EC3001B8256F90890053313A /* IncomeTableViewCell.swift */,
 				EC9C82A025766304005F89B5 /* ActivitiesTransactionsTableViewCell.swift */,
+				ECB7AAFE2577AEB6004E7FFD /* SetBudgetCollectionViewCell.swift */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -500,6 +512,7 @@
 				EC8868982546B9E30056A8A3 /* PagerViewForsavingsViewController.swift in Sources */,
 				EC510864253FFDA000A98A3E /* DashBoard.swift in Sources */,
 				EC510860253FFDA000A98A3E /* AppDelegate.swift in Sources */,
+				ECBD054B257778CE00779083 /* EditMonthlyBudgetViewController.swift in Sources */,
 				EC9C829E257654E3005F89B5 /* ActivitiesFooterView.swift in Sources */,
 				EC5108C925403DF500A98A3E /* AccountsViewController.swift in Sources */,
 				EC8B248C255D1B890086837A /* GoalTransactionsTableViewCell.swift in Sources */,
@@ -514,6 +527,8 @@
 				ECC83183256520150027B349 /* SelectColorCell.swift in Sources */,
 				EC2F0F562563DAE7007EA0B3 /* NavBarX.swift in Sources */,
 				EC9C828725760D2D005F89B5 /* DashboardRecordsTableViewCell.swift in Sources */,
+				ECB7AAFC2577AD46004E7FFD /* SetMonthlyBudgetViewController.swift in Sources */,
+				EC8E5E7B2578F1B20047E42D /* OverAllBudgetsTabViewController.swift in Sources */,
 				ECC8DB6A2542E37B008F41FA /* BudgetsTabViewController.swift in Sources */,
 				ECC8DB6D2542EB3F008F41FA /* ActivitiesTabViewController.swift in Sources */,
 				EC4D809E254298AC00D0EA31 /* BudgetBrain.swift in Sources */,
@@ -524,6 +539,7 @@
 				EC07563F254FD980001FBBA3 /* LoginPageView.swift in Sources */,
 				EC5108882540018E00A98A3E /* SWRevealViewController.m in Sources */,
 				EC80B8AE2574C2A700424BFF /* DashboardAccountsCollectionViewCell.swift in Sources */,
+				ECB7AAFF2577AEB6004E7FFD /* SetBudgetCollectionViewCell.swift in Sources */,
 				ECC8315A2564EFC30027B349 /* AddAccountViewController.swift in Sources */,
 				ECCB0949255A71380024B827 /* AddSavingAmountViewController.swift in Sources */,
 				ECB8968E2555607000092DBB /* NewGoalViewController.swift in Sources */,
@@ -695,7 +711,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Budget Management/Supporting Files/Budget Management-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -717,7 +733,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Budget Management/Supporting Files/Budget Management-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -52,6 +52,8 @@ class ExpenseViewController: UIViewController, IndicatorInfoProvider {
         view.addSubview(newCategoryAlert)
     }
     
+    
+    //getting data from realm
     private func getDetails(){
         
         if let id = userID{
@@ -63,6 +65,7 @@ class ExpenseViewController: UIViewController, IndicatorInfoProvider {
         }
     }
     
+    //setting labels, etc...
     private func setLabel(){
         newCategoryAlert = (Bundle.main.loadNibNamed("NewCategoryView", owner: self, options: nil)?.first as? NewCategoryView)!
         newCategoryAlert.categoryTitleLBL.text = "New Income Category"
@@ -107,6 +110,8 @@ class ExpenseViewController: UIViewController, IndicatorInfoProvider {
         }
     }
     
+    
+    //saving data to realm
     private func saveData(){
         
         if let userid = userID {

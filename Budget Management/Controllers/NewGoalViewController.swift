@@ -75,6 +75,8 @@ class NewGoalViewController: UIViewController {
         
     }
     
+    
+    //getting details from realm
     private func getGoalDetails(with details: GoalDetails){
         amountTXT.text = "\(details.totalGoalAmount)"
         goalNameTextField.text = details.goalName
@@ -85,6 +87,7 @@ class NewGoalViewController: UIViewController {
         goalDescriptionTextField.text = details.goalDescription
     }
     
+    //setting icon in image
     private func setIcon(with name: String){
         
         switch name {
@@ -110,6 +113,8 @@ class NewGoalViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    //checking for empty textfield and saving data to realm
     @IBAction func saveIconButton(_ sender: UIButton) {
         
         if goalNameTextField.text?.isEmpty ?? true || amountTXT.text?.isEmpty ?? true || targetDateTextfield.text?.isEmpty ?? true || goalDescriptionTextField.text?.isEmpty ?? true{
@@ -128,6 +133,8 @@ class NewGoalViewController: UIViewController {
         }
     }
     
+    
+    //saving data func
     private func saveData(){
         
         if let id = userID {
@@ -250,6 +257,8 @@ extension NewGoalViewController: UITextFieldDelegate {
 //MARK: - extension datepciker
 
 extension NewGoalViewController {
+    
+    //date picker view methods
     func showDatePicker(){
         //Formate Date
         datePicker.datePickerMode = .date

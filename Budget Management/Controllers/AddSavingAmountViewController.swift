@@ -71,6 +71,8 @@ class AddSavingAmountViewController: UIViewController {
         getDetails()
     }
     
+    //getting details from realm amd depending on nif user is adding a new amount in a goal or editing or seeing a achieved goal details
+    
     private func getDetails(){
         
         if let details = selectedGoalDetails, let _ = edit {
@@ -143,6 +145,8 @@ class AddSavingAmountViewController: UIViewController {
         }
     }
     
+    
+    //saving data to realm
     private func saveData(){
         if let details = selectedGoalDetails {
             do {
@@ -180,6 +184,8 @@ class AddSavingAmountViewController: UIViewController {
         }
     }
     
+    
+    //getting current date
     private func getCurrentDate()-> todaysDate{
         
         let date = Date()
@@ -197,6 +203,8 @@ class AddSavingAmountViewController: UIViewController {
         return curDate
     }
     
+    
+    //changing textfield border colors
     private func changeBorderColor(name: UIColor) {
         addAmountTextField.layer.borderColor = name.cgColor
         addAmountTextField.layer.borderWidth = 1.0
@@ -213,6 +221,8 @@ class AddSavingAmountViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    //error checking and saving data func
     @IBAction func saveDepositBtn(_ sender: UIButton) {
         
         if saveDeleteButton.tag == 0 {
@@ -267,6 +277,7 @@ class AddSavingAmountViewController: UIViewController {
         }
     }
     
+    //pciker view func
     private func showPicker(forView: UIView){
         
         if let userid = userID {
@@ -318,6 +329,8 @@ extension AddSavingAmountViewController: UITextFieldDelegate {
 //MARK: - extension datepciker
 
 extension AddSavingAmountViewController {
+    
+    //picker view funcs
     func showDatePicker(){
         //Formate Date
         datePicker.datePickerMode = .date

@@ -36,6 +36,8 @@ class GoalAchievedViewController: UIViewController, IndicatorInfoProvider {
         getData()
     }
     
+    
+    //getting data from realm
     private func getData(){
         if let userId = userID {
             if let details = self.realm.objects(ProfileModel.self).filter("id = %@", userId).first{

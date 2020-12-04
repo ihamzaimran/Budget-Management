@@ -37,7 +37,7 @@ class AllActivityViewController: UIViewController, IndicatorInfoProvider {
         getDetails()
     }
     
-    
+    //getting details from realm
     private func getDetails() {
         
         if userID != nil {
@@ -101,19 +101,31 @@ extension AllActivityViewController: UITableViewDelegate, UITableViewDataSource 
         return footer
     }
     
-    //    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-    //
-    //        let header = view as! ActivitiesHeaderView
-    //
-    //    }
+        func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    
+            let header = view as! ActivitiesHeaderView
+            header.tintColor = .clear
+        }
     
     func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         let footer = view as! ActivitiesFooterView
+        footer.tintColor = .clear
         if let total = transactions?.count {
             footer.totalTransactions.text = "Total Transactions = \(total)"
         } else {
             footer.totalTransactions.text = "Total Transactions = 0"
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let alert = UIAlertController(title: "Important", message: "Savings can only be edited from savings module.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Close", style: .default, handler: { (_) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }

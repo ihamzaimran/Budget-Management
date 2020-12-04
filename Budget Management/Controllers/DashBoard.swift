@@ -47,15 +47,14 @@ class DashBoard: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
         sideMenuVC?.shareDelegate = self
         navigationItem.hidesBackButton = true
         
         navigationController?.interactivePopGestureRecognizer?.delegate = self
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
-        let navBar: NavBar = Bundle.main.loadNibNamed("NavBar", owner: self, options: nil)?.first as! NavBar
-        navBar.titleLBL.text = "Dashboard"
+        //        let navBar: NavBar = Bundle.main.loadNibNamed("NavBar", owner: self, options: nil)?.first as! NavBar
+        //        navBar.titleLBL.text = "Dashboard"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,6 +89,8 @@ class DashBoard: UIViewController, UIGestureRecognizerDelegate {
         
     }
     
+    
+    //getting details from realm in reversed order to get the last 3 transactions
     private func getDetails() {
         
         if let id = userID{
@@ -129,6 +130,8 @@ class DashBoard: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    
+    //action buttons
     @IBAction func addAccountBtn(_ sender: UIButton) {
         let addAccountVC = UIStoryboard(name: Constants.StoryboardName.secondStoryboard, bundle: nil).instantiateViewController(identifier: Constants.StoryboardIDs.addAccount) as! AddAccountViewController
         self.navigationController?.pushViewController(addAccountVC, animated: true)
@@ -147,7 +150,10 @@ class DashBoard: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func showMoreRecords(_ sender: UIButton) {
-        print("Show More Records")
+        
+        if let tab = self.tabBarController{
+            tab.selectedIndex = 2
+        }
     }
 }
 
@@ -155,7 +161,6 @@ class DashBoard: UIViewController, UIGestureRecognizerDelegate {
 
 extension DashBoard: ShareSheetProtocol {
     func MenuDismissed() {
-        print("Function working")
         let description = "Budget Management is a free to download app. \n Download it now from the App Store."
         let shareAll = [description]
         let activityViewController = UIActivityViewController(activityItems: shareAll, applicationActivities: nil)
@@ -164,12 +169,11 @@ extension DashBoard: ShareSheetProtocol {
     }
 }
 
-//MARK: extension collectionview
+//MARK:- extension collectionview
 
 extension DashBoard: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return arr.count
+        arr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -224,5 +228,17 @@ extension DashBoard: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let alert = UIAlertController(title: "Important", message: "Savings can only be edited from savings module.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Close", style: .default, handler: { (_) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }

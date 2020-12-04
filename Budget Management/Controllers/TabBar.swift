@@ -13,6 +13,7 @@ class TabBar: UITabBarController, UITabBarControllerDelegate {
     
     var navBar: NavBar?
     var navBarX: NavBarX?
+    internal var showActivityTab = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +24,12 @@ class TabBar: UITabBarController, UITabBarControllerDelegate {
         
         let device = Device.current
         
+        
+        //checking if the phone is older than iphone x than load a NavBar according to those phones
         if device.isOneOf(groupOfAllowedDevices) {
             navBarX = Bundle.main.loadNibNamed("NavBarX", owner: self, options: nil)?.first as? NavBarX
             loadNavBarViewX()
-        } else {
+        } else {//else load a simple navbar
             navBar = Bundle.main.loadNibNamed("NavBar", owner: self, options: nil)?.first as? NavBar
             loadNavBarView()
         }
@@ -35,14 +38,20 @@ class TabBar: UITabBarController, UITabBarControllerDelegate {
         
         setupSideMenu()
         updateMenus()
-        
-        
     }
     
+    
+    //tab bar mehtods to check which tab bar is pressed and change titles accordingly
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         
         if viewController is DashBoard {
-            print("dashboard")
+            if let nav = navBar {
+                nav.titleLBL.text = "Dashboard"
+                print("Dashboard")
+            } else if let navbar = navBarX {
+                navbar.titleLBL.text = "Dashboard"
+                print("Dashboard")
+            }
         } else if viewController is BudgetsTabViewController {
             if let nav = navBar {
                 nav.titleLBL.text = "Budgets"
@@ -70,6 +79,8 @@ class TabBar: UITabBarController, UITabBarControllerDelegate {
         }
     }
     
+    
+    //loading nav abr methods
     private func loadNavBarView(){
         
         navBar?.menuIconBtn.addTarget(self, action: #selector(self.menuIconPressed(_:)), for: .touchUpInside)
@@ -107,6 +118,8 @@ class TabBar: UITabBarController, UITabBarControllerDelegate {
 
 extension TabBar {
     
+    
+    //customize menu's methods
     private func updateMenus() {
         let settings = makeSettings()
         SideMenuManager.default.leftMenuNavigationController?.settings = settings

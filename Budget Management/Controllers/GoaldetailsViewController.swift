@@ -47,6 +47,8 @@ class GoaldetailsViewController: UIViewController {
         getDetails()
     }
     
+    //getting details from realm
+    
     private func getDetails(){
         
         if let details = selectedGoal {
@@ -100,6 +102,8 @@ class GoaldetailsViewController: UIViewController {
         }
     }
     
+    
+    //getting current date from realm
     private func getCurrentDate()->String{
         
         let date = Date()
@@ -110,6 +114,8 @@ class GoaldetailsViewController: UIViewController {
         return currentDate
     }
     
+    
+    //animation methods
     private func animateLabel() {
         
         UIView.animate(withDuration: 1.0, delay: 0.33, options: .transitionCurlUp) {
@@ -125,6 +131,8 @@ class GoaldetailsViewController: UIViewController {
         }
     }
     
+    
+    //getting difference in date method
     private func getDifferencOfDate(for date: String) -> Int{
         
         let curDate = Date()
@@ -149,6 +157,7 @@ class GoaldetailsViewController: UIViewController {
         return 0
     }
     
+    //goal achieved method
     private func checkGoalAchieved(){
         
         if let details = selectedGoal {
@@ -263,6 +272,8 @@ class GoaldetailsViewController: UIViewController {
 
 extension GoaldetailsViewController: ChartViewDelegate {
     
+    
+    //charts methods
     private func setUpChart(){
         
         let l = pieChartView.legend

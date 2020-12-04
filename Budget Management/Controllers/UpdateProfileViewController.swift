@@ -73,6 +73,8 @@ class UpdateProfileViewController: UIViewController {
         //        registerNotification()
     }
     
+    
+    // registering notification to know when keyboard appearss
     private func registerNotification() {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -93,6 +95,7 @@ class UpdateProfileViewController: UIViewController {
         }
     }
     
+    //getting data from realm
     private func getDataFromRealm(){
         
         if let userid = userDefault.string(forKey: "UserID")  {
@@ -209,6 +212,8 @@ class UpdateProfileViewController: UIViewController {
         }
     }
     
+    
+    // picker view methods
     private func showPicker(forView: UIView){
         forView.frame = self.view.frame
         self.view.addSubview(forView)
@@ -218,6 +223,8 @@ class UpdateProfileViewController: UIViewController {
         self.genderViewPicker.removeFromSuperview()
     }
     
+    
+    //setting custom border color to textfields
     private func setTextFieldBorderColor(){
         
         emailTxt.delegate = self
@@ -233,6 +240,9 @@ class UpdateProfileViewController: UIViewController {
         professionTxt.setTextFieldStyle()
     }
     
+    
+    
+    // tap gesture recognisers for views
     @IBAction func femaleViewTapGestureRecogniser(_ sender: UITapGestureRecognizer) {
         
         maleGenderTxt.textColor = .darkGray
@@ -347,6 +357,7 @@ extension UpdateProfileViewController: UIImagePickerControllerDelegate, UINaviga
         imagePickerController.dismiss(animated: true, completion: nil)
     }
     
+    //saving data to realm
     private func saveData(){
         
         if let userId = userId {
